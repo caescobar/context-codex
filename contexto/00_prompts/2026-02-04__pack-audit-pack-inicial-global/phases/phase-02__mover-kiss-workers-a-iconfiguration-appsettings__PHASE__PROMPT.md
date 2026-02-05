@@ -1,0 +1,55 @@
+# PHASE PROMPT
+PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global
+ItemId: PHASE-02
+IndexRef: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/INDEX.md
+PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/phases/phase-02__mover-kiss-workers-a-iconfiguration-appsettings__PHASE__PROMPT.md
+
+## Modo
+refactor-safe + change-control
+
+## Skills
+- telemetric-backend-style
+- telemetric-connectors-standard
+
+## Objetivo
+Mover KISS/Workers a IConfiguration/appsettings.
+
+## Alcance (max 5 archivos de codigo)
+- telemetric-hub/kiss/Telemetric.Hub/Program.cs
+- telemetric-hub/kiss/Telemetric.Worker.DTE/Program.cs
+- telemetric-hub/kiss/Telemetric.Worker.Persist/Program.cs
+
+## Entregables
+- contexto/02_changes/2026-02-05__phase-02__mover-kiss-workers-a-iconfiguration-appsettings__plan.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_PLAN.md)
+- contexto/02_changes/2026-02-05__phase-02__mover-kiss-workers-a-iconfiguration-appsettings__summary.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_SUMMARY.md)
+- contexto/03_hallazgos/pending.md (solo si hay hallazgos nuevos o cambio de estado)
+
+## Guardrails
+- Max 5 archivos (solo los listados en Alcance)
+- No ampliar alcance
+- Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita
+- Si algun path no existe: buscar y confirmar el path real antes de continuar
+
+## No-go rules
+- Si requiere tocar archivos fuera del Alcance o superar 5 archivos
+- Si implica cambiar contratos externos sin migracion explicita
+- Si no se puede cumplir la verificacion
+
+## Verificacion (pasos manuales)
+1. Accion: iniciar Telemetric.Hub usando configuraciones por ambiente en appsettings/IConfiguration y observar logs de conexion. Expected: conexiones exitosas a Redis, Rabbit y ClickHouse con los mismos valores de ambiente.
+2. Accion: iniciar Telemetric.Worker.DTE usando configuraciones por ambiente en appsettings/IConfiguration y observar logs de conexion. Expected: conexiones exitosas a Redis, Rabbit y ClickHouse con los mismos valores de ambiente.
+3. Accion: iniciar Telemetric.Worker.Persist usando configuraciones por ambiente en appsettings/IConfiguration y observar logs de conexion. Expected: conexiones exitosas a Redis, Rabbit y ClickHouse con los mismos valores de ambiente.
+
+## Done criteria
+- Hub y Workers usan IConfiguration/appsettings sin hardcodes para Redis/Rabbit/ClickHouse.
+- Las tres ejecuciones completan conexion a Redis/Rabbit/ClickHouse segun las configuraciones por ambiente.
+- Plan y summary completados con evidencia y verificacion registrada.
+
+## Tarea (ejecutor)
+1. Ejecutar cambios minimos para cumplir el objetivo limitado al Alcance.
+2. Completar plan + summary usando templates (con evidencia paths).
+3. En summary: resultado observado vs expected para cada paso de verificacion + Done criteria.
+
+## Post-step obligatorio
+- Marcar [x] PHASE-02 en IndexRef.
+- Completar/actualizar links de Output (plan y summary) en el indice.

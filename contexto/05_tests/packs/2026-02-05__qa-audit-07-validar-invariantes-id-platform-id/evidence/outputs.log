@@ -1,0 +1,284 @@
+# Outputs
+
+## Step 3.1 docker compose up -d
+```txt
+time="2026-02-05T10:24:17-05:00" level=warning msg="D:\\Projectos\\telemetric\\telemetric-hub\\kiss\\scripts\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+unable to get image 'redis:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/redis:latest/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Step 3.2 hub dotnet run (Start-Process)
+```txt
+stdout:
+Usando la configuración de inicio de telemetric-hub\kiss\Telemetric.Hub\Properties\launchSettings.json...
+Compilando...
+
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.3 DTE dotnet run (Start-Process)
+```txt
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.3 Persist dotnet run (Start-Process)
+```txt
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.4 redis-cli ping
+```txt
+redis-cli : El término 'redis-cli' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta 
+es correcta e inténtelo de nuevo.
+En línea: 2 Carácter: 1
++ redis-cli -h localhost -p 6379 ping
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (redis-cli:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+## Step 3.4 rabbit admin
+```txt
+{"consumer_details":[],"arguments":{},"auto_delete":false,"consumer_capacity":0,"consumer_utilisation":0,"consumers":0,"deliveries":[],"durable":true,"effective_policy_definition":{},"exclusive":false,"exclusive_consumer_tag":null,"garbage_collection":{"fullsweep_after":65535,"max_heap_size":0,"min_bin_vheap_size":46422,"min_heap_size":233,"minor_gcs":0},"head_message_timestamp":null,"idle_since":"2026-02-05T15:24:25.304+00:00","incoming":[],"memory":9472,"message_bytes":0,"message_bytes_paged_out":0,"message_bytes_persistent":0,"message_bytes_ram":0,"message_bytes_ready":0,"message_bytes_unacknowledged":0,"messages":0,"messages_details":{"rate":0.0},"messages_paged_out":0,"messages_persistent":0,"messages_ram":0,"messages_ready":0,"messages_ready_details":{"rate":0.0},"messages_ready_ram":0,"messages_unacknowledged":0,"messages_unacknowledged_details":{"rate":0.0},"messages_unacknowledged_ram":0,"name":"telemetry.validated","node":"rabbit@cae1a610ab00","operator_policy":null,"policy":null,"recoverable_slaves":null,"reductions":11412,"reductions_details":{"rate":0.0},"single_active_consumer_tag":null,"state":"running","storage_version":1,"type":"classic","vhost":"ingesta"}  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1191  100  1191    0     0   263k      0 --:--:-- --:--:-- --:--:--  290k
+```
+
+## Step 3.4 clickhouse count (smoke)
+```txt
+error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/telemetric-clickhouse/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Step 4.1 redis HSET
+```txt
+redis-cli : El término 'redis-cli' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta 
+es correcta e inténtelo de nuevo.
+En línea: 2 Carácter: 1
++ redis-cli -h localhost -p 6379 HSET device:1001 platform_id 1001
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (redis-cli:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+## Step 4.2 redis HDEL
+```txt
+redis-cli : El término 'redis-cli' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta 
+es correcta e inténtelo de nuevo.
+En línea: 2 Carácter: 1
++ redis-cli -h localhost -p 6379 HDEL device:1002 platform_id
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (redis-cli:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+## Step 5.1 redis HGET 1001
+```txt
+redis-cli : El término 'redis-cli' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta 
+es correcta e inténtelo de nuevo.
+En línea: 2 Carácter: 1
++ redis-cli -h localhost -p 6379 HGET device:1001 platform_id
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (redis-cli:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+## Step 5.1 redis HGET 1002
+```txt
+redis-cli : El término 'redis-cli' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta 
+es correcta e inténtelo de nuevo.
+En línea: 2 Carácter: 1
++ redis-cli -h localhost -p 6379 HGET device:1002 platform_id
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (redis-cli:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+## Step 5.2 API Case A
+```txt
+curl: (7) Failed to connect to localhost port 7008 after 2223 ms: Could not connect to server
+```
+
+## Step 5.3 rabbit admin
+```txt
+{"consumer_details":[],"arguments":{},"auto_delete":false,"consumer_capacity":0,"consumer_utilisation":0,"consumers":0,"deliveries":[],"durable":true,"effective_policy_definition":{},"exclusive":false,"exclusive_consumer_tag":null,"garbage_collection":{"fullsweep_after":65535,"max_heap_size":0,"min_bin_vheap_size":46422,"min_heap_size":233,"minor_gcs":0},"head_message_timestamp":null,"idle_since":"2026-02-05T15:24:25.304+00:00","incoming":[],"memory":9472,"message_bytes":0,"message_bytes_paged_out":0,"message_bytes_persistent":0,"message_bytes_ram":0,"message_bytes_ready":0,"message_bytes_unacknowledged":0,"messages":0,"messages_details":{"rate":0.0},"messages_paged_out":0,"messages_persistent":0,"messages_ram":0,"messages_ready":0,"messages_ready_details":{"rate":0.0},"messages_ready_ram":0,"messages_unacknowledged":0,"messages_unacknowledged_details":{"rate":0.0},"messages_unacknowledged_ram":0,"name":"telemetry.validated","node":"rabbit@cae1a610ab00","operator_policy":null,"policy":null,"recoverable_slaves":null,"reductions":11412,"reductions_details":{"rate":0.0},"single_active_consumer_tag":null,"state":"running","storage_version":1,"type":"classic","vhost":"ingesta"}  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1191  100  1191    0     0   363k      0 --:--:-- --:--:-- --:--:--  387k
+```
+
+## Step 5.4 clickhouse DeviceId=0
+```txt
+error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/telemetric-clickhouse/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Step 5.5 API Case B
+```txt
+curl: (7) Failed to connect to localhost port 7008 after 2242 ms: Could not connect to server
+```
+
+## Step 5.6 clickhouse DeviceId=0 (repeat)
+```txt
+error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/telemetric-clickhouse/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Step 5.7 logs check
+```txt
+hub.out.log:
+Usando la configuración de inicio de telemetric-hub\kiss\Telemetric.Hub\Properties\launchSettings.json...
+Compilando...
+
+hub.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+
+dte.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+
+persist.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 9 teardown docker compose down
+```txt
+time="2026-02-05T10:28:26-05:00" level=warning msg="D:\\Projectos\\telemetric\\telemetric-hub\\kiss\\scripts\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/json?all=1&filters=%7B%22label%22%3A%7B%22com.docker.compose.config-hash%22%3Atrue%2C%22com.docker.compose.oneoff%3DFalse%22%3Atrue%2C%22com.docker.compose.project%3Dscripts%22%3Atrue%7D%7D": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Ejecucion 2026-02-05 10:37
+
+## Step 3.1 docker compose up -d
+```txt
+time="2026-02-05T10:37:19-05:00" level=warning msg="D:\\Projectos\\telemetric\\telemetric-hub\\kiss\\scripts\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+unable to get image 'clickhouse/clickhouse-server:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/clickhouse/clickhouse-server:latest/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Step 3.2 hub dotnet run (Start-Process)
+```txt
+stdout:
+Usando la configuración de inicio de telemetric-hub\kiss\Telemetric.Hub\Properties\launchSettings.json...
+Compilando...
+
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.3 DTE dotnet run (Start-Process)
+```txt
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.3 Persist dotnet run (Start-Process)
+```txt
+stderr:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Ejecucion 2026-02-05 10:41
+
+## Step 3.1 docker compose up -d
+```txt
+time="2026-02-05T10:41:57-05:00" level=warning msg="D:\\Projectos\\telemetric\\telemetric-hub\\kiss\\scripts\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+unable to get image 'rabbitmq:3-management': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/rabbitmq:3-management/json": open //./pipe/dockerDesktopLinuxEngine: Acceso denegado.
+```
+
+## Ejecucion 2026-02-05 10:43 (con permisos Docker)
+
+## Step 3.1 docker compose up -d
+```txt
+time="2026-02-05T10:43:46-05:00" level=warning msg="D:\\Projectos\\telemetric\\telemetric-hub\\kiss\\scripts\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container telemetric-redis  Running
+ Container rabbitmq  Running
+ Container telemetric-clickhouse  Running
+ Container scripts-redis-init-1  Starting
+ Container scripts-redis-init-1  Started
+```
+
+## Step 3.2 / 3.3 dotnet run
+```txt
+hub.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+
+dte.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+
+persist.err.log:
+No se pudo llevar a cabo la compilación. Corrija los errores de compilación y vuelva a ejecutar el proyecto.
+```
+
+## Step 3.4 redis ping (docker exec)
+```txt
+PONG
+```
+
+## Step 3.4 rabbit admin
+```txt
+{"consumer_details":[],"arguments":{},"auto_delete":false,"consumer_capacity":0,"consumer_utilisation":0,"consumers":0,"deliveries":[],"durable":true,"effective_policy_definition":{},"exclusive":false,"exclusive_consumer_tag":null,"garbage_collection":{"fullsweep_after":65535,"max_heap_size":0,"min_bin_vheap_size":46422,"min_heap_size":233,"minor_gcs":0},"head_message_timestamp":null,"idle_since":"2026-02-05T15:24:25.304+00:00","incoming":[],"memory":9472,"message_bytes":0,"message_bytes_paged_out":0,"message_bytes_persistent":0,"message_bytes_ram":0,"message_bytes_ready":0,"message_bytes_unacknowledged":0,"messages":0,"messages_details":{"rate":0.0},"messages_paged_out":0,"messages_persistent":0,"messages_ram":0,"messages_ready":0,"messages_ready_details":{"rate":0.0},"messages_ready_ram":0,"messages_unacknowledged":0,"messages_unacknowledged_details":{"rate":0.0},"messages_unacknowledged_ram":0,"name":"telemetry.validated","node":"rabbit@cae1a610ab00","operator_policy":null,"policy":null,"recoverable_slaves":null,"reductions":11412,"reductions_details":{"rate":0.0},"single_active_consumer_tag":null,"state":"running","storage_version":1,"type":"classic","vhost":"ingesta"}  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1191  100  1191    0     0   330k      0 --:--:-- --:--:-- --:--:--  387k
+```
+
+## Step 3.4 clickhouse count (smoke)
+```txt
+7684
+```
+
+## Step 4.1 redis HSET (docker exec)
+```txt
+0
+```
+
+## Step 4.2 redis HDEL (docker exec)
+```txt
+0
+```
+
+## Step 5.1 redis HGET 1001 (docker exec)
+```txt
+1001
+```
+
+## Step 5.1 redis HGET 1002 (docker exec)
+```txt
+
+```
+
+## Step 5.2 API Case A
+```txt
+curl: (7) Failed to connect to localhost port 7008 after 2217 ms: Could not connect to server
+```
+
+## Step 5.3 rabbit admin
+```txt
+{"consumer_details":[],"arguments":{},"auto_delete":false,"consumer_capacity":0,"consumer_utilisation":0,"consumers":0,"deliveries":[],"durable":true,"effective_policy_definition":{},"exclusive":false,"exclusive_consumer_tag":null,"garbage_collection":{"fullsweep_after":65535,"max_heap_size":0,"min_bin_vheap_size":46422,"min_heap_size":233,"minor_gcs":0},"head_message_timestamp":null,"idle_since":"2026-02-05T15:24:25.304+00:00","incoming":[],"memory":9472,"message_bytes":0,"message_bytes_paged_out":0,"message_bytes_persistent":0,"message_bytes_ram":0,"message_bytes_ready":0,"message_bytes_unacknowledged":0,"messages":0,"messages_details":{"rate":0.0},"messages_paged_out":0,"messages_persistent":0,"messages_ram":0,"messages_ready":0,"messages_ready_details":{"rate":0.0},"messages_ready_ram":0,"messages_unacknowledged":0,"messages_unacknowledged_details":{"rate":0.0},"messages_unacknowledged_ram":0,"name":"telemetry.validated","node":"rabbit@cae1a610ab00","operator_policy":null,"policy":null,"recoverable_slaves":null,"reductions":11412,"reductions_details":{"rate":0.0},"single_active_consumer_tag":null,"state":"running","storage_version":1,"type":"classic","vhost":"ingesta"}  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1191  100  1191    0     0   342k      0 --:--:-- --:--:-- --:--:--  387k
+```
+
+## Step 5.4 clickhouse DeviceId=0
+```txt
+0
+```
+
+## Step 5.5 API Case B
+```txt
+curl: (7) Failed to connect to localhost port 7008 after 2233 ms: Could not connect to server
+```
+
+## Step 5.6 clickhouse DeviceId=0 (repeat)
+```txt
+0
+```

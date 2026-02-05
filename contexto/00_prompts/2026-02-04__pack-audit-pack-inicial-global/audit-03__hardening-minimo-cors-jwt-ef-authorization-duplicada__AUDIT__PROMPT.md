@@ -1,0 +1,32 @@
+PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global
+ItemId: AUDIT-03
+IndexRef: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/INDEX.md
+PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/audit-03__hardening-minimo-cors-jwt-ef-authorization-duplicada__AUDIT__PROMPT.md
+
+Modo: docs-only
+Skills: telemetric-backend-style
+
+Objetivo
+Auditar hardening minimo (CORS/JWT/EF auditoria/Authorization duplicada) y documentar riesgos o gaps.
+
+Alcance
+- Buscar y confirmar paths reales de configuracion CORS, JWT, EF auditing y Authorization.
+- Revisar duplicidades en autorizacion y puntos de bypass o falta de cobertura.
+- Identificar settings inconsistentes entre proyectos.
+
+Entregables
+- Reporte en contexto/01_audits/YYYY-MM-DD__audit-03__hardening-minimo-cors-jwt-ef-authorization-duplicada.md usando el template de auditoria real (buscar en contexto/01_overview/templates/ y confirmar path exacto; si existe TEMPLATE_AUDIT_REPORT usarlo, si no usar el template de auditoria disponible).
+- Actualizar contexto/03_hallazgos/pending.md solo si hay hallazgos nuevos.
+
+Guardrails
+- Prohibido modificar codigo.
+- No inventar paths: buscar y confirmar paths reales, citarlos en el reporte.
+- Si algo no se encuentra: anotar "No encontrado".
+- No pedir confirmacion.
+
+No-go rules
+- No ejecutar cambios de codigo ni refactors.
+
+Post-step
+- Marcar [x] AUDIT-03 en IndexRef.
+- Completar o actualizar el link de Output en IndexRef.

@@ -1,0 +1,58 @@
+﻿# Commands executed or to execute (DRY_RUN-safe)
+
+- docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml up -d
+- dotnet run --project telemetric-hub/kiss/Telemetric.Hub/Telemetric.Hub.csproj
+- dotnet run --project telemetric-hub/kiss/Telemetric.Worker.DTE/Telemetric.Worker.DTE.csproj
+- dotnet run --project telemetric-hub/kiss/Telemetric.Worker.Persist/Telemetric.Worker.Persist.csproj
+- redis-cli -h localhost -p 6379 HSET device:1001 platform_id 1001
+- redis-cli -h localhost -p 6379 HDEL device:1002 platform_id
+- redis-cli -h localhost -p 6379 HGET device:1001 platform_id
+- redis-cli -h localhost -p 6379 HGET device:1002 platform_id
+- curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1001.{\\\"ts\\\":1700000000,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+- curl -u admin:admin123 http://localhost:15672/api/queues/ingesta/telemetry.validated
+- docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"
+- curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1002.{\\\"ts\\\":1700000001,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+- docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"
+- docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml down
+docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml up -d
+dotnet run --project telemetric-hub/kiss/Telemetric.Hub/Telemetric.Hub.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.DTE/Telemetric.Worker.DTE.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.Persist/Telemetric.Worker.Persist.csproj
+redis-cli -h localhost -p 6379 ping
+curl -u admin:admin123 http://localhost:15672/api/queues/ingesta/telemetry.validated
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() FROM TelemetryLog"
+redis-cli -h localhost -p 6379 HSET device:1001 platform_id 1001
+redis-cli -h localhost -p 6379 HDEL device:1002 platform_id
+redis-cli -h localhost -p 6379 HGET device:1001 platform_id
+redis-cli -h localhost -p 6379 HGET device:1002 platform_id
+curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1001.{\\\"ts\\\":1700000000,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+curl -u admin:admin123 http://localhost:15672/api/queues/ingesta/telemetry.validated
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"
+curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1002.{\\\"ts\\\":1700000001,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"
+docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml down
+docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml up -d
+dotnet run --project telemetric-hub/kiss/Telemetric.Hub/Telemetric.Hub.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.DTE/Telemetric.Worker.DTE.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.Persist/Telemetric.Worker.Persist.csproj
+Start-Sleep -Seconds 5
+docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml up -d
+docker compose -f telemetric-hub/kiss/scripts/docker-compose.yml up -d
+dotnet run --project telemetric-hub/kiss/Telemetric.Hub/Telemetric.Hub.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.DTE/Telemetric.Worker.DTE.csproj
+dotnet run --project telemetric-hub/kiss/Telemetric.Worker.Persist/Telemetric.Worker.Persist.csproj
+dotnet build telemetric-hub/kiss/Telemetric.Hub/Telemetric.Hub.csproj
+dotnet build telemetric-hub/kiss/Telemetric.Worker.DTE/Telemetric.Worker.DTE.csproj
+dotnet build telemetric-hub/kiss/Telemetric.Worker.Persist/Telemetric.Worker.Persist.csproj
+docker exec -i telemetric-redis redis-cli ping
+curl -u admin:admin123 http://localhost:15672/api/queues/ingesta/telemetry.validated
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() FROM TelemetryLog"
+docker exec -i telemetric-redis redis-cli HSET device:1001 platform_id 1001
+docker exec -i telemetric-redis redis-cli HDEL device:1002 platform_id
+docker exec -i telemetric-redis redis-cli HGET device:1001 platform_id
+docker exec -i telemetric-redis redis-cli HGET device:1002 platform_id
+curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1001.{\\\"ts\\\":1700000000,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+curl -u admin:admin123 http://localhost:15672/api/queues/ingesta/telemetry.validated
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"
+curl -k -X POST https://localhost:7008/api/v1/ingest-raw -H "Content-Type: application/json" -d "{\"frame\":\"1002.{\\\"ts\\\":1700000001,\\\"t\\\":1,\\\"sv\\\":1,\\\"data\\\":{\\\"lat\\\":40.4168,\\\"lng\\\":-3.7038,\\\"tmp\\\":12.3,\\\"bat\\\":95}}\"}"
+docker exec -i telemetric-clickhouse clickhouse-client --user teleuser --password telepass123 --database telemetric --query "SELECT count() AS cnt FROM TelemetryLog WHERE DeviceId = 0 AND Timestamp >= now() - INTERVAL 15 MINUTE"

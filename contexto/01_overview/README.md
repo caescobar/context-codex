@@ -34,6 +34,41 @@ La idea es simple:
   - SignalR group naming
 - Si un cambio toca contratos, debe documentarse como decisión y plan de migración.
 
+### 1.5 Contrato canonico de Identidad/Telemetria
+Basado en evidencia existente. Referencias:
+- `contexto/01_audits/2026-02-04__audit-01__identidad-telemetria-serial-vs-sql-id.md`
+- `contexto/03_hallazgos/pending.md` (HALL-20260204-001..003)
+
+**Definiciones**
+- `serial`: identificador natural del dispositivo (string). Es la identidad externa para routing y grupos.
+- `platform_id` (SQL id): identidad interna (INT) usada para persistencia y payload.
+- `TelemetryEnvelope.DeviceId`: string que representa el SQL id cuando `platform_id` existe.
+
+**Routing / Group vs Payload vs Persistencia**
+- RabbitMQ routing key: `telemetry.device.{serial}` (routing por serial).
+- SignalR group: `device_{serial}` (suscripción por serial).
+- Payload: `TelemetryEnvelope.DeviceId` = SQL id (cuando hay `platform_id`).
+- Redis config: `device:{serial}` y campo `platform_id`.
+- Redis last-value: `device:{id}:last` (id actual = `DeviceId` del payload).
+
+**Mapeo serial <-> platform_id**
+- Resolución primaria: Redis config `device:{serial}` contiene `platform_id`.
+- DTE usa `platform_id` como `DeviceId` en el payload normalizado.
+- Cuando falta `platform_id`, no se debe persistir ni publicar telemetry normalizada (ver invariantes).
+
+**Invariantes (no-go)**
+- Prohibido persistir telemetria con `DeviceId=0`.
+- Si falta `platform_id`, el flujo normalizado debe abortar con evidencia (log/metric) y no publicar/persistir.
+- No cambiar:
+  - Redis key patterns (ej: `device:{serial}`, `device:{id}:last`)
+  - Rabbit routing keys (ej: `telemetry.device.{serial}`)
+  - SignalR group naming (ej: `device_{serial}`)
+  sin migración explícita.
+
+**Notas de riesgo conocidas**
+- Mismatch serial vs SQL id puede dejar snapshots vacíos en Redis last-value (ver HALL-20260204-002).
+- Semántica mixta de `DeviceId` en payload vs routing requiere documentación explícita (ver HALL-20260204-003).
+
 ---
 
 ## 2) Estructura de `contexto/`
@@ -144,16 +179,41 @@ Usamos el skill **`telemetric-prompt-builder`** para convertir una descripción 
 Modo: docs-only
 Skills: telemetric-prompt-builder
 
-Input:
-{{pega aquí tu descripción natural del problema o feature}}
+Input (texto humano):
+<PEGA AQUÍ TU DESCRIPCIÓN NATURAL>
 
 Tarea:
-Genera un PROMPT FINAL estandarizado (clasifica: HALLAZGO | AUDIT | PHASE | STORY PACK) y REGÍSTRALO además en:
-- contexto/00_prompts/{{YYYY-MM-DD}}__{{slug}}__{{tipo}}.md
+1) Clasifica en: HALLAZGO | AUDIT | PHASE | STORY PACK (rationale en 2 bullets).
+2) Determina el PackDir:
+   - Si el input refiere a un pack existente, usar ese pack.
+   - Si no, crear uno nuevo: contexto/00_prompts/YYYY-MM-DD__pack-{slug}/
+3) Crea/actualiza el índice del pack:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/INDEX.md
+   Reglas del índice:
+   - Debe incluir checkboxes de estado del pack.
+   - Debe incluir cada item con checkbox + links a Prompt y Output.
+4) Guarda el prompt en:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/{itemId}__{slug}__{tipo}__PROMPT.md
+5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
+   - AUDIT -> contexto/01_audits/YYYY-MM-DD__{itemId}__{slug}.md
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__{itemId}__{slug}__phase-X_{plan|summary}.md
+   - STORY -> contexto/04_storypacks/YYYY-MM-DD__{itemId}__{slug}.md
+   - HALLAZGO -> contexto/03_hallazgos/pending.md (o item link)
 
-Regla:
-Tu salida debe incluir un bloque PROMPT FINAL listo para copiar/pegar.
-No ejecutes cambios de código.
+Guardrails:
+- Solo escribir en contexto/
+- No tocar código
+- No pedir confirmación: escribir los archivos en contexto/ directamente.
+- No incluir `report-only` como skill si el prompt debe escribir en contexto/.
+-PHASE: max 5 archivos de código.
+-Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migración explícita.
+
+Salida obligatoria:
+- CLASIFICACIÓN
+- PROMPT FINAL (listo para copiar/pegar)
+- ARCHIVO (PackDir + archivo prompt creado)
+- INDEX actualizado
+
 ```
 
 ### 4.2 Uso recomendado (2 pasos)
@@ -183,3 +243,134 @@ El builder generará:
 - prompts ejecutables `audit-XX__...__PROMPT.md`, `phase-XX__...__PROMPT.md`, etc.
 
 Los prompts ejecutores deben **marcar [x]** su item en `INDEX.md` al finalizar.
+
+## Ejemplo de uso para fase
+Aqui hay algunos ejemplos de uso
+
+```txt
+Modo: docs-only
+Skills: telemetric-prompt-builder
+
+Input (texto humano):
+
+Usar PackDir existente: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
+Quiero generar el PROMPT FINAL para ejecutar PHASE-01 basada en el AUDIT-01 (2026-02-04), sección “Plan sugerido por fases”, Fase 1.
+Usa exactamente el objetivo/archivos/verificación definidos ahí, sin ampliar alcance.
+
+Tarea:
+1) Clasifica en: HALLAZGO | AUDIT | PHASE | STORY PACK (rationale en 2 bullets).
+2) Determina el PackDir:
+   - Si el input refiere a un pack existente, usar ese pack.
+   - Si no, crear uno nuevo: contexto/00_prompts/YYYY-MM-DD__pack-{slug}/
+3) Crea/actualiza el índice del pack:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/INDEX.md
+   Reglas del índice:
+   - Debe incluir checkboxes de estado del pack.
+   - Debe incluir cada item con checkbox + links a Prompt y Output.
+4) Guarda el prompt en:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/{itemId}__{slug}__{tipo}__PROMPT.md
+5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
+   - AUDIT -> contexto/01_audits/YYYY-MM-DD__{itemId}__{slug}.md
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__{itemId}__{slug}__phase-X_{plan|summary}.md
+   - STORY -> contexto/04_storypacks/YYYY-MM-DD__{itemId}__{slug}.md
+   - HALLAZGO -> contexto/03_hallazgos/pending.md (o item link)
+ 
+Guardrails:
+- Solo escribir en contexto/
+- No tocar código
+- No pedir confirmación: escribir los archivos en contexto/ directamente.
+- No incluir `report-only` como skill si el prompt debe escribir en contexto/.
+-PHASE: max 5 archivos de código.
+-Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migración explícita.
+
+Salida obligatoria:
+- CLASIFICACIÓN
+- PROMPT FINAL (listo para copiar/pegar)
+- ARCHIVO (PackDir + archivo prompt creado)
+- INDEX actualizado
+```
+
+
+### Ejemplo sugerido para generacion de QA
+
+Modo: docs-only
+Skills: telemetric-prompt-builder
+
+Input (texto humano):
+Usar PackDir existente: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
+Quiero generar el PROMPT FINAL de QA para validar PHASE-01 (2026-02-04__phase-01__validar-invariantes-id-platform-id).
+Objetivo QA: comprobar que NO se generan inserts con DeviceId=0 y que sin platform_id NO se publica/persiste (deja evidencia log/warn/metric).
+Contexto técnico: stack docker-compose; endpoint Hub: POST /api/v1/ingest-raw (formato 'serial.payload'); existe hostigador que simula dispositivo; Redis es fuente de config.
+
+Tarea:
+1) Clasifica en: HALLAZGO | AUDIT | PHASE | STORY PACK (rationale en 2 bullets).
+2) Determina el PackDir:
+   - Si el input refiere a un pack existente, usar ese pack.
+   - Si no, crear uno nuevo: contexto/00_prompts/YYYY-MM-DD__pack-{slug}/
+3) Crea/actualiza el índice del pack:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/INDEX.md
+   Reglas del índice:
+   - Debe incluir checkboxes de estado del pack.
+   - Debe incluir cada item con checkbox + links a Prompt y Output.
+4) Guarda el prompt en:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/{itemId}__{slug}__{tipo}__PROMPT.md
+5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
+   - AUDIT -> contexto/01_audits/YYYY-MM-DD__{itemId}__{slug}.md
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__{itemId}__{slug}__phase-X_{plan|summary}.md
+   - STORY -> contexto/04_storypacks/YYYY-MM-DD__{itemId}__{slug}.md
+   - HALLAZGO -> contexto/03_hallazgos/pending.md (o item link)
+   - QA -> contexto/05_qa/YYYY-MM-DD__{itemId}__{slug}__qa.md
+
+Guardrails:
+- Solo escribir en contexto/
+- No tocar código
+- No pedir confirmación: escribir los archivos en contexto/ directamente.
+- No incluir `report-only` como skill si el prompt debe escribir en contexto/.
+- PHASE: max 5 archivos de código.
+- Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migración explícita.
+
+Salida obligatoria:
+- CLASIFICACIÓN
+- PROMPT FINAL (listo para copiar/pegar)
+- ARCHIVO (PackDir + archivo prompt creado)
+- INDEX actualizado
+
+
+### Ejemplo sugerido ejecucion de pack de QA
+
+Modo: change-control (local-run permitido)
+Skills: telemetric-qa-pack-builder
+
+Objetivo:
+Ejecutar el QA Pack y dejar evidencia reproducible (comandos + outputs + logs) para validar PHASE-01.
+
+Input:
+Usar QA Pack existente:
+- QA Pack: contexto/05_tests/packs/2026-02-05__qa-audit-07-validar-invariantes-id-platform-id/QA_PACK.md
+- Scripts: contexto/05_tests/packs/2026-02-05__qa-audit-07-validar-invariantes-id-platform-id/scripts/
+- Evidence dir: contexto/05_tests/packs/2026-02-05__qa-audit-07-validar-invariantes-id-platform-id/evidence/
+
+Tarea:
+1) Leer el QA_PACK.md y ejecutar en orden:
+   a) Setup (infra + hub + workers) siguiendo la sección 3.
+   b) Preparación de datos A/B siguiendo sección 4.
+   c) Ejecución sección 5 (pasos 1..7).
+   d) Teardown (si aplica).
+2) Capturar evidencia:
+   - Registrar cada comando ejecutado en evidence/commands.log (una línea por comando).
+   - Pegar outputs relevantes en evidence/outputs.log (con separadores claros por paso).
+   - Guardar queries en evidence/clickhouse_queries.sql y resultados en evidence/clickhouse_results.txt.
+   - Guardar notas de lo no automatizable en evidence/notes.md.
+3) Completar la sección 6 y 7 del QA_PACK.md:
+   - Reemplazar PENDIENTE por outputs reales (API/Rabbit/ClickHouse/Logs).
+   - Completar Observed y marcar Done criteria con [x] o dejar [ ] si falla.
+4) Si el QA pasa:
+   - Marcar [x] AUDIT-07 en IndexRef indicado en el QA Pack.
+5) Si el QA falla:
+   - No inventar fixes.
+   - Registrar un HALLAZGO nuevo en contexto/03_hallazgos/pending.md con evidencia exacta (logs/paths) y dejar estado Open.
+
+Guardrails:
+- No tocar código de producto (solo ejecutar y escribir evidencia en contexto/).
+- No inventar resultados.
+- Si un comando no existe o falla por entorno, documentarlo tal cual en evidence/notes.md y proponer el comando alternativo solo si está respaldado por el repo.
