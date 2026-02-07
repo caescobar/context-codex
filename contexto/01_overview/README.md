@@ -252,9 +252,9 @@ Modo: docs-only
 Skills: telemetric-prompt-builder
 
 Input (texto humano):
-
 Usar PackDir existente: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
-Quiero generar el PROMPT FINAL para ejecutar PHASE-01 basada en el AUDIT-01 (2026-02-04), sección “Plan sugerido por fases”, Fase 1.
+Fuente obligatoria: contexto/01_audits/2026-02-05__audit-03__hardening-minimo-cors-jwt-ef-authorization-duplicada.md
+Quiero generar el PROMPT FINAL para ejecutar PHASE-03 basada en la sección “Plan sugerido por fases”, Fase 3. 
 Usa exactamente el objetivo/archivos/verificación definidos ahí, sin ampliar alcance.
 
 Tarea:
@@ -268,20 +268,17 @@ Tarea:
    - Debe incluir checkboxes de estado del pack.
    - Debe incluir cada item con checkbox + links a Prompt y Output.
 4) Guarda el prompt en:
-   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/{itemId}__{slug}__{tipo}__PROMPT.md
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/phases/phase-03__{slug}__PHASE__PROMPT.md 
 5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
-   - AUDIT -> contexto/01_audits/YYYY-MM-DD__{itemId}__{slug}.md
-   - PHASE -> contexto/02_changes/YYYY-MM-DD__{itemId}__{slug}__phase-X_{plan|summary}.md
-   - STORY -> contexto/04_storypacks/YYYY-MM-DD__{itemId}__{slug}.md
-   - HALLAZGO -> contexto/03_hallazgos/pending.md (o item link)
- 
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__phase-02__{slug}__{plan|summary}.md
+
 Guardrails:
 - Solo escribir en contexto/
 - No tocar código
 - No pedir confirmación: escribir los archivos en contexto/ directamente.
-- No incluir `report-only` como skill si el prompt debe escribir en contexto/.
--PHASE: max 5 archivos de código.
--Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migración explícita.
+- No incluir report-only como skill si el prompt debe escribir en contexto/.
+- PHASE: max 5 archivos de código.
+- Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migración explícita.
 
 Salida obligatoria:
 - CLASIFICACIÓN

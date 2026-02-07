@@ -20,12 +20,12 @@
 - [x] AUDIT-03 Backend: Hardening minimo (CORS/JWT/EF auditoria/Authorization duplicada)
   - Prompt: ./audit-03__hardening-minimo-cors-jwt-ef-authorization-duplicada__AUDIT__PROMPT.md
   - Output: ../../01_audits/2026-02-05__audit-03__hardening-minimo-cors-jwt-ef-authorization-duplicada.md
-- [ ] AUDIT-04 Frontend: Estandar HTTP (AXIOS CORE unico) + contrato de errores
+- [x] AUDIT-04 Frontend: Estandar HTTP (AXIOS CORE unico) + contrato de errores
   - Prompt: ./audit-04__frontend-http-axios-core-contrato-errores__AUDIT__PROMPT.md
-  - Output: ../../01_audits/2026-02-04__audit-04__frontend-http-axios-core-contrato-errores.md
-- [ ] AUDIT-05 Frontend: Maps (estructura, lifecycle, performance, leaks)
+  - Output: ../../01_audits/2026-02-06__audit-04__frontend-http-axios-core-contrato-errores.md
+- [x] AUDIT-05 Frontend: Maps (estructura, lifecycle, performance, leaks)
   - Prompt: ./audit-05__frontend-maps-structure-lifecycle-performance-leaks__AUDIT__PROMPT.md
-  - Output: ../../01_audits/2026-02-04__audit-05__frontend-maps-structure-lifecycle-performance-leaks.md
+  - Output: ../../01_audits/2026-02-06__audit-05__frontend-maps-structure-lifecycle-performance-leaks.md
 - [ ] AUDIT-06 Cleanup global (inventario, sin borrar)
   - Prompt: ./audit-06__cleanup-global-inventario-sin-borrar__AUDIT__PROMPT.md
   - Output: ../../01_audits/2026-02-04__audit-06__cleanup-global-inventario-sin-borrar.md
@@ -47,10 +47,14 @@
   - Prompt: ./phases/phase-02__mover-kiss-workers-a-iconfiguration-appsettings__PHASE__PROMPT.md
   - Output (plan): ../../02_changes/2026-02-05__phase-02__mover-kiss-workers-a-iconfiguration-appsettings__plan.md
   - Output (summary): ../../02_changes/2026-02-05__phase-02__mover-kiss-workers-a-iconfiguration-appsettings__summary.md
-- [ ] PHASE-02 Quitar AllowAnonymous en OrganizationNodes y Telemetry/History
+- [x] PHASE-02 Quitar AllowAnonymous en OrganizationNodes y Telemetry/History
   - Prompt: ./phases/phase-02__quitar-allowanonymous-organizationnodes-telemetry-history__PHASE__PROMPT.md
   - Output (plan): ../../02_changes/2026-02-05__phase-02__quitar-allowanonymous-organizationnodes-telemetry-history__plan.md
   - Output (summary): ../../02_changes/2026-02-05__phase-02__quitar-allowanonymous-organizationnodes-telemetry-history__summary.md
+- [x] PHASE-03 Endurecer CORS/JWT y limpiar duplicados en DI
+  - Prompt: ./phases/phase-03__endurecer-cors-jwt-limpiar-duplicados-di__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-06__phase-03__endurecer-cors-jwt-limpiar-duplicados-di__plan.md
+  - Output (summary): ../../02_changes/2026-02-06__phase-03__endurecer-cors-jwt-limpiar-duplicados-di__summary.md
 - [x] PHASE-03 Consolidar esquema unico de Options (conectores)
   - Prompt: ./phases/phase-03__consolidar-esquema-options__PHASE__PROMPT.md
   - Output (plan): ../../02_changes/2026-02-05__phase-03__consolidar-esquema-options__plan.md
@@ -58,6 +62,18 @@
 - [x] PHASE-03 Documentar contrato canonico identidad/telemetria
   - Prompt: ./phases/phase-03__documentar-contrato-canonico-identidad-telemetria__PHASE__PROMPT.md
   - Output: ../../01_overview/README.md
+- [x] PHASE-01 Migrar stores demo y limpiar imports residuales
+  - Prompt: ./phases/phase-01__frontend-http-axios-core-contrato-errores-fase-3__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-3__plan.md
+  - Output (summary): ../../02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-3__summary.md
+- [x] PHASE-01 Definir cliente canonico y contrato de error (Frontend HTTP)
+  - Prompt: ./phases/phase-01__frontend-http-axios-core-contrato-errores-fase-1__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-1__plan.md
+  - Output (summary): ../../02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-1__summary.md
+- [x] PHASE-02 Migrar servicios principales y telemetry history a axios core (Frontend HTTP)
+  - Prompt: ./phases/phase-02__frontend-http-axios-core-contrato-errores-fase-2__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-06__phase-02__frontend-http-axios-core-contrato-errores-fase-2__plan.md
+  - Output (summary): ../../02_changes/2026-02-06__phase-02__frontend-http-axios-core-contrato-errores-fase-2__summary.md
 
 ### QA
 - [x] AUDIT-07 QA Pack: Validar PHASE-01 (no DeviceId=0, platform_id obligatorio)

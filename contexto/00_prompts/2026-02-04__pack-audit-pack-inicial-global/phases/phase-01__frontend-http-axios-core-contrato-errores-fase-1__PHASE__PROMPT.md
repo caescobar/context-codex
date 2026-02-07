@@ -1,0 +1,54 @@
+# PHASE PROMPT - phase-01__frontend-http-axios-core-contrato-errores-fase-1
+
+PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
+ItemId: PHASE-01
+IndexRef: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/INDEX.md
+PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/phases/phase-01__frontend-http-axios-core-contrato-errores-fase-1__PHASE__PROMPT.md
+
+Modo: refactor-safe + change-control
+Skills: telemetric-frontend-style
+
+Objetivo
+- Definir cliente canonico y contrato de error.
+
+Alcance (max 5 archivos de codigo)
+- telemetric-front/src/core/utils/axios.ts
+- telemetric-front/src/utils/axios.ts
+- telemetric-front/src/core/index.ts
+- telemetric-front/src/utils/helpers/fetch-wrapper.ts
+- telemetric-front/src/features/auth/auth.service.ts
+
+Entregables
+- contexto/02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-1__plan.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_PLAN.md)
+- contexto/02_changes/2026-02-06__phase-01__frontend-http-axios-core-contrato-errores-fase-1__summary.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_SUMMARY.md)
+- Actualizar contexto/03_hallazgos/pending.md solo si hay hallazgos nuevos o cambio de estado
+
+Guardrails
+- Maximo 5 archivos: solo los listados en Alcance
+- No ampliar alcance
+- Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita
+- Si algun path no existe: buscar y confirmar el path real antes de continuar
+
+No-go rules
+- Si requiere tocar archivos fuera del Alcance o superar 5 archivos
+- Si implica cambiar contratos externos sin migracion explicita
+- Si no se puede cumplir la verificacion
+
+Tarea (ejecutor)
+1) Ejecutar cambios minimos para definir un solo AXIOS CORE canonico y un contrato de error unificado dentro del Alcance.
+2) Completar plan + summary usando templates (con evidencia paths).
+3) En summary: resultado observado vs expected para cada paso de verificacion + Done criteria.
+
+Verificacion (pasos manuales)
+1) Accion: Login con credenciales validas y observar el flujo de autenticacion. Expected: se obtiene token y se usa el mismo cliente canonico; no hay redirects inesperados.
+2) Accion: Forzar refresh de token (expirar token y repetir accion). Expected: el refresh se procesa correctamente y los errores se reportan con el contrato unificado.
+3) Accion: Acceder a un recurso con permisos insuficientes. Expected: el error 401/403 sigue el contrato unificado y el flujo de UI responde de forma consistente.
+
+Done criteria
+- El cliente HTTP canonico es el unico usado por los archivos del Alcance.
+- El contrato de error es consistente en los flujos de login, refresh y permisos.
+- La verificacion manual coincide con Expected en todos los pasos.
+
+Post-step obligatorio
+- Marcar [x] PHASE-01 en IndexRef
+- Completar/actualizar links de Output (plan y summary) en el indice

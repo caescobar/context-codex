@@ -113,7 +113,7 @@
 
 ## HALL-20260205-005 – Endpoints críticos con AllowAnonymous()
 - Severidad: High
-- Estado: Open
+- Estado: Done
 - Bloquea fase actual: No
 - Síntoma: endpoints de Organizations, OrganizationNodes y Telemetry/History permiten acceso sin autenticación.
 - Impacto: bypass de autenticación/autorización y exposición de operaciones sensibles.
@@ -126,7 +126,7 @@
 
 ## HALL-20260205-006 – CORS AllowAll + credenciales sin separación por ambiente
 - Severidad: Medium
-- Estado: Open
+- Estado: Done
 - Bloquea fase actual: No
 - Síntoma: política CORS “AllowAll” con `AllowCredentials()` y `SetIsOriginAllowed(_ => true)` aplicada globalmente.
 - Impacto: cualquier origin puede hacer requests con credenciales en navegadores; riesgo en producción.
@@ -139,7 +139,7 @@
 
 ## HALL-20260205-007 – JWT sin validación explícita de Issuer/Audience
 - Severidad: Medium
-- Estado: Open
+- Estado: Done
 - Bloquea fase actual: No
 - Síntoma: configuración JWT sólo establece SigningKey; Issuer/Audience existen en config pero no se validan.
 - Impacto: tokens firmados con la misma key podrían aceptarse aunque issuer/audience sean incorrectos.
@@ -152,7 +152,7 @@
 
 ## HALL-20260205-008 – Duplicidad de registro de Authorization en DI
 - Severidad: Low
-- Estado: Open
+- Estado: Done
 - Bloquea fase actual: No
 - Síntoma: `IAuthorizationPolicyProvider` y `IAuthorizationHandler` se registran dos veces.
 - Impacto: confusión y riesgo de drift si sólo se edita uno de los duplicados.
@@ -174,4 +174,95 @@
 - Causa raíz (hipótesis): carpeta legado no aislada del flujo actual.
 - Solución propuesta: marcar/retirar `old/` del build o documentar configuración vigente.
 - Decisión:
+- Notas:
+
+## HALL-20260206-001 - Multiples clientes HTTP y contratos de error divergentes (frontend)
+- Severidad: Medium
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: coexistencia de axios en `src/utils/axios.ts`, axios alterno en `src/core/utils/axios.ts`, `fetchWrapper` y `fetch` directo, con mapeos de error distintos.
+- Impacto: manejo de errores/autorizacion inconsistente y UX desigual.
+- Evidencia (paths/logs): telemetric-front/src/utils/axios.ts, telemetric-front/src/core/utils/axios.ts, telemetric-front/src/utils/helpers/fetch-wrapper.ts, telemetric-front/src/features/telemetry/telemetry.service.ts
+- Repro: forzar 401/403/500 en endpoints de auth/organizations/telemetry y comparar comportamiento.
+- Causa raiz (hipotesis): ausencia de un AXIOS CORE canonico y migracion parcial.
+- Solucion propuesta: consolidar en un solo cliente HTTP con contrato de error unificado.
+- Decision:
+- Notas:
+
+## HALL-20260206-002 - Uso de fetchWrapper/fetch directo en servicios (frontend)
+- Severidad: Medium
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: servicios usan `fetchWrapper` o `fetch` directo en lugar del AXIOS CORE unico.
+- Impacto: rompe estandar, complica observabilidad y manejo consistente de auth/error.
+- Evidencia (paths/logs): telemetric-front/src/utils/helpers/fetch-wrapper.ts, telemetric-front/src/features/auth/auth.service.ts, telemetric-front/src/services/organization.service.ts, telemetric-front/src/features/telemetry/telemetry.service.ts
+- Repro: revisar imports/calls a `fetchWrapper` y `fetch` en los paths indicados.
+- Causa raiz (hipotesis): wrapper legacy no retirado y servicios nuevos continuando el patron.
+- Solucion propuesta: migrar servicios a axios core y deprecar `fetchWrapper`.
+- Decision:
+- Notas:
+
+## HALL-20260206-003 - Duplicidad de instancia axios y export inconsistente (frontend)
+- Severidad: Low
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: `src/core/utils/axios.ts` define baseURL/auth pero no hay usos; `src/utils/axios.ts` es el import comun.
+- Impacto: el core real no se usa; riesgo de auth/baseURL inconsistentes.
+- Evidencia (paths/logs): telemetric-front/src/core/utils/axios.ts, telemetric-front/src/core/index.ts, telemetric-front/src/utils/axios.ts, telemetric-front/src/stores/apps/blog.ts
+- Repro: buscar imports de `@/utils/axios` vs `@/core/...`.
+- Causa raiz (hipotesis): duplicidad por migracion parcial y exports no alineados.
+- Solucion propuesta: definir un unico axios core y ajustar exports/imports.
+- Decision:
+- Notas:
+
+## HALL-20260206-004 – Listener global de teclado no se limpia en MapsEditor
+- Severidad: Medium
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: en MapsEditor se agrega un `keydown` anónimo (tecla “F”) sin `removeEventListener`.
+- Impacto: listeners duplicados al re-montar la vista; potencial leak y triggers múltiples.
+- Evidencia (paths/logs): telemetric-front/src/features/maps/views/MapsEditorView.vue
+- Repro: entrar/salir del editor varias veces y presionar “F”; el handler se dispara múltiples veces.
+- Causa raiz (hipotesis): handler inline no referenciable para cleanup.
+- Solucion propuesta: usar función nombrada y remover en `onUnmounted`.
+- Decision:
+- Notas:
+
+## HALL-20260206-005 – Re-binds de interacciones sin cleanup (duplicación de listeners)
+- Severidad: Medium
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: `setupInteractions` se invoca más de una vez por nodo y adjunta listeners Leaflet/DOM sin limpieza.
+- Impacto: eventos duplicados y sobrecosto en mapas grandes.
+- Evidencia (paths/logs): telemetric-front/src/features/maps/components/canvas/renderers/MapRenderer.vue, telemetric-front/src/features/maps/composables/useNodeInteractions.ts, telemetric-front/src/features/maps/services/selection/selection.service.ts
+- Repro: editar un nodo (setIcon) y observar handlers duplicados.
+- Causa raiz (hipotesis): falta de guardas y de `off/removeEventListener`.
+- Solucion propuesta: unificar binding y limpiar handlers previos por nodo/layer.
+- Decision:
+- Notas:
+
+## HALL-20260206-006 – Suscripciones a telemetría sin unsubscribe en Viewer/Editor
+- Severidad: Medium
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: Viewer/Editor realizan `telemetryService.subscribe(...)` sin unsubscribe en `onUnmounted` o cambio de mapa.
+- Impacto: streams duplicados, mayor uso de CPU/red.
+- Evidencia (paths/logs): telemetric-front/src/features/maps/views/MapsViewerView.vue, telemetric-front/src/features/maps/views/MapsEditorView.vue
+- Repro: abrir varios mapas en secuencia y verificar suscripciones concurrentes.
+- Causa raiz (hipotesis): falta de cleanup en lifecycle.
+- Solucion propuesta: agregar `telemetryService.unsubscribe(...)` o reset en unmount y antes de re-suscribir.
+- Decision:
+- Notas:
+
+## HALL-20260206-007 – Listeners globales de drag sin cleanup en unmount (edge case)
+- Severidad: Low
+- Estado: Open
+- Bloquea fase actual: No
+- Sintoma: listeners `mousemove/mouseup` sólo se remueven en el propio `mouseup`.
+- Impacto: si se desmonta durante drag, pueden quedar listeners activos.
+- Evidencia (paths/logs): telemetric-front/src/features/maps/composables/plan/useLeafletTransform.ts, telemetric-front/src/features/maps/composables/useChildNodeDragging.ts
+- Repro: iniciar drag y navegar fuera de la vista antes de soltar el mouse.
+- Causa raiz (hipotesis): falta de cleanup en `onUnmounted`.
+- Solucion propuesta: agregar cleanup explícito en unmount.
+- Decision:
 - Notas:
