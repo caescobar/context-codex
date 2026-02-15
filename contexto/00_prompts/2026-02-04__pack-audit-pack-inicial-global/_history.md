@@ -1,108 +1,181 @@
-# History
+# Builder History
 
-Fecha: 2026-02-04
+Fecha: 2026-02-09
 
-Input original
-Quiero reconstruir el set “inicial” de 6 auditorias globales de Telemetric (las que ya definimos antes) pero ahora en el flujo nuevo con packs + INDEX checklist.
-No ejecutes auditorias, solo genera los prompts y el indice.
+Input original:
+Modo: docs-only
+Skills: telemetric-prompt-builder
 
-Auditorias a reconstruir (globales):
-1) Backend: Contrato de Identidad y Telemetria (serial vs SQL id)
-2) Backend: Unificacion DI/Configuracion de Connectors (API + KISS/Workers)
-3) Backend: Hardening minimo (CORS/JWT/EF auditoria/Authorization duplicada)
-4) Frontend: Estandar HTTP (AXIOS CORE unico) + contrato de errores
-5) Frontend: Maps (estructura, lifecycle, performance, leaks)
-6) Cleanup global (inventario, sin borrar)
-
-Requisitos:
-- Crear pack folder con slug: audit-pack-inicial-global
-- Dentro del pack crear INDEX.md con checkboxes [ ] para los 6 AUDIT-01..AUDIT-06
-- Generar 6 prompts executor (AUDIT) guardados en el pack, uno por auditoria
-- Cada prompt debe:
-  - Modo: docs-only
-  - No tocar codigo
-  - Crear su reporte en contexto/01_audits/YYYY-MM-DD__audit-XX__<slug>.md usando TEMPLATE_AUDIT_REPORT
-  - Actualizar pending.md solo si hay hallazgos nuevos
-  - Post-step: marcar [x] su item en el INDEX del pack y linkear el output
-
-Guardrails:
-- No inventar paths; obligar a encontrar y citar paths reales durante la ejecucion.
-- No pedir confirmacion.
-
-Clasificacion
-AUDIT
-
-Rationale
-- El objetivo es generar prompts ejecutores de auditorias, no ejecutar cambios ni implementar funcionalidades.
-- Se requiere un pack con multiples items AUDIT y su indice.
-
-PROMPT FINAL
-(Ver builder_prompt.md)
-
----
-
-Fecha: 2026-02-04
-
-Input original
+Input (texto humano):
 Usar PackDir existente: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
-Quiero generar el PROMPT FINAL para ejecutar PHASE-01 basada en el AUDIT-01 (2026-02-04), seccion "Plan sugerido por fases", Fase 1.
+Fuente obligatoria: contexto/01_audits/2026-02-06__audit-05__frontend-maps-structure-lifecycle-performance-leaks.md
+Quiero generar el PROMPT FINAL para ejecutar PHASE-02 basada en la seccion "Plan sugerido por fases", Fase 2.
 Usa exactamente el objetivo/archivos/verificacion definidos ahi, sin ampliar alcance.
 
-Clasificacion
-PHASE
+Tarea:
+1) Clasifica en: HALLAZGO | AUDIT | PHASE | STORY PACK (rationale en 2 bullets).
+2) Determina el PackDir:
+   - Si el input refiere a un pack existente, usar ese pack.
+   - Si no, crear uno nuevo: contexto/00_prompts/YYYY-MM-DD__pack-{slug}/
+3) Crea/actualiza el indice del pack:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/INDEX.md
+   Reglas del indice:
+   - Debe incluir checkboxes de estado del pack.
+   - Debe incluir cada item con checkbox + links a Prompt y Output.
+4) Guarda el prompt en:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/phases/phase-03__{slug}__PHASE__PROMPT.md
+5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__phase-01__{slug}__{plan|summary}.md
 
-Rationale
-- Se solicita ejecutar una fase concreta definida en un audit, con objetivo, archivos y verificacion ya delimitados.
-- El alcance esta acotado a cambios en codigo con maximo 5 archivos y entregables de plan/summary.
+Guardrails:
+- Solo escribir en contexto/
+- No tocar codigo
+- No pedir confirmacion: escribir los archivos en contexto/ directamente.
+- No incluir report-only como skill si el prompt debe escribir en contexto/.
+- PHASE: max 5 archivos de codigo.
+- Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita.
 
-PROMPT FINAL
-PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
-ItemId: PHASE-01
+Salida obligatoria:
+- CLASIFICACION
+- PROMPT FINAL (listo para copiar/pegar)
+- ARCHIVO (PackDir + archivo prompt creado)
+- INDEX actualizado
+
+Clasificacion: PHASE
+Rationale:
+- El input pide ejecutar una fase concreta del plan sugerido (Fase 2) con objetivo, archivos y verificacion ya definidos.
+- El alcance esta acotado a dos archivos y un cambio concreto, por lo que es un cambio de fase.
+
+PROMPT FINAL:
+# PROMPT FINAL — PHASE-02 Frontend Maps: unsubscribe telemetria
+
+PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global
+ItemId: PHASE-02
 IndexRef: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/INDEX.md
-PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/phase-01__validar-invariantes-id-platform-id__PHASE__PROMPT.md
+PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/phases/phase-03__frontend-maps-unsubscribe-telemetria__PHASE__PROMPT.md
 
 Modo: refactor-safe + change-control
-Skills: telemetric-backend-style, telemetric-connectors-standard
+Skills: telemetric-frontend-style
 
-Objetivo
-- Validar invariantes de ID (platform_id obligatorio para persistencia).
+Objetivo:
+Agregar unsubscribe de telemetria al desmontar y/o cambiar de mapa en Viewer/Editor.
 
-Alcance (archivos de codigo, max 5, exactos)
-- telemetric-api/src/Telemetric.Api/Features/Devices/CreateDevice/CreateDeviceCommandHandler.cs
-- telemetric-api/src/Telemetric.Api/Features/Devices/UpdateDevice/UpdateDeviceCommandHandler.cs
-- telemetric-hub/kiss/connectors/Telemetric.Connectors.Redis/RedisDeviceSyncService.cs
-- telemetric-hub/kiss/Telemetric.Worker.DTE/WorkerApplication.cs
-- telemetric-hub/kiss/connectors/Telemetric.Connectors.ClickHouse/ClickHouseTelemetryWriter.cs
+Alcance (archivos max 5):
+- telemetric-front/src/features/maps/views/MapsViewerView.vue
+- telemetric-front/src/features/maps/views/MapsEditorView.vue
 
-Entregables
-- contexto/02_changes/2026-02-04__phase-01__validar-invariantes-id-platform-id__plan.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_PLAN.md)
-- contexto/02_changes/2026-02-04__phase-01__validar-invariantes-id-platform-id__summary.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_SUMMARY.md)
-- Actualizar contexto/03_hallazgos/pending.md solo si hay hallazgos nuevos
+Entregables:
+- contexto/02_changes/2026-02-09__phase-02__frontend-maps-unsubscribe-telemetria__plan.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_PLAN.md)
+- contexto/02_changes/2026-02-09__phase-02__frontend-maps-unsubscribe-telemetria__summary.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_SUMMARY.md)
+- actualizar contexto/03_hallazgos/pending.md si aplica
 
-Guardrails
-- No ampliar alcance: usar exactamente objetivo, archivos y verificacion indicados.
-- Maximo 5 archivos de codigo: solo los listados en Alcance.
+Tarea:
+1) Identificar donde se realiza la suscripcion a telemetria en Viewer/Editor y el punto correcto de cleanup.
+2) Implementar unsubscribe en onUnmounted y antes de re-suscribir por cambio de mapa, sin cambiar el comportamiento funcional esperado.
+3) Documentar el cambio y riesgos en el plan/summary.
+
+Verificacion:
+- Medir suscripciones activas antes/despues de navegar entre mapas.
+
+Guardrails:
+- Max 5 archivos de codigo.
+- No cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita.
+- No ampliar alcance fuera del objetivo y archivos definidos.
+
+No-go rules:
+- No tocar otros modulos ni archivos fuera del alcance.
+- No introducir cambios de API ni contratos externos.
+
+Post-step obligatorio:
+- Marcar como [x] el item PHASE-02 en IndexRef.
+- Completar/confirmar el link de Output en IndexRef con las rutas reales de plan/summary.
+
+Fecha: 2026-02-10
+
+Input original:
+Modo: docs-only
+Skills: telemetric-prompt-builder
+
+Input (texto humano):
+Usar PackDir existente: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/
+Fuente obligatoria: contexto/01_audits/2026-02-06__audit-05__frontend-maps-structure-lifecycle-performance-leaks.md
+Quiero generar el PROMPT FINAL para ejecutar PHASE-03 basada en la seccion â€œPlan sugerido por fasesâ€, Fase 3.
+Usa exactamente el objetivo/archivos/verificacion definidos ahi, sin ampliar alcance.
+
+Tarea:
+1) Clasifica en: HALLAZGO | AUDIT | PHASE | STORY PACK (rationale en 2 bullets).
+2) Determina el PackDir:
+   - Si el input refiere a un pack existente, usar ese pack.
+   - Si no, crear uno nuevo: contexto/00_prompts/YYYY-MM-DD__pack-{slug}/
+3) Crea/actualiza el indice del pack:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/INDEX.md
+   Reglas del indice:
+   - Debe incluir checkboxes de estado del pack.
+   - Debe incluir cada item con checkbox + links a Prompt y Output.
+4) Guarda el prompt en:
+   - contexto/00_prompts/YYYY-MM-DD__pack-{slug}/phases/phase-03__{slug}__PHASE__PROMPT.md 
+5) (Si aplica) Actualiza en el INDEX el link de Output con ruta real esperada:
+   - PHASE -> contexto/02_changes/YYYY-MM-DD__phase-01__{slug}__{plan|summary}.md
+
+Guardrails:
+- Solo escribir en contexto/
+- No tocar codigo
+- No pedir confirmacion: escribir los archivos en contexto/ directamente.
+- No incluir report-only como skill si el prompt debe escribir en contexto/.
+- PHASE: max 5 archivos de codigo.
 - Prohibido cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita.
-- Si algun path no existe, buscar y confirmar el path real antes de continuar.
 
-Regla de invariantes
-- Si falta platform_id: no persistir / no publicar / no escribir y registrar log/warn/metric (sin introducir nuevos contratos).
+Salida obligatoria:
+- CLASIFICACION
+- PROMPT FINAL (listo para copiar/pegar)
+- ARCHIVO (PackDir + archivo prompt creado)
+- INDEX actualizado
 
-No-go rules
-- Si requiere tocar un archivo fuera de Alcance o superar 5 archivos.
-- Si implica cambiar contratos externos sin migracion explicita.
-- Si no se puede cumplir la verificacion exacta.
+Clasificacion: PHASE
+Rationale:
+- El input pide ejecutar una fase concreta del plan sugerido (Fase 3) con objetivo, archivos y verificacion ya definidos.
+- El alcance esta acotado a dos archivos y un cambio concreto, por lo que es un cambio de fase.
 
-Verificacion (pasos manuales)
-1. Accion: enviar telemetria con platform_id presente (API_CALL: <curl/postman aqui> o flujo equivalente). Expected: la telemetria ingresa sin errores.
-2. Accion: consultar ClickHouse para registros recientes del dispositivo y para DeviceId=0 (CLICKHOUSE_SQL: <query aqui>). Expected: hay registros para DeviceId valido y 0 registros nuevos con DeviceId=0.
-3. Accion: enviar telemetria sin platform_id (API_CALL: <curl/postman aqui> o flujo equivalente). Expected: no se persiste en ClickHouse y se registra log/warn/metric de invariante.
-4. Accion: volver a consultar ClickHouse para DeviceId=0 en el rango reciente (CLICKHOUSE_SQL: <query aqui>). Expected: sigue en 0 inserts con DeviceId=0.
+PROMPT FINAL:
+# PROMPT FINAL â€” PHASE-03 Frontend Maps: harden lifecycle edge-cases (drag durante unmount)
 
-Tarea
-1) Ejecutar cambios minimos para hacer obligatorio platform_id antes de persistir, limitandote al Alcance.
-2) Completar el plan y summary usando los templates indicados, con evidencia (paths) y resultados observados vs expected para cada paso de verificacion.
+PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global
+ItemId: PHASE-03
+IndexRef: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/INDEX.md
+PromptPath: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global/phases/phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__PHASE__PROMPT.md
 
-Post-step (obligatorio)
-- Marcar [x] el item PHASE-01 en IndexRef.
-- Completar/actualizar links de Output (plan y summary) en el indice.
+Modo: refactor-safe + change-control
+Skills: telemetric-frontend-style
+
+Objetivo:
+Harden lifecycle edge-cases (drag durante unmount).
+
+Alcance (archivos max 5):
+- telemetric-front/src/features/maps/composables/plan/useLeafletTransform.ts
+- telemetric-front/src/features/maps/composables/useChildNodeDragging.ts
+
+Entregables:
+- contexto/02_changes/2026-02-10__phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__plan.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_PLAN.md)
+- contexto/02_changes/2026-02-10__phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__summary.md (usar contexto/01_overview/templates/TEMPLATE_CHANGE_SUMMARY.md)
+- actualizar contexto/03_hallazgos/pending.md si aplica
+
+Tarea:
+1) Identificar listeners globales de drag y puntos de cleanup durante unmount en ambos composables.
+2) Asegurar cleanup de listeners (mousemove/mouseup) en onUnmounted o hooks equivalentes.
+3) Documentar el cambio y riesgos en el plan/summary.
+
+Verificacion:
+- Iniciar drag y salir de la vista; confirmar que no quedan listeners en window.
+
+Guardrails:
+- Max 5 archivos de codigo.
+- No cambiar contratos externos (Redis key patterns, Rabbit routing keys, SignalR group naming) sin migracion explicita.
+- No ampliar alcance fuera del objetivo y archivos definidos.
+
+No-go rules:
+- No tocar otros modulos ni archivos fuera del alcance.
+- No introducir cambios de API ni contratos externos.
+
+Post-step obligatorio:
+- Marcar como [x] el item PHASE-03 en IndexRef.
+- Completar/confirmar el link de Output en IndexRef con las rutas reales de plan/summary.

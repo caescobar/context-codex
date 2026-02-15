@@ -1,4 +1,4 @@
-# Pack: audit-pack-inicial-global (2026-02-04)
+﻿# Pack: audit-pack-inicial-global (2026-02-04)
 
 ## Estado
 - [x] Pack iniciado
@@ -26,15 +26,27 @@
 - [x] AUDIT-05 Frontend: Maps (estructura, lifecycle, performance, leaks)
   - Prompt: ./audit-05__frontend-maps-structure-lifecycle-performance-leaks__AUDIT__PROMPT.md
   - Output: ../../01_audits/2026-02-06__audit-05__frontend-maps-structure-lifecycle-performance-leaks.md
-- [ ] AUDIT-06 Cleanup global (inventario, sin borrar)
+- [x] AUDIT-06 Cleanup global (inventario, sin borrar)
   - Prompt: ./audit-06__cleanup-global-inventario-sin-borrar__AUDIT__PROMPT.md
-  - Output: ../../01_audits/2026-02-04__audit-06__cleanup-global-inventario-sin-borrar.md
+  - Output: ../../01_audits/2026-02-10__audit-06__cleanup-global-inventario-sin-borrar.md
 
 ### Phases
 - [x] PHASE-01 Validar invariantes de ID (platform_id obligatorio para persistencia)
   - Prompt: ./phases/phase-01__validar-invariantes-id-platform-id__PHASE__PROMPT.md
   - Output (plan): ../../02_changes/2026-02-04__phase-01__validar-invariantes-id-platform-id__plan.md
   - Output (summary): ../../02_changes/2026-02-04__phase-01__validar-invariantes-id-platform-id__summary.md
+- [x] PHASE-01 Frontend Maps: limpiar listeners y evitar duplicados de interaccion
+  - Prompt: ./phases/phase-03__frontend-maps-cleanup-listeners-duplicados-interaccion__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-09__phase-01__frontend-maps-cleanup-listeners-duplicados-interaccion__plan.md
+  - Output (summary): ../../02_changes/2026-02-09__phase-01__frontend-maps-cleanup-listeners-duplicados-interaccion__summary.md
+- [x] PHASE-02 Frontend Maps: agregar unsubscribe de telemetria al desmontar/cambiar mapa
+  - Prompt: ./phases/phase-03__frontend-maps-unsubscribe-telemetria__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-09__phase-02__frontend-maps-unsubscribe-telemetria__plan.md
+  - Output (summary): ../../02_changes/2026-02-09__phase-02__frontend-maps-unsubscribe-telemetria__summary.md
+- [x] PHASE-03 Frontend Maps: harden lifecycle edge-cases (drag durante unmount)
+  - Prompt: ./phases/phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__PHASE__PROMPT.md
+  - Output (plan): ../../02_changes/2026-02-10__phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__plan.md
+  - Output (summary): ../../02_changes/2026-02-10__phase-03__frontend-maps-lifecycle-edge-cases-drag-unmount__summary.md
 - [x] PHASE-01 Unificar configuracion de connectors en API (Redis/Rabbit/ClickHouse)
   - Prompt: ./phases/phase-01__unificar-config-connectors-api__PHASE__PROMPT.md
   - Output (plan): ../../02_changes/2026-02-05__phase-01__unificar-config-connectors-api__plan.md
@@ -82,4 +94,3 @@
 
 ## Pendientes
 - pending.md: ../../03_hallazgos/pending.md
-

@@ -1,4 +1,4 @@
-﻿# PROMPT FINAL — PHASE-03 Frontend Maps: harden lifecycle edge-cases (drag durante unmount)
+# PROMPT FINAL — PHASE-03 Frontend Maps: harden lifecycle edge-cases (drag durante unmount)
 
 PackDir: contexto/00_prompts/2026-02-04__pack-audit-pack-inicial-global
 ItemId: PHASE-03

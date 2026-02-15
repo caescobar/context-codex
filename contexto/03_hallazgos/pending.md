@@ -256,7 +256,7 @@
 
 ## HALL-20260206-007 – Listeners globales de drag sin cleanup en unmount (edge case)
 - Severidad: Low
-- Estado: Open
+- Estado: Done
 - Bloquea fase actual: No
 - Sintoma: listeners `mousemove/mouseup` sólo se remueven en el propio `mouseup`.
 - Impacto: si se desmonta durante drag, pueden quedar listeners activos.
@@ -264,5 +264,5 @@
 - Repro: iniciar drag y navegar fuera de la vista antes de soltar el mouse.
 - Causa raiz (hipotesis): falta de cleanup en `onUnmounted`.
 - Solucion propuesta: agregar cleanup explícito en unmount.
-- Decision:
-- Notas:
+- Decision: Implementado cleanup en PHASE-03 (onUnmounted).
+- Notas: Pendiente verificacion manual en entorno UI.
