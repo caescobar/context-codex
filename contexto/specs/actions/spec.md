@@ -178,6 +178,9 @@ Guarda:
   1) Revisar si el endpoint ya existe en el proyecto.
   2) Si no existe, definir el contrato (OpenAPI delta incremental) y crear el endpoint.
   3) Proveer pruebas mínimas (smoke/integration).
+- Candado anti-duplicación (obligatorio):
+  - Reuse-first: antes de crear endpoints nuevos, buscar y reutilizar endpoints equivalentes.
+  - Si hay duda de equivalencia o del estándar de API, emitir “DECISIÓN PENDIENTE” y detenerse.
 - OpenAPI se actualiza incrementalmente por historia en:
   - `contexto/openapi/actions.yaml`
 - Si no se puede inferir el estándar de API del proyecto (envelope/errores/versionado/auth),
