@@ -1,0 +1,98 @@
+﻿2026-02-18T00:00:00 | Expected: generar evidencia reproducible de setup/run/teardown para ACT-003 phase-02.
+2026-02-18T00:00:00 | Observed (pendiente): ejecucion integrada aun no realizada (DRY_RUN=1 por defecto).
+2026-02-18T10:38:34 | Expected: setup valida herramientas y discovery de entorno para ACT-003 phase-02.
+2026-02-18T10:38:34 | Observed: inicio setup (DRY_RUN=0).
+2026-02-18T10:38:34 | Observed: herramienta OK -> dotnet
+2026-02-18T10:38:34 | Observed: herramienta OK -> rg
+2026-02-18T10:38:34 | Observed: herramienta OK -> curl
+redis
+redis-init
+clickhouse
+rabbitmq
+2026-02-18T10:38:35 | Observed: compose legado detectado (no usado): telemetric-api/old/docker-compose.yml
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Telemetric.Connectors.Abstractions -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.Abstractions\telemetric-api\.tmp-build\Telemetric.Connectors.Abstractions.dll
+  Telemetric.Connectors.ClickHouse -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.ClickHouse\telemetric-api\.tmp-build\Telemetric.Connectors.ClickHouse.dll
+  Telemetric.Connectors.RabbitMQ -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.RabbitMQ\telemetric-api\.tmp-build\Telemetric.Connectors.RabbitMQ.dll
+  Telemetric.Connectors.Redis -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.Redis\telemetric-api\.tmp-build\Telemetric.Connectors.Redis.dll
+  Telemetric.Api -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\telemetric-api\.tmp-build\Telemetric.Api.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.82
+2026-02-18T10:38:38 | Expected: setup deja evidencia en commands.log y outputs.log.
+2026-02-18T10:38:38 | Observed: setup finalizado.
+2026-02-18T10:39:44 | Expected: setup valida herramientas y discovery de entorno para ACT-003 phase-02.
+2026-02-18T10:39:44 | Observed: inicio setup (DRY_RUN=0).
+2026-02-18T10:39:44 | Expected: teardown sin borrar datos criticos.
+2026-02-18T10:39:44 | Observed: no-op ejecutado.
+2026-02-18T10:39:44 | Observed: herramienta OK -> dotnet
+2026-02-18T10:39:44 | Observed: herramienta OK -> rg
+2026-02-18T10:39:44 | Observed: herramienta OK -> curl
+clickhouse
+rabbitmq
+redis
+redis-init
+2026-02-18T10:39:44 | Observed: compose legado detectado (no usado): telemetric-api/old/docker-compose.yml
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Telemetric.Connectors.Abstractions -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.Abstractions\telemetric-api\.tmp-build\Telemetric.Connectors.Abstractions.dll
+  Telemetric.Connectors.Redis -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.Redis\telemetric-api\.tmp-build\Telemetric.Connectors.Redis.dll
+  Telemetric.Connectors.RabbitMQ -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.RabbitMQ\telemetric-api\.tmp-build\Telemetric.Connectors.RabbitMQ.dll
+  Telemetric.Connectors.ClickHouse -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\connectors\Telemetric.Connectors.ClickHouse\telemetric-api\.tmp-build\Telemetric.Connectors.ClickHouse.dll
+  Telemetric.Api -> C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\telemetric-api\.tmp-build\Telemetric.Api.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.92
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:27:        Put("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:29:        Policies(PermissionClaims.Actions.Update);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:12:        Get("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:14:        Policies(PermissionClaims.Actions.View);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplates\GetTemplatesEndpoint.cs:19:        Policies(PermissionClaims.Actions.View);
+2026-02-18T10:39:47 | Expected: setup deja evidencia en commands.log y outputs.log.
+2026-02-18T10:39:47 | Observed: setup finalizado.
+2026-02-18T10:40:19 | Expected: run valida GET/PUT templates con versionado inmutable.
+2026-02-18T10:40:19 | Observed: inicio run (DRY_RUN=0, RULE_TEMPLATE_ID=1).
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:27:        Put("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:29:        Policies(PermissionClaims.Actions.Update);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplates\GetTemplatesEndpoint.cs:19:        Policies(PermissionClaims.Actions.View);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:12:        Get("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:14:        Policies(PermissionClaims.Actions.View);
+67:  /api/v1/actions/templates/{ruleTemplateId}:
+72:      operationId: getActionTemplateById
+93:      operationId: updateActionTemplate
+2026-02-18T10:41:08 | Observed: run abortado; API no disponible en http://localhost:5220 (Invoke-RestMethod login).
+2026-02-18T10:43:54 | Expected: run valida GET/PUT templates con versionado inmutable.
+2026-02-18T10:43:54 | Observed: inicio run (DRY_RUN=0, RULE_TEMPLATE_ID=1).
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:27:        Put("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:29:        Policies(PermissionClaims.Actions.Update);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:12:        Get("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:14:        Policies(PermissionClaims.Actions.View);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplates\GetTemplatesEndpoint.cs:19:        Policies(PermissionClaims.Actions.View);
+67:  /api/v1/actions/templates/{ruleTemplateId}:
+72:      operationId: getActionTemplateById
+93:      operationId: updateActionTemplate
+2026-02-18T10:46:13 | Expected: run valida GET/PUT templates con versionado inmutable.
+2026-02-18T10:46:13 | Observed: inicio run (DRY_RUN=0, RULE_TEMPLATE_ID=3).
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:27:        Put("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\UpdateTemplate\UpdateTemplateEndpoint.cs:29:        Policies(PermissionClaims.Actions.Update);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplates\GetTemplatesEndpoint.cs:19:        Policies(PermissionClaims.Actions.View);
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:12:        Get("/api/v1/actions/templates/{RuleTemplateId}");
+telemetric-api/src/Telemetric.Api/Features/Actions/Templates\GetTemplateById\GetTemplateByIdEndpoint.cs:14:        Policies(PermissionClaims.Actions.View);
+67:  /api/v1/actions/templates/{ruleTemplateId}:
+72:      operationId: getActionTemplateById
+93:      operationId: updateActionTemplate
+2026-02-18T10:46:16 | Expected: versionNumber post = pre + 1 (2).
+2026-02-18T10:46:16 | Observed: pre=1, post=2, putVersion=2.
+2026-02-18T10:46:16 | Expected: version previa sigue en historial.
+2026-02-18T10:46:16 | Observed: previousVersionPresent=True
+2026-02-18T10:46:16 | Observed: SQL opcional no ejecutado (SQLCMD_ARGS no definido).
+2026-02-18T10:46:16 | Observed: run finalizado.
+2026-02-18T10:49:09 | Expected: teardown sin borrar datos criticos.
+2026-02-18T10:49:09 | Observed: no-op ejecutado.

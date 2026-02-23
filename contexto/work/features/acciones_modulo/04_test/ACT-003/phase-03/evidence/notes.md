@@ -1,0 +1,16 @@
+- Notes - ACT-003 phase-03
+
+- Pack creado/actualizado en modo docs-only dentro de `contexto/work/features/acciones_modulo/04_test/ACT-003/phase-03/`.
+- Scripts iniciales usan `DRY_RUN=1` por defecto para evitar efectos no deseados.
+- Para corrida real usar `DRY_RUN=0` y entorno frontend/API disponible.
+- Se detectaron dos compose en el repo:
+  - `telemetric-hub/kiss/scripts/docker-compose.yml` (seleccionado para discovery operativo)
+  - `telemetric-api/old/docker-compose.yml` (legado, no usado)
+- Teardown phase-03: no se realizaron cambios destructivos.
+- Teardown phase-03: no se realizaron cambios destructivos.
+- Teardown phase-03: no se realizaron cambios destructivos.
+- 2026-02-19: Ejecucion integrada completada con DRY_RUN=0 (setup/run/teardown en OK).
+- 2026-02-19: RULE_TEMPLATE_ID no aplica para este pack frontend (validacion de rutas/feature/service/types/views).
+- 2026-02-19: Typecheck global frontend falla por deuda tecnica preexistente fuera del alcance de ACT-003; evidencia en outputs.log.
+- 2026-02-19: Verificacion de cierre de API: STILL_RUNNING: none (Telemetric.Api).
+- 2026-02-19: Ejecutado fix 03.01 (ACT-003) sin cambios de codigo en producto; criterios de contenido cumplen y gate no-demo se mantiene PASS (120 <= 240).

@@ -1,0 +1,73 @@
+2026-02-23T00:00:00 | initialized phase-02 QA pack (no execution yet)
+2026-02-23T11:50:04 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T11:50:04 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-23T11:50:04 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T11:50:15 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T11:50:15 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-23T11:50:15 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T11:50:15 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T11:50:15 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T11:50:15 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T11:50:15 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md
+2026-02-23T11:50:15 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-02.md
+2026-02-23T11:50:15 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesQueryHandler.cs
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateCommandHandler.cs
+2026-02-23T11:50:15 | Test-Path telemetric-api/src/Telemetric.Api/Common/Interfaces/IApplicationDbContext.cs
+2026-02-23T11:50:15 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T11:50:15 | rg --line-number -F -e '/api/v1/actions/rules:' -e '/api/v1/actions/devices/{deviceId}/rules:' -e '/api/v1/actions/rules/{ruleInstanceId}/state:' contexto/openapi/actions.yaml
+2026-02-23T11:50:15 | rg --line-number -F -e 'Get("/api/v1/actions/rules")' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T11:50:15 | rg --line-number -F -e 'Patch("/api/v1/actions/rules/{RuleInstanceId}/state")' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:50:15 | rg --line-number -F -e 'Policies(PermissionClaims.Actions.View)' -e 'Policies(PermissionClaims.Actions.Update)' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:50:15 | rg --line-number -F -e 'DeviceId' -e 'Status' -e 'ClientId' -e 'ActionAttempts' -e 'StatusFail' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesQueryHandler.cs
+2026-02-23T11:50:15 | rg --line-number -F -e 'SaveChangesAsync' -e 'UpdatedAt' -e 'UpdatedBy' -e 'ClientId' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateCommandHandler.cs
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesQueryHandler.cs
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateCommandHandler.cs
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-02.md
+2026-02-23T11:50:19 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Common\Interfaces\IApplicationDbContext.cs
+2026-02-23T11:50:19 | npm --prefix telemetric-front run typecheck
+2026-02-23T11:50:22 | teardown phase-02 (safe no-op), DRY_RUN=1
+2026-02-23T11:53:38 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T11:53:38 | teardown phase-02 (safe no-op), DRY_RUN=0
+2026-02-23T11:53:38 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T11:53:51 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T11:53:51 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-23T11:53:51 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T11:53:51 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T11:53:51 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T11:53:51 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T11:53:51 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md
+2026-02-23T11:53:51 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-02.md
+2026-02-23T11:53:51 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesQueryHandler.cs
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateCommandHandler.cs
+2026-02-23T11:53:51 | Test-Path telemetric-api/src/Telemetric.Api/Common/Interfaces/IApplicationDbContext.cs
+2026-02-23T11:53:51 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T11:53:51 | rg --line-number -F -e '/api/v1/actions/rules:' -e '/api/v1/actions/devices/{deviceId}/rules:' -e '/api/v1/actions/rules/{ruleInstanceId}/state:' contexto/openapi/actions.yaml
+2026-02-23T11:53:51 | rg --line-number -F -e 'Get("/api/v1/actions/rules")' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T11:53:51 | rg --line-number -F -e 'Patch("/api/v1/actions/rules/{RuleInstanceId}/state")' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:53:51 | rg --line-number -F -e 'Policies(PermissionClaims.Actions.View)' -e 'Policies(PermissionClaims.Actions.Update)' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T11:53:51 | rg --line-number -F -e 'DeviceId' -e 'Status' -e 'ClientId' -e 'ActionAttempts' -e 'StatusFail' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesQueryHandler.cs
+2026-02-23T11:53:51 | rg --line-number -F -e 'SaveChangesAsync' -e 'UpdatedAt' -e 'UpdatedBy' -e 'ClientId' telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateCommandHandler.cs
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesQueryHandler.cs
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateCommandHandler.cs
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-02.md
+2026-02-23T11:53:55 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Common\Interfaces\IApplicationDbContext.cs
+2026-02-23T11:53:55 | npm --prefix telemetric-front run typecheck
+2026-02-23T11:54:16 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-23T11:54:20 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-23T11:54:20 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-23T11:54:23 | teardown phase-02 (safe no-op), DRY_RUN=0
+2026-02-23T11:55:12 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C -Q "SET NOCOUNT ON; SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted = 0 ORDER BY RuleTemplateId DESC;"

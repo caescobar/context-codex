@@ -1,0 +1,11 @@
+2026-02-19T15:48:53 | fix-03.01 | Observed: "Ver detalle" occurrences in ActionsTemplatesView.vue = 0 (PASS).
+2026-02-19T15:48:53 | fix-03.01 | Observed: tooltip/icon evidence present in ActionsTemplatesView.vue (PASS).
+2026-02-19T15:48:53 | fix-03.01 | Observed: no_demo_ts_errors=120, baseline=240 => NO_DEMO_GATE=PASS.
+2026-02-19T15:48:53 | fix-03.01 | Observed: global typecheck keeps preexisting errors outside ACT-003 scope.
+2026-02-19T17:17:08 | fix-03.manual | Observed: Actions modal save button uses Device pattern tokens (mdi-content-save/flat + cancel grey).
+2026-02-19T17:17:08 | fix-03.manual | Evidence(actions): rg: regex parse error: ||     (?:prepend-icon=\) ||     ^ || error: unclosed group
+2026-02-19T17:17:08 | fix-03.manual | Evidence(devices): rg: regex parse error: ||     (?:prepend-icon=\) ||     ^ || error: unclosed group
+2026-02-19T17:17:08 | fix-03.manual | Observed: typecheck total_errors=141 demo_errors=21 no_demo_ts_errors=120.
+2026-02-19T17:17:08 | fix-03.manual | Observed: baseline reference en QA_PACK previa = 240; no_demo gate PASS si 120 <= 240.
+2026-02-19T17:18:17 | fix-03.manual | Evidence(actions-corrected): line=231: <v-chip :color="item.isActive ? 'success' : 'error'" size="small" variant="flat" rounded="md" label> || line=308: <v-btn variant="text" color="grey-darken-1" @click="closeTemplateModal">Cancelar</v-btn> || line=311: variant="flat" || line=312: prepend-icon="mdi-content-save"
+2026-02-19T17:18:17 | fix-03.manual | Evidence(devices-corrected): line=244: <v-btn color="primary" variant="flat" :loading="saving" prepend-icon="mdi-content-save"

@@ -1,0 +1,75 @@
+2026-02-20T15:47:46 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:59:47 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T15:59:47 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T15:59:47 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T15:59:47 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T15:59:47 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T15:59:47 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T15:59:47 | Test-Path telemetric-front/package.json
+2026-02-20T15:59:47 | rg --line-number -F 'validateAndBuild' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T15:59:47 | rg --line-number -F 'durationSeconds no puede ser mayor que windowSeconds.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T15:59:47 | rg --line-number -F 'ttlSeconds invalido para HOLD_LAST_VALUE.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T15:59:47 | rg --line-number -F 'Debe ingresar al menos un destinatario.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T15:59:47 | rg --line-number -F "path: '/actions'" telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T15:59:47 | rg --line-number -F "requiresPermission: 'Actions.View'" telemetric-front/src/features/actions/actions.routes.ts telemetric-front/src/layouts/menuItems.ts
+2026-02-20T15:59:47 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:59:47 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T15:59:47 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T15:59:47 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T15:59:47 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T15:59:47 | Test-Path telemetric-front/src/layouts/menuItems.ts
+2026-02-20T15:59:47 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T15:59:47 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:59:47 | Read baseline from baseline.json
+2026-02-20T15:59:47 | teardown phase-03 (safe no-op), DRY_RUN=1
+2026-02-20T16:02:45 | teardown phase-03 (safe no-op), DRY_RUN=0
+2026-02-20T16:02:45 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T16:02:45 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:02:45 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T16:02:45 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T16:02:45 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T16:02:45 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:02:45 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T16:02:45 | Test-Path telemetric-front/src/layouts/menuItems.ts
+2026-02-20T16:02:45 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T16:02:45 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T16:02:45 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:02:45 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T16:02:45 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T16:02:45 | Test-Path telemetric-front/package.json
+2026-02-20T16:02:45 | rg --line-number -F 'validateAndBuild' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:02:45 | rg --line-number -F 'durationSeconds no puede ser mayor que windowSeconds.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:02:45 | rg --line-number -F 'ttlSeconds invalido para HOLD_LAST_VALUE.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:02:45 | rg --line-number -F 'Debe ingresar al menos un destinatario.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:02:45 | rg --line-number -F "path: '/actions'" telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T16:02:45 | rg --line-number -F "requiresPermission: 'Actions.View'" telemetric-front/src/features/actions/actions.routes.ts telemetric-front/src/layouts/menuItems.ts
+2026-02-20T16:02:45 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:03:06 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T16:03:10 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-20T16:03:56 | Get-CimInstance Win32_Process (verify Telemetric.Api still running)
+2026-02-20T16:12:16 | Start-Job Telemetric.Api for QA close run
+2026-02-20T16:12:21 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T16:12:21 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T16:12:21 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T16:12:21 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T16:12:22 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T16:12:22 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T16:12:22 | Test-Path telemetric-front/package.json
+2026-02-20T16:12:22 | rg --line-number -F 'validateAndBuild' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:12:22 | rg --line-number -F 'durationSeconds no puede ser mayor que windowSeconds.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:12:22 | rg --line-number -F 'ttlSeconds invalido para HOLD_LAST_VALUE.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:12:22 | rg --line-number -F 'Debe ingresar al menos un destinatario.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:12:22 | rg --line-number -F "path: '/actions'" telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T16:12:22 | rg --line-number -F "requiresPermission: 'Actions.View'" telemetric-front/src/features/actions/actions.routes.ts telemetric-front/src/layouts/menuItems.ts
+2026-02-20T16:12:22 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:12:41 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T16:12:41 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T16:12:41 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:12:41 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-20T16:12:41 | Test-Path telemetric-front/src/layouts/menuItems.ts
+2026-02-20T16:12:41 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md
+2026-02-20T16:12:41 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:13:01 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T16:13:03 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-20T16:13:03 | teardown phase-03 (safe no-op), DRY_RUN=0
+2026-02-20T16:13:06 | Verify Telemetric.Api still running after QA close run

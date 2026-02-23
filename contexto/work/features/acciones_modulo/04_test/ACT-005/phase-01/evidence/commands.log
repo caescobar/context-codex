@@ -1,0 +1,74 @@
+# commands log initialized by telemetric-qa-pack-builder
+2026-02-20T14:54:15 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T14:54:15 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T14:54:15 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T14:54:15 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T14:54:15 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T14:54:15 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T14:54:15 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-01.md
+2026-02-20T14:54:15 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:15 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T14:54:15 | Test-Path telemetric-front/package.json
+2026-02-20T14:54:15 | rg --line-number -F 'DefinitionJsonV1' contexto/openapi/actions.yaml
+2026-02-20T14:54:15 | rg --line-number -F 'discriminator' contexto/openapi/actions.yaml
+2026-02-20T14:54:15 | rg --line-number -F 'ruleType' contexto/openapi/actions.yaml
+2026-02-20T14:54:15 | rg --line-number -F 'JsonValueKind.Object' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:15 | rg --line-number -F 'GetRawText' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:15 | rg --line-number -F 'Put(\
+2026-02-20T14:54:15 | rg --line-number -F 'export type RuleType' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:15 | rg --line-number -F 'durationSeconds' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:15 | npm --prefix telemetric-front run typecheck
+2026-02-20T14:54:15 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T14:54:15 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs
+2026-02-20T14:54:15 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:15 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-01.md
+2026-02-20T14:54:15 | npm --prefix telemetric-front run typecheck
+2026-02-20T14:54:15 | Read baseline from baseline.json
+2026-02-20T14:54:15 | teardown phase-01 (safe no-op), DRY_RUN=1
+2026-02-20T14:54:27 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T14:54:27 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T14:54:27 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T14:54:27 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T14:54:27 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T14:54:27 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T14:54:27 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-01.md
+2026-02-20T14:54:27 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:27 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T14:54:27 | Test-Path telemetric-front/package.json
+2026-02-20T14:54:27 | rg --line-number -F 'DefinitionJsonV1' contexto/openapi/actions.yaml
+2026-02-20T14:54:27 | rg --line-number -F 'discriminator' contexto/openapi/actions.yaml
+2026-02-20T14:54:27 | rg --line-number -F 'ruleType' contexto/openapi/actions.yaml
+2026-02-20T14:54:27 | rg --line-number -F 'JsonValueKind.Object' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:27 | rg --line-number -F 'GetRawText' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:27 | rg --line-number -F 'ruleTemplateId' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:54:27 | rg --line-number -F 'export type RuleType' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:27 | rg --line-number -F 'durationSeconds' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:54:27 | npm --prefix telemetric-front run typecheck
+2026-02-20T14:58:36 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T14:58:36 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T14:58:36 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T14:58:36 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T14:58:36 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T14:58:36 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T14:58:36 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-01.md
+2026-02-20T14:58:36 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T14:58:36 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T14:58:36 | Test-Path telemetric-front/package.json
+2026-02-20T14:58:36 | rg --line-number -F 'DefinitionJsonV1' contexto/openapi/actions.yaml
+2026-02-20T14:58:36 | rg --line-number -F 'discriminator' contexto/openapi/actions.yaml
+2026-02-20T14:58:36 | rg --line-number -F 'ruleType' contexto/openapi/actions.yaml
+2026-02-20T14:58:36 | rg --line-number -F 'JsonValueKind.Object' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:58:36 | rg --line-number -F 'GetRawText' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:58:36 | rg --line-number -F 'ruleTemplateId' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:58:36 | rg --line-number -F 'export type RuleType' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:58:36 | rg --line-number -F 'durationSeconds' telemetric-front/src/features/actions/types.ts
+2026-02-20T14:58:36 | npm --prefix telemetric-front run typecheck
+2026-02-20T14:59:00 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T14:59:00 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T14:59:00 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs
+2026-02-20T14:59:00 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T14:59:00 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-01.md
+2026-02-20T14:59:01 | npm --prefix telemetric-front run typecheck
+2026-02-20T14:59:21 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T14:59:29 | teardown phase-01 (safe no-op), DRY_RUN=0

@@ -1,0 +1,75 @@
+# commands log initialized for ACT-004 phase-01
+2026-02-20T10:35:01 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T10:35:01 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T10:35:01 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T10:35:01 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T10:35:01 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T10:35:01 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T10:35:01 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T10:35:01 | Test-Path telemetric-front/package.json
+2026-02-20T10:35:01 | rg --line-number -F 'AssignTemplateToDevices' telemetric-api/src/Telemetric.Api/Features/Actions
+2026-02-20T10:35:01 | rg --line-number -F 'template-version' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T10:35:01 | rg --line-number -F 'PermissionClaims.Actions.Assign' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T10:35:01 | teardown phase-01 (safe no-op), DRY_RUN=1
+2026-02-20T10:35:01 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T10:35:01 | rg --line-number -F 'UQ_RuleInstance_Device_TemplateVersion' telemetric-api/scripts/012_create_actions_schema.sql
+2026-02-20T10:35:10 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T10:35:10 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T10:35:10 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T10:35:10 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T10:35:10 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T10:35:10 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T10:35:10 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T10:35:10 | Test-Path telemetric-front/package.json
+2026-02-20T10:35:10 | rg --line-number -F 'AssignTemplateToDevices' telemetric-api/src/Telemetric.Api/Features/Actions
+2026-02-20T10:35:10 | rg --line-number -F 'template-version' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T10:35:10 | rg --line-number -F 'PermissionClaims.Actions.Assign' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T10:35:10 | rg --line-number -F 'UQ_RuleInstance_Device_TemplateVersion' telemetric-api/scripts/012_create_actions_schema.sql
+2026-02-20T10:35:10 | rg --line-number -F '/api/v1/actions/assignments/template-version' contexto/openapi/actions.yaml
+2026-02-20T10:35:10 | npm --prefix telemetric-front run typecheck
+2026-02-20T10:35:10 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T10:35:10 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesCommandHandler.cs
+2026-02-20T10:35:10 | Test-Path telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T10:35:10 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T10:35:10 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T10:35:11 | npm --prefix telemetric-front run typecheck
+2026-02-20T10:35:11 | Read baseline from baseline.json
+2026-02-20T10:35:11 | teardown phase-01 (safe no-op), DRY_RUN=1
+2026-02-20T11:13:58 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T11:13:58 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T11:13:58 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T11:13:58 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T11:13:58 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T11:13:58 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T11:13:58 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T11:13:58 | Test-Path telemetric-front/package.json
+2026-02-20T11:13:58 | rg --line-number -F 'AssignTemplateToDevices' telemetric-api/src/Telemetric.Api/Features/Actions
+2026-02-20T11:13:58 | rg --line-number -F 'template-version' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T11:13:58 | rg --line-number -F 'PermissionClaims.Actions.Assign' telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T11:13:58 | rg --line-number -F 'UQ_RuleInstance_Device_TemplateVersion' telemetric-api/scripts/012_create_actions_schema.sql
+2026-02-20T11:13:58 | rg --line-number -F '/api/v1/actions/assignments/template-version' contexto/openapi/actions.yaml
+2026-02-20T11:13:58 | npm --prefix telemetric-front run typecheck
+2026-02-20T11:14:21 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T11:14:21 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesCommandHandler.cs
+2026-02-20T11:14:21 | Test-Path telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T11:14:21 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T11:14:21 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T11:14:21 | npm --prefix telemetric-front run typecheck
+2026-02-20T11:14:41 | teardown phase-01 (safe no-op), DRY_RUN=0
+2026-02-20T11:31:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T11:31:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesCommandHandler.cs
+2026-02-20T11:31:33 | Test-Path telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T11:31:34 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T11:31:34 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T11:31:34 | npm --prefix telemetric-front run typecheck
+2026-02-20T11:31:54 | Invoke-RestMethod POST http://localhost:5220/api/v1/actions/assignments/template-version (payload tipado JSON)
+2026-02-20T11:34:35 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesEndpoint.cs
+2026-02-20T11:34:35 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/AssignTemplateToDevices/AssignTemplateToDevicesCommandHandler.cs
+2026-02-20T11:34:35 | Test-Path telemetric-api/src/Telemetric.Api/Domain/Constants/PermissionClaims.cs
+2026-02-20T11:34:35 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T11:34:35 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-01.md
+2026-02-20T11:34:35 | npm --prefix telemetric-front run typecheck
+2026-02-20T11:34:56 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T11:34:56 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (autodiscovery TEST_RULE_TEMPLATE_VERSION_ID)
+2026-02-20T11:34:56 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (autodiscovery TEST_DEVICE_IDS)
+2026-02-20T11:34:56 | Invoke-RestMethod POST http://localhost:5220/api/v1/actions/assignments/template-version (payload tipado JSON)

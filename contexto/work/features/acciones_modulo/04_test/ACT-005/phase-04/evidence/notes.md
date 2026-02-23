@@ -1,0 +1,20 @@
+# Inicializacion de evidencia
+- commands.log: pendiente de ejecucion
+- outputs.log: pendiente de ejecucion
+- Regla de cierre: cualquier runtime levantado durante QA debe apagarse y verificarse detenido al finalizar.
+- Teardown phase-04: no se realizaron cambios destructivos.
+- Cierre runtime pendiente de confirmar manualmente si se levantaron servicios en DRY_RUN=0.
+- Teardown phase-04: no se realizaron cambios destructivos.
+- Cierre runtime pendiente de confirmar manualmente si se levantaron servicios en DRY_RUN=0.
+- Teardown phase-04: no se realizaron cambios destructivos.
+- Cierre runtime pendiente de confirmar manualmente si se levantaron servicios en DRY_RUN=0.
+- 2026-02-20T16:38: QA run DRY_RUN=0 completada.
+- SQL usado: SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted=0 ORDER BY RuleTemplateId DESC; => RuleTemplateId=4.
+- Run ejecutado con TEST_RULE_TEMPLATE_VERSION_ID=6 y TEST_DEVICE_IDS=7,6,5.
+- API levantada temporalmente en http://localhost:5220. PID terminado: 10676.
+- STILL_RUNNING: none (Telemetric.Api).
+- 2026-02-20T16:38: QA run DRY_RUN=0 completada.
+- SQL usado: SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted=0 ORDER BY RuleTemplateId DESC; => RuleTemplateId=4.
+- Run ejecutado con TEST_RULE_TEMPLATE_VERSION_ID=6 y TEST_DEVICE_IDS=7,6,5.
+- API levantada temporalmente en http://localhost:5220. PID terminado: 10676.
+- STILL_RUNNING: none (Telemetric.Api).

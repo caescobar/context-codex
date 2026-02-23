@@ -1,0 +1,10 @@
+2026-02-19T15:48:53 | rg --line-number "Ver detalle" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T15:48:53 | rg --line-number "v-tooltip|tooltip|icon|EyeIcon" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T15:48:53 | npm --prefix telemetric-front run typecheck
+2026-02-19T15:48:53 | Count no-demo TS errors from typecheck output
+2026-02-19T17:16:40 | rg --line-number "prepend-icon=\"mdi-content-save\"|color=\"grey-darken-1\"|variant=\"flat\"" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T17:16:40 | rg --line-number "prepend-icon=\"mdi-content-save\"|variant=\"flat\"" telemetric-front/src/features/admin/devices/views/DeviceForm.vue
+2026-02-19T17:16:40 | npm --prefix telemetric-front run typecheck
+2026-02-19T17:17:08 | rg --line-number "prepend-icon=\"mdi-content-save\"|color=\"grey-darken-1\"|variant=\"flat\"" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T17:17:08 | rg --line-number "prepend-icon=\"mdi-content-save\"|variant=\"flat\"" telemetric-front/src/features/admin/devices/views/DeviceForm.vue
+2026-02-19T17:17:08 | npm --prefix telemetric-front run typecheck

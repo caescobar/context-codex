@@ -1,0 +1,254 @@
+
+2026-02-23T12:09:58 | Expected: teardown without destructive actions.
+2026-02-23T12:09:58 | Observed: no-op executed.
+2026-02-23T12:09:58 | Runtime closure rule: any instance started during QA must be stopped and verified as not running.
+2026-02-23T12:09:58 | Expected: run validates ACT-007 phase-03 frontend rules tab + badge fail + toggle + no-regression.
+2026-02-23T12:09:58 | Observed: run start (DRY_RUN=1, API_BASE_URL=http://localhost:5220).
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs]=True
+2026-02-23T12:09:58 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs]=True
+2026-02-23T12:09:59 | Observed: phase_summary_done=True
+2026-02-23T12:09:59 | Observed: phase_summary_rules_tab=True
+2026-02-23T12:09:59 | Observed: phase_summary_badge=True
+2026-02-23T12:09:59 | Observed: phase_summary_toggle=True
+2026-02-23T12:09:59 | Observed: view_rules_tab_present=True
+2026-02-23T12:09:59 | Observed: view_active_tab_rules=True
+2026-02-23T12:09:59 | Observed: view_rules_filter_schema=True
+2026-02-23T12:09:59 | Observed: view_rules_error_state=True
+2026-02-23T12:09:59 | Observed: view_rules_error_copy=True
+2026-02-23T12:09:59 | Observed: view_rules_empty_state=True
+2026-02-23T12:09:59 | Observed: view_rules_table=True
+2026-02-23T12:09:59 | Observed: view_ui_dynamic_filter=True
+2026-02-23T12:09:59 | Observed: view_ui_server_table=True
+2026-02-23T12:09:59 | Observed: view_rules_status_values=True
+2026-02-23T12:09:59 | Observed: view_badge_flag=True
+2026-02-23T12:09:59 | Observed: view_badge_chip=True
+2026-02-23T12:09:59 | Observed: view_last_fail_fallback=True
+2026-02-23T12:09:59 | Observed: view_update_rule_state_action=True
+2026-02-23T12:09:59 | Observed: view_actions_update_permission=True
+2026-02-23T12:09:59 | Observed: view_reload_rules_after_toggle=True
+2026-02-23T12:09:59 | Observed: service_get_rules_method=True
+2026-02-23T12:09:59 | Observed: service_update_rule_state_method=True
+2026-02-23T12:09:59 | Observed: service_rules_route=True
+2026-02-23T12:09:59 | Observed: service_rules_patch_route=False
+2026-02-23T12:09:59 | Observed: types_rules_query_params=True
+2026-02-23T12:09:59 | Observed: types_rule_list_item=True
+2026-02-23T12:09:59 | Observed: types_rule_operational_status=True
+2026-02-23T12:09:59 | Observed: types_update_rule_state_request=True
+2026-02-23T12:09:59 | Observed: types_update_rule_state_response=True
+2026-02-23T12:09:59 | Observed: types_last_attempt_fail_flag=True
+2026-02-23T12:09:59 | Observed: route_actions_path=True
+2026-02-23T12:09:59 | Observed: route_actions_permission=True
+2026-02-23T12:09:59 | Observed: menu_actions_path=True
+2026-02-23T12:09:59 | Observed: menu_actions_permission=True
+2026-02-23T12:09:59 | Observed: backend_rules_route=True
+2026-02-23T12:09:59 | Observed: backend_rules_policy=True
+2026-02-23T12:09:59 | Observed: backend_update_route=True
+2026-02-23T12:09:59 | Observed: backend_update_policy=True
+2026-02-23T12:09:59 | Observed: any_count[service]=0
+2026-02-23T12:09:59 | Observed: any_count[types]=0
+2026-02-23T12:09:59 | Observed: any_count[view]=0
+2026-02-23T12:09:59 | Observed (pending): typecheck and auto-login/sql autodiscovery skipped by DRY_RUN=1.
+2026-02-23T12:09:59 | Observed: run finished.
+2026-02-23T12:10:21 | Expected: setup validates prerequisites and discovery for ACT-007 phase-03.
+2026-02-23T12:10:21 | Observed: setup start (DRY_RUN=1, FRONTEND_DIR=telemetric-front).
+2026-02-23T12:10:21 | Observed: tool OK -> rg
+2026-02-23T12:10:21 | Observed: tool OK -> node
+2026-02-23T12:10:21 | Observed: tool OK -> npm
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-hub/kiss/scripts/docker-compose.yml]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-api/old/docker-compose.yml]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Properties/launchSettings.json]=True
+2026-02-23T12:10:21 | Observed: path_exists[contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md]=True
+2026-02-23T12:10:21 | Observed: path_exists[contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-03.md]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-front/src/features/actions/views/ActionsTemplatesView.vue]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-front/src/features/actions/actions.service.ts]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-front/src/features/actions/types.ts]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-front/src/features/actions/actions.routes.ts]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-front/src/layouts/menuItems.ts]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs]=True
+2026-02-23T12:10:21 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs]=True
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed (pending): DRY_RUN=1 skipped command.
+2026-02-23T12:10:21 | Observed: setup finished.
+2026-02-23T12:10:25 | Expected: run validates ACT-007 phase-03 frontend rules tab + badge fail + toggle + no-regression.
+2026-02-23T12:10:25 | Observed: run start (DRY_RUN=1, API_BASE_URL=http://localhost:5220).
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs]=True
+2026-02-23T12:10:25 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs]=True
+2026-02-23T12:10:25 | Observed: phase_summary_done=True
+2026-02-23T12:10:25 | Observed: phase_summary_rules_tab=True
+2026-02-23T12:10:25 | Observed: phase_summary_badge=True
+2026-02-23T12:10:25 | Observed: phase_summary_toggle=True
+2026-02-23T12:10:25 | Observed: view_rules_tab_present=True
+2026-02-23T12:10:25 | Observed: view_active_tab_rules=True
+2026-02-23T12:10:25 | Observed: view_rules_filter_schema=True
+2026-02-23T12:10:25 | Observed: view_rules_error_state=True
+2026-02-23T12:10:25 | Observed: view_rules_error_copy=True
+2026-02-23T12:10:25 | Observed: view_rules_empty_state=True
+2026-02-23T12:10:25 | Observed: view_rules_table=True
+2026-02-23T12:10:25 | Observed: view_ui_dynamic_filter=True
+2026-02-23T12:10:25 | Observed: view_ui_server_table=True
+2026-02-23T12:10:25 | Observed: view_rules_status_values=True
+2026-02-23T12:10:25 | Observed: view_badge_flag=True
+2026-02-23T12:10:25 | Observed: view_badge_chip=True
+2026-02-23T12:10:25 | Observed: view_last_fail_fallback=True
+2026-02-23T12:10:25 | Observed: view_update_rule_state_action=True
+2026-02-23T12:10:25 | Observed: view_actions_update_permission=True
+2026-02-23T12:10:25 | Observed: view_reload_rules_after_toggle=True
+2026-02-23T12:10:25 | Observed: service_get_rules_method=True
+2026-02-23T12:10:25 | Observed: service_update_rule_state_method=True
+2026-02-23T12:10:25 | Observed: service_rules_route=True
+2026-02-23T12:10:25 | Observed: service_rules_patch_route=False
+2026-02-23T12:10:25 | Observed: types_rules_query_params=True
+2026-02-23T12:10:25 | Observed: types_rule_list_item=True
+2026-02-23T12:10:25 | Observed: types_rule_operational_status=True
+2026-02-23T12:10:25 | Observed: types_update_rule_state_request=True
+2026-02-23T12:10:25 | Observed: types_update_rule_state_response=True
+2026-02-23T12:10:25 | Observed: types_last_attempt_fail_flag=True
+2026-02-23T12:10:25 | Observed: route_actions_path=True
+2026-02-23T12:10:25 | Observed: route_actions_permission=True
+2026-02-23T12:10:25 | Observed: menu_actions_path=True
+2026-02-23T12:10:25 | Observed: menu_actions_permission=True
+2026-02-23T12:10:25 | Observed: backend_rules_route=True
+2026-02-23T12:10:25 | Observed: backend_rules_policy=True
+2026-02-23T12:10:25 | Observed: backend_update_route=True
+2026-02-23T12:10:25 | Observed: backend_update_policy=True
+2026-02-23T12:10:25 | Observed: any_count[service]=0
+2026-02-23T12:10:25 | Observed: any_count[types]=0
+2026-02-23T12:10:25 | Observed: any_count[view]=0
+2026-02-23T12:10:25 | Observed (pending): typecheck and auto-login/sql autodiscovery skipped by DRY_RUN=1.
+2026-02-23T12:10:25 | Observed: run finished.
+2026-02-23T12:13:46 | Expected: setup validates prerequisites and discovery for ACT-007 phase-03.
+2026-02-23T12:13:46 | Observed: setup start (DRY_RUN=0, FRONTEND_DIR=telemetric-front).
+2026-02-23T12:13:46 | Observed: tool OK -> rg
+2026-02-23T12:13:46 | Observed: tool OK -> node
+2026-02-23T12:13:46 | Observed: tool OK -> npm
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-hub/kiss/scripts/docker-compose.yml]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-api/old/docker-compose.yml]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Properties/launchSettings.json]=True
+2026-02-23T12:13:46 | Observed: path_exists[contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md]=True
+2026-02-23T12:13:46 | Observed: path_exists[contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-03.md]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-front/src/features/actions/views/ActionsTemplatesView.vue]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-front/src/features/actions/actions.service.ts]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-front/src/features/actions/types.ts]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-front/src/features/actions/actions.routes.ts]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-front/src/layouts/menuItems.ts]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs]=True
+2026-02-23T12:13:46 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs]=True
+rabbitmq
+redis
+redis-init
+clickhouse
+telemetric-front/src/features/actions/views/ActionsTemplatesView.vue:34:const activeTab = ref<'runs' | 'rules' | 'templates'>('runs');
+telemetric-front/src/features/actions/views/ActionsTemplatesView.vue:513:                    <v-tab value="runs">Runs</v-tab>
+telemetric-front/src/features/actions/views/ActionsTemplatesView.vue:514:                    <v-tab value="rules">Rules</v-tab>
+telemetric-front/src/features/actions/views/ActionsTemplatesView.vue:515:                    <v-tab value="templates">Templates</v-tab>
+4:import { UiCard, UiDialog, UiDynamicFilter, UiServerTable, useUiServerTable } from '@/stratlabs-ui';
+150:const rulesErrorMessage = ref('');
+183:const { tableProps: templatesTableProps, reload: reloadTemplates, totalItems: templatesTotalItems } = useUiServerTable(async (params) => {
+196:const { tableProps: runsTableProps, reload: reloadRuns, totalItems: runsTotalItems } = useUiServerTable(async (params) => {
+226:const { tableProps: rulesTableProps, reload: reloadRules, totalItems: rulesTotalItems } = useUiServerTable(async (params) => {
+227:    rulesErrorMessage.value = '';
+248:        rulesErrorMessage.value = 'No se pudieron cargar las reglas.';
+501:            <UiDynamicFilter :schema="filterSchema" v-model="filters" @search="reloadActiveTab" @reset="resetActiveFilters" />
+506:            <v-alert v-if="rulesErrorMessage" type="error" variant="tonal" class="mb-4">{{ rulesErrorMessage }}</v-alert>
+524:                        <UiServerTable :headers="runsHeaders" v-bind="runsTableProps">
+539:                        </UiServerTable>
+543:                        <v-alert v-if="hasRulesLoaded && !rulesErrorMessage && rulesTotalItems === 0" type="info" variant="tonal" class="mb-4">
+547:                        <UiServerTable :headers="rulesHeaders" v-bind="rulesTableProps">
+594:                        </UiServerTable>
+609:                        <UiServerTable :headers="templatesHeaders" v-bind="templatesTableProps">
+629:                        </UiServerTable>
+556:                                    <v-chip v-if="item.hasLastAttemptFail" color="error" size="small" variant="flat" rounded="md" label>
+557:                                        Ultimo fail
+566:                                <span v-if="item.hasLastAttemptFail" class="text-error">{{ item.lastAttemptError || 'Fail sin detalle de error.' }}</span>
+170:const canUpdate = computed(() => authStore.user?.permissions?.includes('Actions.Update') || false);
+578:                                                @click="updateRuleState(item, !item.isPaused)"
+65:    getRules: (params?: ActionRulesQueryParams) =>
+67:            httpClient.get(`${baseUrl}/actions/rules${buildQueryString(params as Record<string, unknown>)}`)
+95:    updateRuleState: (payload: UpdateRuleStateRequest) =>
+97:            httpClient.patch(`${baseUrl}/actions/rules/${payload.ruleInstanceId}/state`, payload)
+17:export type RuleOperationalStatus = 'Enabled' | 'Paused';
+19:export type ActionRulesQueryParams = {
+22:    status?: RuleOperationalStatus;
+151:export type ActionRuleListItem = {
+158:    operationalStatus: RuleOperationalStatus;
+269:export type UpdateRuleStateRequest = {
+274:export type UpdateRuleStateResponse = {
+277:    operationalStatus: RuleOperationalStatus;
+telemetric-front/src/features/actions/actions.routes.ts:5:        path: '/actions',
+telemetric-front/src/features/actions/actions.routes.ts:11:            requiresPermission: 'Actions.View'
+telemetric-front/src/features/actions/actions.routes.ts:21:            requiresPermission: 'Actions.View'
+telemetric-front/src/layouts/menuItems.ts:45:        requiresPermission: 'Actions.View'
+2026-02-23T12:13:47 | Observed: setup finished.
+2026-02-23T12:13:47 | Expected: run validates ACT-007 phase-03 frontend rules tab + badge fail + toggle + no-regression.
+2026-02-23T12:13:47 | Observed: run start (DRY_RUN=0, API_BASE_URL=http://localhost:5220).
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs]=True
+2026-02-23T12:13:47 | Observed: file_exists[C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs]=True
+2026-02-23T12:13:47 | Observed: phase_summary_done=True
+2026-02-23T12:13:47 | Observed: phase_summary_rules_tab=True
+2026-02-23T12:13:47 | Observed: phase_summary_badge=True
+2026-02-23T12:13:47 | Observed: phase_summary_toggle=True
+2026-02-23T12:13:47 | Observed: view_rules_tab_present=True
+2026-02-23T12:13:47 | Observed: view_active_tab_rules=True
+2026-02-23T12:13:47 | Observed: view_rules_filter_schema=True
+2026-02-23T12:13:47 | Observed: view_rules_error_state=True
+2026-02-23T12:13:47 | Observed: view_rules_error_copy=True
+2026-02-23T12:13:47 | Observed: view_rules_empty_state=True
+2026-02-23T12:13:47 | Observed: view_rules_table=True
+2026-02-23T12:13:47 | Observed: view_ui_dynamic_filter=True
+2026-02-23T12:13:47 | Observed: view_ui_server_table=True
+2026-02-23T12:13:47 | Observed: view_rules_status_values=True
+2026-02-23T12:13:47 | Observed: view_badge_flag=True
+2026-02-23T12:13:47 | Observed: view_badge_chip=True
+2026-02-23T12:13:47 | Observed: view_last_fail_fallback=True
+2026-02-23T12:13:47 | Observed: view_update_rule_state_action=True
+2026-02-23T12:13:47 | Observed: view_actions_update_permission=True
+2026-02-23T12:13:47 | Observed: view_reload_rules_after_toggle=True
+2026-02-23T12:13:47 | Observed: service_get_rules_method=True
+2026-02-23T12:13:47 | Observed: service_update_rule_state_method=True
+2026-02-23T12:13:47 | Observed: service_rules_route=True
+2026-02-23T12:13:47 | Observed: service_rules_patch_route=False
+2026-02-23T12:13:47 | Observed: types_rules_query_params=True
+2026-02-23T12:13:47 | Observed: types_rule_list_item=True
+2026-02-23T12:13:47 | Observed: types_rule_operational_status=True
+2026-02-23T12:13:47 | Observed: types_update_rule_state_request=True
+2026-02-23T12:13:47 | Observed: types_update_rule_state_response=True
+2026-02-23T12:13:47 | Observed: types_last_attempt_fail_flag=True
+2026-02-23T12:13:47 | Observed: route_actions_path=True
+2026-02-23T12:13:47 | Observed: route_actions_permission=True
+2026-02-23T12:13:47 | Observed: menu_actions_path=True
+2026-02-23T12:13:47 | Observed: menu_actions_permission=True
+2026-02-23T12:13:47 | Observed: backend_rules_route=True
+2026-02-23T12:13:47 | Observed: backend_rules_policy=True
+2026-02-23T12:13:47 | Observed: backend_update_route=True
+2026-02-23T12:13:47 | Observed: backend_update_policy=True
+2026-02-23T12:13:47 | Observed: any_count[service]=0
+2026-02-23T12:13:47 | Observed: any_count[types]=0
+2026-02-23T12:13:47 | Observed: any_count[view]=0
+2026-02-23T12:13:47 | Observed: required_checks=FAIL (service_rules_patch_route)
+2026-02-23T12:13:57 | Expected: teardown without destructive actions.
+2026-02-23T12:13:57 | Observed: no-op executed.
+2026-02-23T12:13:57 | Runtime closure rule: any instance started during QA must be stopped and verified as not running.

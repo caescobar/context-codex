@@ -1,0 +1,70 @@
+2026-02-23T00:00:00 | INIT phase-02 commands log regenerated.
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsEndpoint.cs
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsQueryHandler.cs
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsQueryHandler.cs
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-006\phase-02.md
+2026-02-23T09:36:02 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Common\Interfaces\IApplicationDbContext.cs
+2026-02-23T09:36:02 | npm --prefix telemetric-front run typecheck
+2026-02-23T09:36:23 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-23T09:36:28 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-23T09:36:28 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-23T09:36:33 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T09:36:33 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-23T09:36:33 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T09:36:33 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T09:36:33 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T09:36:33 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T09:36:33 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T09:36:33 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-02.md
+2026-02-23T09:36:33 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsEndpoint.cs
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsQueryHandler.cs
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsQueryHandler.cs
+2026-02-23T09:36:33 | Test-Path telemetric-api/src/Telemetric.Api/Common/Interfaces/IApplicationDbContext.cs
+2026-02-23T09:36:33 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T09:36:33 | rg --line-number -F -e "/api/v1/actions/runs:" -e "/api/v1/actions/templates/{ruleTemplateId}/runs:" contexto/openapi/actions.yaml
+2026-02-23T09:36:33 | rg --line-number -F -e "Get("/api/v1/actions/runs")" telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsEndpoint.cs
+2026-02-23T09:36:33 | rg --line-number -F -e "Get("/api/v1/actions/templates/{RuleTemplateId}/runs")" telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T09:36:56 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsEndpoint.cs
+2026-02-23T09:36:56 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsQueryHandler.cs
+2026-02-23T09:36:56 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T09:36:56 | teardown phase-02 (safe no-op), DRY_RUN=0
+2026-02-23T09:36:56 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T09:37:20 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T09:37:20 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-23T09:37:20 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T09:37:20 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T09:37:20 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T09:37:20 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T09:37:20 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T09:37:20 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-02.md
+2026-02-23T09:37:20 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsEndpoint.cs
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsQueryHandler.cs
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsQueryHandler.cs
+2026-02-23T09:37:20 | Test-Path telemetric-api/src/Telemetric.Api/Common/Interfaces/IApplicationDbContext.cs
+2026-02-23T09:37:20 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T09:37:20 | rg --line-number -F -e '/api/v1/actions/runs:' -e '/api/v1/actions/templates/{ruleTemplateId}/runs:' contexto/openapi/actions.yaml
+2026-02-23T09:37:20 | rg --line-number -F -e 'Get("/api/v1/actions/runs")' telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsEndpoint.cs
+2026-02-23T09:37:20 | rg --line-number -F -e 'Get("/api/v1/actions/templates/{RuleTemplateId}/runs")' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T09:37:20 | rg --line-number -F -e 'Policies(PermissionClaims.Actions.View)' telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T09:37:20 | rg --line-number -F -e '_context.ActionAttempts' -e '.AsNoTracking()' -e 'OrderByDescending' -e 'ClientId' telemetric-api/src/Telemetric.Api/Features/Actions/Runs/GetRuns/GetRunsQueryHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsQueryHandler.cs
+2026-02-23T09:37:20 | rg --line-number -F -e 'DbSet<ActionAttempt> ActionAttempts' telemetric-api/src/Telemetric.Api/Common/Interfaces/IApplicationDbContext.cs
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsEndpoint.cs
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Runs\GetRuns\GetRunsQueryHandler.cs
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsQueryHandler.cs
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-006\phase-02.md
+2026-02-23T09:37:23 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Common\Interfaces\IApplicationDbContext.cs
+2026-02-23T09:37:23 | npm --prefix telemetric-front run typecheck
+2026-02-23T09:37:45 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-23T09:37:50 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-23T09:37:50 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-23T09:37:54 | teardown phase-02 (safe no-op), DRY_RUN=0

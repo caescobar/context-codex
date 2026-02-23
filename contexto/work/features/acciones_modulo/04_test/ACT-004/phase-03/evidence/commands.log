@@ -1,0 +1,55 @@
+
+2026-02-20T12:29:41 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T12:29:41 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T12:29:41 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T12:29:41 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T12:29:41 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T12:29:41 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-03.md
+2026-02-20T12:29:41 | Test-Path telemetric-front/package.json
+2026-02-20T12:29:41 | rg --line-number -F 'assignTemplateToDevices' telemetric-front/src/features/actions
+2026-02-20T12:29:41 | rg --line-number -F '/actions/assignments/template-version' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:29:41 | rg --line-number -F 'getAssignableDevices' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:29:41 | rg --line-number -F 'RejectedDuplicate' telemetric-front/src/features/actions
+2026-02-20T12:29:41 | rg --line-number -F 'Fuera de alcance' telemetric-front/src/features/actions/views
+2026-02-20T12:29:41 | npm --prefix telemetric-front run typecheck
+2026-02-20T12:29:58 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T12:29:58 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T12:29:58 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T12:29:58 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T12:29:58 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T12:29:58 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-03.md
+2026-02-20T12:29:58 | Test-Path telemetric-front/package.json
+2026-02-20T12:29:58 | rg --line-number -F 'assignTemplateToDevices' telemetric-front/src/features/actions
+2026-02-20T12:29:58 | rg --line-number -F '/actions/assignments/template-version' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:29:58 | rg --line-number -F 'getAssignableDevices' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:29:58 | rg --line-number -F 'RejectedDuplicate' telemetric-front/src/features/actions
+2026-02-20T12:29:58 | rg --line-number -F 'Fuera de alcance' telemetric-front/src/features/actions/views
+2026-02-20T12:29:58 | npm --prefix telemetric-front run typecheck
+2026-02-20T12:30:25 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:30:25 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T12:30:25 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T12:30:25 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-20T12:30:25 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-03.md
+2026-02-20T12:30:25 | npm --prefix telemetric-front run typecheck
+2026-02-20T12:30:51 | teardown phase-03 (safe no-op), DRY_RUN=0
+2026-02-20T12:34:00 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T12:34:00 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T12:34:00 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T12:34:00 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T12:34:00 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T12:34:00 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-03.md
+2026-02-20T12:34:00 | Test-Path telemetric-front/package.json
+2026-02-20T12:34:00 | rg --line-number -F 'assignTemplateToDevices' telemetric-front/src/features/actions
+2026-02-20T12:34:00 | rg --line-number -F '/actions/assignments/template-version' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:34:00 | rg --line-number -F 'getAssignableDevices' telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:34:01 | rg --line-number -F 'RejectedDuplicate' telemetric-front/src/features/actions
+2026-02-20T12:34:01 | rg --line-number -F 'Fuera de alcance' telemetric-front/src/features/actions/views
+2026-02-20T12:34:01 | npm --prefix telemetric-front run typecheck
+2026-02-20T12:34:25 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T12:34:25 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T12:34:25 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-20T12:34:25 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-20T12:34:25 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-004/phase-03.md
+2026-02-20T12:34:25 | npm --prefix telemetric-front run typecheck
+2026-02-20T12:34:47 | teardown phase-03 (safe no-op), DRY_RUN=0
+2026-02-20T12:35:19 | Get-CimInstance Win32_Process | Where-Object { Name -eq 'dotnet.exe' -and CommandLine -match 'Telemetric\.Api\.csproj' }

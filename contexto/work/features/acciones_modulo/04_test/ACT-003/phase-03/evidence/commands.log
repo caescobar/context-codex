@@ -1,0 +1,70 @@
+2026-02-19T09:50:07 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-19T09:50:07 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-19T09:50:07 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-19T09:50:07 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-19T09:50:07 | rg --line-number -F '/actions' telemetric-front/src
+2026-02-19T09:50:07 | rg --line-number -F '/actions/templates/:id' telemetric-front/src
+2026-02-19T09:50:07 | rg --line-number -F 'features/actions' telemetric-front/src/router telemetric-front/src/features -g '*.ts'
+2026-02-19T09:50:07 | rg --line-number -F '@/core/utils/axios' telemetric-front/src/features -g '*.ts'
+2026-02-19T09:50:07 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:50:07 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-19T09:50:07 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-19T09:50:07 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-19T09:50:07 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T09:50:07 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T09:50:07 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:50:07 | teardown phase-03 (safe no-op), DRY_RUN=1
+2026-02-19T09:51:08 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-19T09:51:08 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-19T09:51:08 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-19T09:51:08 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-19T09:51:08 | rg --line-number -F '/actions' telemetric-front/src
+2026-02-19T09:51:08 | rg --line-number -F '/actions/templates/:id' telemetric-front/src
+2026-02-19T09:51:08 | rg --line-number -F 'features/actions' telemetric-front/src/router telemetric-front/src/features -g '*.ts'
+2026-02-19T09:51:08 | rg --line-number -F '@/core/utils/axios' telemetric-front/src/features -g '*.ts'
+2026-02-19T09:51:08 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:51:08 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-19T09:51:08 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-19T09:51:08 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-19T09:51:08 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T09:51:08 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T09:51:08 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:51:08 | teardown phase-03 (safe no-op), DRY_RUN=1
+2026-02-19T09:54:04 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-19T09:54:04 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-19T09:54:04 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-19T09:54:04 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-19T09:54:05 | rg --line-number -F '/actions' telemetric-front/src
+2026-02-19T09:54:05 | rg --line-number -F '/actions/templates/:id' telemetric-front/src
+2026-02-19T09:54:05 | rg --line-number -F 'features/actions' telemetric-front/src/router telemetric-front/src/features -g '*.ts'
+2026-02-19T09:54:05 | rg --line-number -F '@/core/utils/axios' telemetric-front/src/features -g '*.ts'
+2026-02-19T09:54:05 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:54:31 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-19T09:54:31 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-19T09:54:31 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-19T09:54:31 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T09:54:31 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T09:54:32 | npm --prefix telemetric-front run typecheck
+2026-02-19T09:55:01 | teardown phase-03 (safe no-op), DRY_RUN=0
+2026-02-19T09:55:37 | Stop-Process dotnet Telemetric.Api (matched by Win32_Process CommandLine)
+2026-02-19T09:55:37 | Verify STILL_RUNNING Telemetric.Api
+2026-02-19T10:21:36 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-19T10:21:36 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-19T10:21:36 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-19T10:21:36 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T10:21:36 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T10:21:36 | npm --prefix telemetric-front run typecheck
+2026-02-19T10:21:36 | Read baseline from baseline.json
+2026-02-19T10:21:51 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-19T10:21:51 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-19T10:21:51 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-19T10:21:51 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T10:21:51 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T10:21:51 | npm --prefix telemetric-front run typecheck
+2026-02-19T15:09:18 | npm --prefix telemetric-front run typecheck
+2026-02-19T15:09:18 | Count no-demo TS errors from typecheck output
+2026-02-19T15:09:29 | rg --line-number -F 'UiDynamicFilter' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T15:09:29 | rg --line-number -F 'UiServerTable' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-19T15:09:29 | rg --line-number -F 'Definition JSON' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-19T15:09:29 | npm --prefix telemetric-front run typecheck
+2026-02-19T15:09:29 | Count no-demo TS errors from typecheck output

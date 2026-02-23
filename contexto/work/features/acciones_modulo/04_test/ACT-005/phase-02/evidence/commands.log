@@ -1,0 +1,85 @@
+2026-02-20T00:00:00 | initialized phase-02 QA pack (no execution yet)
+2026-02-20T15:23:26 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:23:42 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T15:23:42 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T15:23:42 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T15:23:42 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T15:23:42 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T15:23:42 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T15:23:42 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:23:42 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:23:42 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:23:42 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | Test-Path telemetric-front/package.json
+2026-02-20T15:23:42 | rg --line-number -F 'ValidateAndNormalizeDefinitionJson(' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | rg --line-number -F 'evaluation.durationSeconds must be less than or equal to evaluation.windowSeconds.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | rg --line-number -F 'missingDataPolicy.ttlSeconds is required when mode is HOLD_LAST_VALUE.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | rg --line-number -F 'missingDataPolicy.ttlSeconds must be null or omitted when mode is INSUFFICIENT_DATA.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | rg --line-number -F 'action.recipients[' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:42 | rg --line-number -F 'Send.ErrorsAsync(400' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceEndpoint.cs
+2026-02-20T15:23:42 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:23:43 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:23:43 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:23:43 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:43 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs
+2026-02-20T15:23:43 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T15:23:43 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:23:43 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:23:43 | Read baseline from baseline.json
+2026-02-20T15:23:43 | teardown phase-02 (safe no-op), DRY_RUN=1
+2026-02-20T15:23:54-05:00 | command -v rg
+2026-02-20T15:23:54-05:00 | command -v dotnet
+2026-02-20T15:23:54-05:00 | command -v node
+2026-02-20T15:23:54-05:00 | command -v npm
+2026-02-20T15:23:55-05:00 | docker compose -f '/mnt/c/Users/PC-03/Documents/GitHub/telemetric/telemetric-hub/kiss/scripts/docker-compose.yml' config --services
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T15:23:55-05:00 | test -f contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-front/package.json
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'ValidateAndNormalizeDefinitionJson(' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'evaluation.durationSeconds must be less than or equal to evaluation.windowSeconds.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'missingDataPolicy.ttlSeconds is required when mode is HOLD_LAST_VALUE.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'missingDataPolicy.ttlSeconds must be null or omitted when mode is INSUFFICIENT_DATA.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'action.recipients[' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | rg --line-number -F 'Send.ErrorsAsync(400' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceEndpoint.cs
+2026-02-20T15:23:55-05:00 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs
+2026-02-20T15:23:55-05:00 | test -f telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T15:23:55-05:00 | test -f contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:23:55-05:00 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:23:55-05:00 | read baseline from baseline.json
+2026-02-20T15:23:55-05:00 | teardown phase-02 (safe no-op), DRY_RUN=1
+2026-02-20T15:30:38 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T15:30:38 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-20T15:30:38 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T15:30:38 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T15:30:38 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T15:30:38 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T15:30:38 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:30:38 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:30:38 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:30:38 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:38 | Test-Path telemetric-front/package.json
+2026-02-20T15:30:38 | rg --line-number -F 'ValidateAndNormalizeDefinitionJson(' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:39 | rg --line-number -F 'evaluation.durationSeconds must be less than or equal to evaluation.windowSeconds.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:39 | rg --line-number -F 'missingDataPolicy.ttlSeconds is required when mode is HOLD_LAST_VALUE.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:39 | rg --line-number -F 'missingDataPolicy.ttlSeconds must be null or omitted when mode is INSUFFICIENT_DATA.' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:39 | rg --line-number -F 'action.recipients[' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:30:39 | rg --line-number -F 'Send.ErrorsAsync(400' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceEndpoint.cs
+2026-02-20T15:30:39 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:32:49 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateCommandHandler.cs
+2026-02-20T15:32:49 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateCommandHandler.cs
+2026-02-20T15:32:49 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Assignments/CreateRuleFromDevice/CreateRuleFromDeviceCommandHandler.cs
+2026-02-20T15:32:49 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/CreateTemplate/CreateTemplateEndpoint.cs
+2026-02-20T15:32:50 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/UpdateTemplate/UpdateTemplateEndpoint.cs
+2026-02-20T15:32:50 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-02.md
+2026-02-20T15:32:50 | npm --prefix telemetric-front run typecheck
+2026-02-20T15:33:09 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T15:33:11 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-20T15:33:11 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-20T15:33:12 | teardown phase-02 (safe no-op), DRY_RUN=0

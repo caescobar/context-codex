@@ -1,0 +1,83 @@
+
+2026-02-20T16:33:42 | teardown phase-04 (safe no-op), DRY_RUN=1
+2026-02-20T16:33:42 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T16:33:42 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T16:33:42 | Test-Path telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:33:42 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T16:33:42 | Test-Path telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:33:42 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T16:33:42 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T16:33:42 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T16:33:42 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:33:42 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T16:33:42 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:33:42 | Test-Path telemetric-front/package.json
+2026-02-20T16:33:42 | rg --line-number -F "path: '/my-devices/:id/edit'" telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:33:42 | rg --line-number -F "validateAndBuildDefinition" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | rg --line-number -F "buildOverrides" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | rg --line-number -F "durationSeconds no puede ser mayor que windowSeconds." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | rg --line-number -F "ttlSeconds invalido para HOLD_LAST_VALUE." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | rg --line-number -F "Debe ingresar al menos un destinatario." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:42 | rg --line-number -F "createRuleFromDevice" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:33:42 | rg --line-number -F "DefinitionJsonV1" contexto/openapi/actions.yaml
+2026-02-20T16:33:42 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:33:42 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:33:42 | Read baseline from baseline.json
+2026-02-20T16:33:48 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T16:33:48 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T16:33:48 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T16:33:48 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T16:33:48 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T16:33:48 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:33:48 | Test-Path telemetric-front/package.json
+2026-02-20T16:33:48 | rg --line-number -F "path: '/my-devices/:id/edit'" telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:33:48 | rg --line-number -F "validateAndBuildDefinition" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:48 | rg --line-number -F "buildOverrides" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:48 | rg --line-number -F "durationSeconds no puede ser mayor que windowSeconds." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:48 | rg --line-number -F "ttlSeconds invalido para HOLD_LAST_VALUE." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:48 | rg --line-number -F "Debe ingresar al menos un destinatario." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:33:48 | rg --line-number -F "createRuleFromDevice" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:33:48 | rg --line-number -F "DefinitionJsonV1" contexto/openapi/actions.yaml
+2026-02-20T16:33:48 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:34:08 | Test-Path telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:34:08 | Test-Path telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:34:08 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:34:08 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T16:34:08 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T16:34:08 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:34:08 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:34:27 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T16:34:31 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-20T16:34:31 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-20T16:34:31 | teardown phase-04 (safe no-op), DRY_RUN=0
+2026-02-20T16:36:20 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-20T16:36:20 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-20T16:36:20 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-20T16:36:20 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-20T16:36:20 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-20T16:36:20 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:36:20 | Test-Path telemetric-front/package.json
+2026-02-20T16:36:20 | rg --line-number -F "path: '/my-devices/:id/edit'" telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:36:20 | rg --line-number -F "validateAndBuildDefinition" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:36:20 | rg --line-number -F "buildOverrides" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:36:20 | rg --line-number -F "durationSeconds no puede ser mayor que windowSeconds." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:36:20 | rg --line-number -F "ttlSeconds invalido para HOLD_LAST_VALUE." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:36:20 | rg --line-number -F "Debe ingresar al menos un destinatario." telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:36:20 | rg --line-number -F "createRuleFromDevice" telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:36:20 | rg --line-number -F "DefinitionJsonV1" contexto/openapi/actions.yaml
+2026-02-20T16:36:20 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:37:04 | Test-Path telemetric-front/src/router/MainRoutes.ts
+2026-02-20T16:37:04 | Test-Path telemetric-front/src/features/customer/devices/views/DeviceCustomerEditView.vue
+2026-02-20T16:37:04 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-20T16:37:04 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-20T16:37:04 | Test-Path contexto/openapi/actions.yaml
+2026-02-20T16:37:04 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-04.md
+2026-02-20T16:37:04 | npm --prefix telemetric-front run typecheck
+2026-02-20T16:37:23 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-20T16:37:28 | teardown phase-04 (safe no-op), DRY_RUN=0
+2026-02-20T16:38:46 | Start-Process dotnet run (telemetric-api/src/Telemetric.Api)
+2026-02-20T16:38:46 | Stop-Process Telemetric.Api PID 10676
+2026-02-20T16:38:56 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C -Q "SET NOCOUNT ON; SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted = 0 ORDER BY RuleTemplateId DESC;"
+2026-02-20T16:38:56 | Start-Process dotnet run (telemetric-api/src/Telemetric.Api)
+2026-02-20T16:38:56 | Stop-Process Telemetric.Api PID 10676

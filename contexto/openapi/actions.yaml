@@ -1,0 +1,1226 @@
+openapi: 3.0.3
+info:
+  title: Telemetric Actions API - Delta ACT-007
+  version: "1.0.0"
+paths:
+  /api/v1/actions/runs:
+    get:
+      tags:
+        - Actions
+      summary: Lista historial global de ejecuciones de acciones (runs)
+      operationId: getActionRuns
+      description: Requiere policy `Actions.View`. Fuente de verdad: `ActionAttempt`.
+      security:
+        - bearerAuth: []
+      x-required-policy: Actions.View
+      parameters:
+        - name: pageNumber
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+            default: 10
+        - name: status
+          in: query
+          schema:
+            $ref: '#/components/schemas/ActionRunStatus'
+      responses:
+        "200":
+          description: Listado paginado de runs globales
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActionRunsResponse'
+        "400":
+          description: Solicitud invalida
+
+  /api/v1/actions/rules:
+    get:
+      tags:
+        - Actions
+      summary: Lista reglas (RuleInstance) en contexto global de Acciones
+      operationId: getActionRules
+      description: Requiere policy `Actions.View`.
+      security:
+        - bearerAuth: []
+      x-required-policy: Actions.View
+      parameters:
+        - name: pageNumber
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+            default: 10
+        - name: status
+          in: query
+          schema:
+            $ref: '#/components/schemas/RuleOperationalStatus'
+      responses:
+        "200":
+          description: Listado paginado de reglas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRulesResponse'
+        "400":
+          description: Solicitud invalida
+
+  /api/v1/actions/devices/{deviceId}/rules:
+    get:
+      tags:
+        - Actions
+      summary: Lista reglas (RuleInstance) asociadas a un dispositivo
+      operationId: getDeviceActionRules
+      description: Requiere policy `Actions.View`.
+      security:
+        - bearerAuth: []
+      x-required-policy: Actions.View
+      parameters:
+        - name: deviceId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: pageNumber
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+            default: 10
+        - name: status
+          in: query
+          schema:
+            $ref: '#/components/schemas/RuleOperationalStatus'
+      responses:
+        "200":
+          description: Listado paginado de reglas del dispositivo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRulesResponse'
+        "400":
+          description: Solicitud invalida
+        "404":
+          description: Dispositivo no encontrado o fuera de alcance
+
+  /api/v1/actions/rules/{ruleInstanceId}/state:
+    patch:
+      tags:
+        - Actions
+      summary: Actualiza estado operativo enabled/paused de una regla
+      operationId: updateActionRuleState
+      description: Requiere policy `Actions.Update`.
+      security:
+        - bearerAuth: []
+      x-required-policy: Actions.Update
+      parameters:
+        - name: ruleInstanceId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRuleStateRequest'
+      responses:
+        "200":
+          description: Estado de regla actualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRuleStateResponse'
+        "400":
+          description: Solicitud invalida
+        "404":
+          description: Regla no encontrada o fuera de alcance
+
+  /api/v1/actions/templates:
+    get:
+      tags:
+        - Actions
+      summary: Lista templates de reglas
+      operationId: getActionTemplates
+      parameters:
+        - name: pageNumber
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+            default: 10
+        - name: searchTerm
+          in: query
+          schema:
+            type: string
+        - name: clientId
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        "200":
+          description: Listado paginado de templates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTemplatesResponse'
+        "400":
+          description: Solicitud invalida
+    post:
+      tags:
+        - Actions
+      summary: Crea un template de regla
+      operationId: createActionTemplate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTemplateRequest'
+      responses:
+        "200":
+          description: Template creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResponse'
+        "400":
+          description: Solicitud invalida
+
+  /api/v1/actions/templates/{ruleTemplateId}:
+    get:
+      tags:
+        - Actions
+      summary: Obtiene detalle de un template
+      operationId: getActionTemplateById
+      parameters:
+        - name: ruleTemplateId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        "200":
+          description: Detalle de template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RuleTemplateDetailResponse'
+        "404":
+          description: Template no encontrado
+    put:
+      tags:
+        - Actions
+      summary: Edita un template creando una nueva version inmutable
+      operationId: updateActionTemplate
+      parameters:
+        - name: ruleTemplateId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTemplateRequest'
+      responses:
+        "200":
+          description: Template actualizado con nueva version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateTemplateResponse'
+        "400":
+          description: Solicitud invalida
+
+  /api/v1/actions/templates/{ruleTemplateId}/runs:
+    get:
+      tags:
+        - Actions
+      summary: Lista historial de ejecuciones de acciones para un template
+      operationId: getTemplateActionRuns
+      description: Requiere policy `Actions.View`. Fuente de verdad: `ActionAttempt`.
+      security:
+        - bearerAuth: []
+      x-required-policy: Actions.View
+      parameters:
+        - name: ruleTemplateId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: pageNumber
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+            default: 10
+        - name: status
+          in: query
+          schema:
+            $ref: '#/components/schemas/ActionRunStatus'
+      responses:
+        "200":
+          description: Listado paginado de runs del template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActionRunsResponse'
+        "400":
+          description: Solicitud invalida
+        "404":
+          description: Template no encontrado
+
+  /api/v1/actions/assignments/template-version:
+    post:
+      tags:
+        - Actions
+      summary: Asigna una version de template a multiples dispositivos
+      operationId: assignTemplateVersionToDevices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignTemplateToDevicesRequest'
+      responses:
+        "200":
+          description: Asignacion procesada por dispositivo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignTemplateToDevicesResponse'
+        "400":
+          description: Solicitud invalida
+
+  /api/v1/actions/assignments/create-from-device:
+    post:
+      tags:
+        - Actions
+      summary: Crea una regla desde Device Detail como local o reusable
+      operationId: createRuleFromDevice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRuleFromDeviceRequest'
+      responses:
+        "200":
+          description: Regla creada desde device
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRuleFromDeviceResponse'
+        "400":
+          description: Solicitud invalida
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    GetRulesResponse:
+      type: object
+      required:
+        - items
+        - pageNumber
+        - totalPages
+        - totalCount
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleListItem'
+        pageNumber:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        totalCount:
+          type: integer
+          format: int32
+
+    RuleListItem:
+      type: object
+      required:
+        - ruleInstanceId
+        - deviceId
+        - ruleTemplateId
+        - ruleTemplateVersionId
+        - ruleTemplateName
+        - isPaused
+        - operationalStatus
+        - hasLastAttemptFail
+      properties:
+        ruleInstanceId:
+          type: integer
+          format: int32
+        deviceId:
+          type: integer
+          format: int32
+        ruleTemplateId:
+          type: integer
+          format: int32
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        ruleTemplateName:
+          type: string
+        isPaused:
+          type: boolean
+          description: true = paused, false = enabled.
+        operationalStatus:
+          $ref: '#/components/schemas/RuleOperationalStatus'
+        hasLastAttemptFail:
+          type: boolean
+          description: Flag para badge rojo; true cuando el ultimo ActionAttempt es Fail.
+        lastAttemptStatus:
+          $ref: '#/components/schemas/ActionRunStatus'
+          nullable: true
+        lastAttemptError:
+          type: string
+          nullable: true
+        lastAttemptedAt:
+          type: string
+          format: date-time
+          nullable: true
+
+    RuleOperationalStatus:
+      type: string
+      enum:
+        - Enabled
+        - Paused
+
+    UpdateRuleStateRequest:
+      type: object
+      required:
+        - isPaused
+      properties:
+        isPaused:
+          type: boolean
+          description: true para pausar, false para habilitar.
+
+    UpdateRuleStateResponse:
+      type: object
+      required:
+        - ruleInstanceId
+        - isPaused
+        - operationalStatus
+      properties:
+        ruleInstanceId:
+          type: integer
+          format: int32
+        isPaused:
+          type: boolean
+        operationalStatus:
+          $ref: '#/components/schemas/RuleOperationalStatus'
+        message:
+          type: string
+          nullable: true
+
+    GetActionRunsResponse:
+      type: object
+      required:
+        - items
+        - pageNumber
+        - totalPages
+        - totalCount
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionRunListItem'
+        pageNumber:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        totalCount:
+          type: integer
+          format: int32
+
+    ActionRunListItem:
+      type: object
+      required:
+        - actionAttemptId
+        - ruleInstanceId
+        - ruleTemplateId
+        - status
+        - attemptedAt
+        - context
+      properties:
+        actionAttemptId:
+          type: integer
+          format: int32
+        ruleInstanceId:
+          type: integer
+          format: int32
+        ruleTemplateId:
+          type: integer
+          format: int32
+        ruleTemplateName:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/ActionRunStatus'
+        error:
+          type: string
+          nullable: true
+          description: Error registrado cuando `status=Fail`.
+        attemptedAt:
+          type: string
+          format: date-time
+        context:
+          $ref: '#/components/schemas/ActionRunContext'
+
+    ActionRunStatus:
+      type: string
+      enum:
+        - Success
+        - Fail
+
+    ActionRunContext:
+      type: string
+      enum:
+        - Global
+        - Template
+
+    GetTemplatesResponse:
+      type: object
+      required:
+        - items
+        - pageNumber
+        - totalPages
+        - totalCount
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleTemplateListItem'
+        pageNumber:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        totalCount:
+          type: integer
+          format: int32
+
+    RuleTemplateListItem:
+      type: object
+      required:
+        - ruleTemplateId
+        - name
+        - isActive
+        - latestVersionNumber
+        - createdAt
+      properties:
+        ruleTemplateId:
+          type: integer
+          format: int32
+        clientId:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        isActive:
+          type: boolean
+        latestVersionNumber:
+          type: integer
+          format: int32
+        createdAt:
+          type: string
+          format: date-time
+
+    CreateTemplateRequest:
+      type: object
+      required:
+        - name
+        - definitionJson
+      properties:
+        clientId:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        definitionJson:
+          $ref: '#/components/schemas/DefinitionJsonV1'
+          description: DSL estructurado v1. No se acepta string JSON.
+        isActive:
+          type: boolean
+          default: true
+
+    CreateTemplateResponse:
+      type: object
+      required:
+        - ruleTemplateId
+        - ruleTemplateVersionId
+        - versionNumber
+      properties:
+        ruleTemplateId:
+          type: integer
+          format: int32
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        versionNumber:
+          type: integer
+          format: int32
+        message:
+          type: string
+          nullable: true
+
+    RuleTemplateDetailResponse:
+      type: object
+      required:
+        - ruleTemplateId
+        - name
+        - isActive
+        - versions
+        - assignmentsCount
+        - failedRunsCount
+      properties:
+        ruleTemplateId:
+          type: integer
+          format: int32
+        clientId:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        isActive:
+          type: boolean
+        currentVersion:
+          $ref: '#/components/schemas/RuleTemplateVersionDetail'
+          nullable: true
+        versions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleTemplateVersionDetail'
+        assignmentsCount:
+          type: integer
+          format: int32
+        failedRunsCount:
+          type: integer
+          format: int32
+
+    RuleTemplateVersionDetail:
+      type: object
+      required:
+        - ruleTemplateVersionId
+        - versionNumber
+        - definitionJson
+        - isActive
+        - createdAt
+      properties:
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        versionNumber:
+          type: integer
+          format: int32
+        definitionJson:
+          oneOf:
+            - $ref: '#/components/schemas/DefinitionJsonV1'
+            - type: string
+          description: Compatibilidad temporal para versiones legacy persistidas como string JSON.
+        isActive:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+
+    UpdateTemplateRequest:
+      type: object
+      required:
+        - ruleTemplateId
+        - name
+        - definitionJson
+      properties:
+        ruleTemplateId:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        definitionJson:
+          $ref: '#/components/schemas/DefinitionJsonV1'
+          description: DSL estructurado v1. No se acepta string JSON.
+        isActive:
+          type: boolean
+          default: true
+
+    UpdateTemplateResponse:
+      type: object
+      required:
+        - ruleTemplateId
+        - ruleTemplateVersionId
+        - versionNumber
+      properties:
+        ruleTemplateId:
+          type: integer
+          format: int32
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        versionNumber:
+          type: integer
+          format: int32
+        message:
+          type: string
+          nullable: true
+
+    AssignTemplateToDevicesRequest:
+      type: object
+      required:
+        - ruleTemplateVersionId
+        - deviceIds
+      properties:
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        deviceIds:
+          type: array
+          minItems: 1
+          items:
+            type: integer
+            format: int32
+
+    AssignTemplateToDevicesItemResponse:
+      type: object
+      required:
+        - deviceId
+        - status
+      properties:
+        deviceId:
+          type: integer
+          format: int32
+        status:
+          type: string
+          enum:
+            - Created
+            - RejectedDuplicate
+            - RejectedNotFoundOrOutOfScope
+
+    AssignTemplateToDevicesResponse:
+      type: object
+      required:
+        - ruleTemplateVersionId
+        - createdCount
+        - rejectedCount
+        - items
+      properties:
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        createdCount:
+          type: integer
+          format: int32
+        rejectedCount:
+          type: integer
+          format: int32
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssignTemplateToDevicesItemResponse'
+        message:
+          type: string
+          nullable: true
+
+    CreateRuleFromDeviceRequest:
+      type: object
+      required:
+        - deviceId
+        - createReusableTemplate
+      properties:
+        deviceId:
+          type: integer
+          format: int32
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+          nullable: true
+        createReusableTemplate:
+          type: boolean
+        reusableTemplateName:
+          type: string
+          nullable: true
+        reusableTemplateDescription:
+          type: string
+          nullable: true
+        definitionJson:
+          $ref: '#/components/schemas/DefinitionJsonV1'
+          nullable: true
+          description: DSL estructurado v1 para flujo create-from-device reusable.
+        overridesJson:
+          $ref: '#/components/schemas/RuleInstanceOverridesV1'
+          nullable: true
+          description: Overrides v1 permitidos: threshold y email.recipients.
+        isPaused:
+          type: boolean
+          default: false
+        isLatchMode:
+          type: boolean
+          default: false
+        cooldownSeconds:
+          type: integer
+          format: int32
+          minimum: 0
+          default: 0
+
+    CreateRuleFromDeviceResponse:
+      type: object
+      required:
+        - ruleInstanceId
+        - ruleTemplateVersionId
+        - createdReusableTemplate
+      properties:
+        ruleInstanceId:
+          type: integer
+          format: int32
+        ruleTemplateVersionId:
+          type: integer
+          format: int32
+        ruleTemplateId:
+          type: integer
+          format: int32
+          nullable: true
+        createdReusableTemplate:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+
+    RuleInstanceOverridesV1:
+      type: object
+      additionalProperties: false
+      properties:
+        threshold:
+          type: number
+        email:
+          type: object
+          additionalProperties: false
+          required:
+            - recipients
+          properties:
+            recipients:
+              type: array
+              minItems: 1
+              items:
+                type: string
+                format: email
+
+    DefinitionJsonV1:
+      discriminator:
+        propertyName: ruleType
+        mapping:
+          INSTANT_THRESHOLD: '#/components/schemas/InstantThresholdDefinition'
+          CONTINUOUS_DURATION: '#/components/schemas/ContinuousDurationDefinition'
+          ACCUMULATED_DURATION_WINDOW: '#/components/schemas/AccumulatedDurationWindowDefinition'
+          AGGREGATION_WINDOW: '#/components/schemas/AggregationWindowDefinition'
+          COUNT_OCCURRENCES_WINDOW: '#/components/schemas/CountOccurrencesWindowDefinition'
+      oneOf:
+        - $ref: '#/components/schemas/InstantThresholdDefinition'
+        - $ref: '#/components/schemas/ContinuousDurationDefinition'
+        - $ref: '#/components/schemas/AccumulatedDurationWindowDefinition'
+        - $ref: '#/components/schemas/AggregationWindowDefinition'
+        - $ref: '#/components/schemas/CountOccurrencesWindowDefinition'
+
+    InstantThresholdDefinition:
+      type: object
+      required:
+        - version
+        - ruleType
+        - metricCode
+        - valueType
+        - evaluation
+        - lifecycle
+        - action
+        - missingDataPolicy
+        - condition
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        ruleType:
+          type: string
+          enum: [INSTANT_THRESHOLD]
+        metricCode:
+          type: string
+          minLength: 1
+        valueType:
+          type: string
+          enum: [NUMBER]
+        evaluation:
+          $ref: '#/components/schemas/RuleEvaluationWindow'
+        lifecycle:
+          $ref: '#/components/schemas/RuleLifecycle'
+        action:
+          $ref: '#/components/schemas/EmailAction'
+        missingDataPolicy:
+          $ref: '#/components/schemas/MissingDataPolicy'
+        condition:
+          $ref: '#/components/schemas/ThresholdCondition'
+
+    ContinuousDurationDefinition:
+      type: object
+      required:
+        - version
+        - ruleType
+        - metricCode
+        - valueType
+        - evaluation
+        - lifecycle
+        - action
+        - missingDataPolicy
+        - condition
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        ruleType:
+          type: string
+          enum: [CONTINUOUS_DURATION]
+        metricCode:
+          type: string
+          minLength: 1
+        valueType:
+          type: string
+          enum: [NUMBER]
+        evaluation:
+          $ref: '#/components/schemas/RuleEvaluationWithDuration'
+        lifecycle:
+          $ref: '#/components/schemas/RuleLifecycle'
+        action:
+          $ref: '#/components/schemas/EmailAction'
+        missingDataPolicy:
+          $ref: '#/components/schemas/MissingDataPolicy'
+        condition:
+          $ref: '#/components/schemas/ThresholdCondition'
+
+    AccumulatedDurationWindowDefinition:
+      type: object
+      required:
+        - version
+        - ruleType
+        - metricCode
+        - valueType
+        - evaluation
+        - lifecycle
+        - action
+        - missingDataPolicy
+        - condition
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        ruleType:
+          type: string
+          enum: [ACCUMULATED_DURATION_WINDOW]
+        metricCode:
+          type: string
+          minLength: 1
+        valueType:
+          type: string
+          enum: [NUMBER]
+        evaluation:
+          $ref: '#/components/schemas/RuleEvaluationWithDuration'
+        lifecycle:
+          $ref: '#/components/schemas/RuleLifecycle'
+        action:
+          $ref: '#/components/schemas/EmailAction'
+        missingDataPolicy:
+          $ref: '#/components/schemas/MissingDataPolicy'
+        condition:
+          $ref: '#/components/schemas/ThresholdCondition'
+
+    AggregationWindowDefinition:
+      type: object
+      required:
+        - version
+        - ruleType
+        - metricCode
+        - valueType
+        - evaluation
+        - lifecycle
+        - action
+        - missingDataPolicy
+        - condition
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        ruleType:
+          type: string
+          enum: [AGGREGATION_WINDOW]
+        metricCode:
+          type: string
+          minLength: 1
+        valueType:
+          type: string
+          enum: [NUMBER]
+        evaluation:
+          $ref: '#/components/schemas/RuleEvaluationWindow'
+        lifecycle:
+          $ref: '#/components/schemas/RuleLifecycle'
+        action:
+          $ref: '#/components/schemas/EmailAction'
+        missingDataPolicy:
+          $ref: '#/components/schemas/MissingDataPolicy'
+        condition:
+          $ref: '#/components/schemas/AggregationCondition'
+
+    CountOccurrencesWindowDefinition:
+      type: object
+      required:
+        - version
+        - ruleType
+        - metricCode
+        - valueType
+        - evaluation
+        - lifecycle
+        - action
+        - missingDataPolicy
+        - condition
+      properties:
+        version:
+          type: integer
+          enum: [1]
+        ruleType:
+          type: string
+          enum: [COUNT_OCCURRENCES_WINDOW]
+        metricCode:
+          type: string
+          minLength: 1
+        valueType:
+          type: string
+          enum: [NUMBER]
+        evaluation:
+          $ref: '#/components/schemas/RuleEvaluationWindow'
+        lifecycle:
+          $ref: '#/components/schemas/RuleLifecycle'
+        action:
+          $ref: '#/components/schemas/EmailAction'
+        missingDataPolicy:
+          $ref: '#/components/schemas/MissingDataPolicy'
+        condition:
+          $ref: '#/components/schemas/CountOccurrencesCondition'
+
+    RuleEvaluationWindow:
+      type: object
+      required:
+        - windowSeconds
+      properties:
+        windowSeconds:
+          type: integer
+          minimum: 1
+          maximum: 604800
+
+    RuleEvaluationWithDuration:
+      allOf:
+        - $ref: '#/components/schemas/RuleEvaluationWindow'
+        - type: object
+          required:
+            - durationSeconds
+          properties:
+            durationSeconds:
+              type: integer
+              minimum: 1
+              maximum: 604800
+              description: Must be less than or equal to evaluation.windowSeconds.
+
+    RuleLifecycle:
+      type: object
+      required:
+        - mode
+        - cooldownSeconds
+      properties:
+        mode:
+          type: string
+          enum:
+            - AUTO_RESET
+            - LATCH
+        cooldownSeconds:
+          type: integer
+          minimum: 0
+          maximum: 86400
+
+    MissingDataPolicy:
+      oneOf:
+        - $ref: '#/components/schemas/MissingDataInsufficientData'
+        - $ref: '#/components/schemas/MissingDataHoldLastValue'
+
+    MissingDataInsufficientData:
+      type: object
+      required:
+        - mode
+      properties:
+        mode:
+          type: string
+          enum: [INSUFFICIENT_DATA]
+        ttlSeconds:
+          type: integer
+          nullable: true
+          description: Must be null or omitted when mode is INSUFFICIENT_DATA.
+
+    MissingDataHoldLastValue:
+      type: object
+      required:
+        - mode
+        - ttlSeconds
+      properties:
+        mode:
+          type: string
+          enum: [HOLD_LAST_VALUE]
+        ttlSeconds:
+          type: integer
+          minimum: 1
+          maximum: 604800
+
+    EmailAction:
+      type: object
+      required:
+        - type
+        - recipients
+      properties:
+        type:
+          type: string
+          enum: [EMAIL]
+        recipients:
+          type: array
+          minItems: 1
+          maxItems: 20
+          uniqueItems: true
+          items:
+            type: string
+            format: email
+            maxLength: 254
+
+    ThresholdCondition:
+      type: object
+      required:
+        - op
+        - value
+      properties:
+        op:
+          $ref: '#/components/schemas/ComparisonOperator'
+        value:
+          type: number
+
+    AggregationCondition:
+      type: object
+      required:
+        - aggregation
+        - op
+        - value
+      properties:
+        aggregation:
+          type: string
+          enum:
+            - AVG
+            - MIN
+            - MAX
+            - SUM
+        op:
+          $ref: '#/components/schemas/ComparisonOperator'
+        value:
+          type: number
+
+    CountOccurrencesCondition:
+      type: object
+      required:
+        - op
+        - value
+        - minCount
+      properties:
+        op:
+          $ref: '#/components/schemas/ComparisonOperator'
+        value:
+          type: number
+        minCount:
+          type: integer
+          minimum: 1
+
+    ComparisonOperator:
+      type: string
+      enum:
+        - GT
+        - GTE
+        - LT
+        - LTE
+        - EQ
+        - NEQ

@@ -1,0 +1,7 @@
+﻿- Ejecución en modo FIX (`is_fix=1`, `fix_id=03.01`) usando `phase-03.fix-01.md`.
+- No se aplicaron cambios en código de producto porque la implementación ya cumplía el alcance del fix.
+- Evidencia consolidada en phase-04 según FixPack.
+- Riesgo residual: deuda TypeScript preexistente en módulos fuera de ACT-003.
+- Ajuste manual solicitado por usuario: se permite continuar pese al bloqueo contractual del FixPack base.
+- Se alineó botón de guardar/cancelar del modal Actions con patrón visual de DeviceForm (admin/devices).
+- Typecheck ejecutado. Resultado no-demo calculado: 120 (comparado contra baseline 240).

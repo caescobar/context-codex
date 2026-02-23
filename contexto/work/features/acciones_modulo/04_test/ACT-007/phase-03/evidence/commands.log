@@ -1,0 +1,75 @@
+
+2026-02-23T12:09:58 | teardown phase-03 (safe no-op), DRY_RUN=1
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T12:09:58 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs
+2026-02-23T12:09:59 | npm --prefix telemetric-front run typecheck
+2026-02-23T12:10:21 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T12:10:21 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T12:10:21 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T12:10:21 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T12:10:21 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T12:10:21 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T12:10:21 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md
+2026-02-23T12:10:21 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-03.md
+2026-02-23T12:10:21 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:10:21 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T12:10:21 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T12:10:21 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-23T12:10:21 | Test-Path telemetric-front/src/layouts/menuItems.ts
+2026-02-23T12:10:21 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T12:10:21 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T12:10:21 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T12:10:21 | rg --line-number -F -e "activeTab = ref<" -e "<v-tab value="rules">Rules</v-tab>" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:10:21 | rg --line-number -F -e 'UiDynamicFilter' -e 'UiServerTable' -e 'rulesErrorMessage' -e 'No se pudieron cargar las reglas.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:10:21 | rg --line-number -F -e 'hasLastAttemptFail' -e 'Ultimo fail' -e 'Fail sin detalle de error.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:10:21 | rg --line-number -F -e 'updateRuleState(item, !item.isPaused)' -e 'Actions.Update' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:10:21 | rg --line-number -F -e 'getRules:' -e 'updateRuleState:' -e '/actions/rules' telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T12:10:21 | rg --line-number -F -e 'ActionRuleListItem' -e 'ActionRulesQueryParams' -e 'UpdateRuleStateRequest' -e 'UpdateRuleStateResponse' -e 'RuleOperationalStatus' telemetric-front/src/features/actions/types.ts
+2026-02-23T12:10:21 | rg --line-number -F -e 'path: ''/actions''' -e 'requiresPermission: ''Actions.View''' telemetric-front/src/features/actions/actions.routes.ts telemetric-front/src/layouts/menuItems.ts
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T12:10:25 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs
+2026-02-23T12:10:25 | npm --prefix telemetric-front run typecheck
+2026-02-23T12:13:46 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T12:13:46 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T12:13:46 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T12:13:46 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T12:13:46 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T12:13:46 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T12:13:46 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-007.plan.md
+2026-02-23T12:13:46 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-007/phase-03.md
+2026-02-23T12:13:46 | Test-Path telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:13:46 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T12:13:46 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T12:13:46 | Test-Path telemetric-front/src/features/actions/actions.routes.ts
+2026-02-23T12:13:46 | Test-Path telemetric-front/src/layouts/menuItems.ts
+2026-02-23T12:13:46 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/GetRules/GetRulesEndpoint.cs
+2026-02-23T12:13:46 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Rules/UpdateRuleState/UpdateRuleStateEndpoint.cs
+2026-02-23T12:13:46 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T12:13:46 | rg --line-number -F -e "activeTab = ref<" -e "<v-tab value="rules">Rules</v-tab>" telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:13:46 | rg --line-number -F -e 'UiDynamicFilter' -e 'UiServerTable' -e 'rulesErrorMessage' -e 'No se pudieron cargar las reglas.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:13:46 | rg --line-number -F -e 'hasLastAttemptFail' -e 'Ultimo fail' -e 'Fail sin detalle de error.' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:13:46 | rg --line-number -F -e 'updateRuleState(item, !item.isPaused)' -e 'Actions.Update' telemetric-front/src/features/actions/views/ActionsTemplatesView.vue
+2026-02-23T12:13:46 | rg --line-number -F -e 'getRules:' -e 'updateRuleState:' -e '/actions/rules' telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T12:13:46 | rg --line-number -F -e 'ActionRuleListItem' -e 'ActionRulesQueryParams' -e 'UpdateRuleStateRequest' -e 'UpdateRuleStateResponse' -e 'RuleOperationalStatus' telemetric-front/src/features/actions/types.ts
+2026-02-23T12:13:47 | rg --line-number -F -e 'path: ''/actions''' -e 'requiresPermission: ''Actions.View''' telemetric-front/src/features/actions/actions.routes.ts telemetric-front/src/layouts/menuItems.ts
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionsTemplatesView.vue
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.routes.ts
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\layouts\menuItems.ts
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-007\phase-03.md
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\GetRules\GetRulesEndpoint.cs
+2026-02-23T12:13:47 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Rules\UpdateRuleState\UpdateRuleStateEndpoint.cs
+2026-02-23T12:13:57 | teardown phase-03 (safe no-op), DRY_RUN=0

@@ -1,0 +1,160 @@
+﻿2026-02-23T00:00:00 | init phase-04 QA evidence file.
+2026-02-23T10:39:36 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:39:36 | teardown phase-04 (safe no-op), DRY_RUN=1
+2026-02-23T10:39:36 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:39:36 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:39:36 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:39:36 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:39:36 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:39:36 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:39:36 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:39:36 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:39:36 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:39:36 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:39:36 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:39:36 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:39:36 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:39:36 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:39:36 | rg --line-number -F -e '<v-tab value=\
+2026-02-23T10:39:36 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:39:36 | rg --line-number -F -e \
+2026-02-23T10:39:36 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:39:36 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:39:36 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:40:27 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:40:27 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:40:27 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:40:27 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:40:27 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:40:27 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:40:27 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:40:27 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:40:27 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:40:27 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:40:27 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:40:27 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:40:27 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:40:27 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:40:27 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:40:27 | rg --line-number -F -e "<v-tab value=""runs"">Ejecuciones</v-tab>" -e "runsErrorMessage" -e "No se pudieron cargar las ejecuciones del template." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:40:27 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:40:27 | rg --line-number -F -e "item.status === 'Fail'" -e "Fallo sin detalle de error." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:40:27 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:40:27 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:40:27 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionTemplateDetailView.vue
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-006\phase-04.md
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateById\GetTemplateByIdQueryHandler.cs
+2026-02-23T10:40:51 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T10:40:51 | npm --prefix telemetric-front run typecheck
+2026-02-23T10:41:08 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:41:08 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:41:08 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:41:08 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:41:08 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:41:08 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:41:08 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:41:08 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:41:08 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:08 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:41:08 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:41:08 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:41:08 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:41:08 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:41:08 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:41:08 | rg --line-number -F -e "<v-tab value="runs">Ejecuciones</v-tab>" -e "runsErrorMessage" -e "No se pudieron cargar las ejecuciones del template." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:08 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:08 | rg --line-number -F -e "item.status === 'Fail'" -e "Fallo sin detalle de error." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:08 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:41:08 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:41:08 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:41:18 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:41:18 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:41:18 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:41:18 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:41:18 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:41:18 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:41:18 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:41:18 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:41:18 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:18 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:41:18 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:41:18 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:41:18 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:41:18 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:41:18 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:41:18 | rg --line-number -F -e "Ejecuciones</v-tab>" -e "runsErrorMessage" -e "No se pudieron cargar las ejecuciones del template." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:18 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:18 | rg --line-number -F -e "item.status === 'Fail'" -e "Fallo sin detalle de error." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:41:18 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:41:18 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:41:18 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:44:10 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:44:10 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:44:10 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:44:10 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:44:10 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:44:10 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:44:10 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:44:10 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:44:10 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:44:10 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:44:10 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:44:10 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:44:10 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:44:10 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:44:10 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:44:10 | rg --line-number -F -e "Ejecuciones</v-tab>" -e "runsErrorMessage" -e "No se pudieron cargar las ejecuciones del template." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:44:10 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:44:10 | rg --line-number -F -e "item.status === 'Fail'" -e "Fallo sin detalle de error." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:44:10 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:44:10 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:44:10 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionTemplateDetailView.vue
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-006\phase-04.md
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateById\GetTemplateByIdQueryHandler.cs
+2026-02-23T10:47:03 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T10:47:03 | npm --prefix telemetric-front run typecheck
+2026-02-23T10:47:23 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-23T10:47:27 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-23T10:47:27 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-23T10:47:30 | teardown phase-04 (safe no-op), DRY_RUN=0
+2026-02-23T10:59:50 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-23T10:59:50 | Get-Command node -ErrorAction SilentlyContinue
+2026-02-23T10:59:50 | Get-Command npm -ErrorAction SilentlyContinue
+2026-02-23T10:59:50 | Test-Path telemetric-hub/kiss/scripts/docker-compose.yml
+2026-02-23T10:59:50 | Test-Path telemetric-api/old/docker-compose.yml
+2026-02-23T10:59:50 | Test-Path telemetric-api/src/Telemetric.Api/Properties/launchSettings.json
+2026-02-23T10:59:50 | Test-Path contexto/work/features/acciones_modulo/02_plans/ACT-006.plan.md
+2026-02-23T10:59:50 | Test-Path contexto/work/features/acciones_modulo/03_execution/ACT-006/phase-04.md
+2026-02-23T10:59:50 | Test-Path telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:59:50 | Test-Path telemetric-front/src/features/actions/actions.service.ts
+2026-02-23T10:59:50 | Test-Path telemetric-front/src/features/actions/types.ts
+2026-02-23T10:59:50 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateRuns/GetTemplateRunsEndpoint.cs
+2026-02-23T10:59:50 | Test-Path telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:59:50 | Test-Path contexto/openapi/actions.yaml
+2026-02-23T10:59:50 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-23T10:59:50 | rg --line-number -F -e "Ejecuciones</v-tab>" -e "runsErrorMessage" -e "No se pudieron cargar las ejecuciones del template." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:59:50 | rg --line-number -F -e 'hasRunsLoaded' -e 'runsTotalItems === 0' -e 'No hay ejecuciones para el template seleccionado.' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:59:50 | rg --line-number -F -e "item.status === 'Fail'" -e "Fallo sin detalle de error." telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue
+2026-02-23T10:59:50 | rg --line-number -F -e 'getTemplateRuns:' -e 'TemplateActionRunsQueryParams' telemetric-front/src/features/actions/actions.service.ts telemetric-front/src/features/actions/types.ts
+2026-02-23T10:59:50 | rg --line-number -F -e 'failedRunsCount' telemetric-front/src/features/actions/views/ActionTemplateDetailView.vue telemetric-front/src/features/actions/types.ts telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:59:50 | rg --line-number -F -e 'attempt.Status == ActionAttempt.StatusFail' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplateId == template.RuleTemplateId' -e 'attempt.RuleInstance.RuleTemplateVersion.RuleTemplate.ClientId == _currentUserService.ClientId.Value' telemetric-api/src/Telemetric.Api/Features/Actions/Templates/GetTemplateById/GetTemplateByIdQueryHandler.cs
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\views\ActionTemplateDetailView.vue
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\actions.service.ts
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-front\src\features\actions\types.ts
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\work\features\acciones_modulo\03_execution\ACT-006\phase-04.md
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateRuns\GetTemplateRunsEndpoint.cs
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-api\src\Telemetric.Api\Features\Actions\Templates\GetTemplateById\GetTemplateByIdQueryHandler.cs
+2026-02-23T10:59:54 | Test-Path C:\Users\PC-03\Documents\GitHub\telemetric\contexto\openapi\actions.yaml
+2026-02-23T10:59:54 | npm --prefix telemetric-front run typecheck
+2026-02-23T11:00:14 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login (auto token)
+2026-02-23T11:00:16 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 1 RuleTemplateVersionId FROM dbo.RuleTemplateVersion WHERE IsDeleted=0 ORDER BY RuleTemplateVersionId DESC;)
+2026-02-23T11:00:16 | sqlcmd -S . -d TelemetricDb -U sa -P sa -C (SELECT TOP 3 DeviceId FROM dbo.Device WHERE IsDeleted=0 ORDER BY DeviceId DESC;)
+2026-02-23T11:00:20 | teardown phase-04 (safe no-op), DRY_RUN=0

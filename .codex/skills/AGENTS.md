@@ -1,0 +1,25 @@
+# AGENTS / SKILLS registry
+
+- axios-core-contract
+- change-control
+- dead-code-cleanup
+- refactor-safe
+- report-only
+- telemetric-backend-standards
+- telemetric-backend-style
+- telemetric-connectors-standard
+- telemetric-fix-orchestrator
+- telemetric-frontend-admin-parity
+- telemetric-frontend-standards
+- telemetric-frontend-style
+- telemetric-storypack-writer
+- telemetric-storypack-linter
+- telemetric-storypack-pipeline
+- telemetric-story-impl-auditor
+- telemetric-story-impl-executor
+- telemetric-story-impl-plan-linter
+- telemetric-qa-pack-builder
+- telemetric-qa-pack-executor
+- telemetric-post-impl-reviewer
+- telemetric-prompt-builder
+- telemetric-sqlserver-standards

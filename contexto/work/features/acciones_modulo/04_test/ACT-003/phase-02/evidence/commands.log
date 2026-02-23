@@ -1,0 +1,29 @@
+﻿2026-02-18T00:00:00 | INIT | QA pack phase-02 creado. DRY_RUN por defecto = 1.
+2026-02-18T00:00:00 | NEXT | Ejecutar scripts/setup.ps1 o scripts/setup.sh.
+2026-02-18T10:38:34 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-18T10:38:34 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-18T10:38:34 | Get-Command curl -ErrorAction SilentlyContinue
+2026-02-18T10:38:34 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-18T10:38:35 | dotnet build telemetric-api/src/Telemetric.Api/Telemetric.Api.csproj -p:OutDir=telemetric-api/.tmp-build/ -p:UseAppHost=false
+2026-02-18T10:38:38 | rg --line-number --glob '*.cs' 'api/v1/actions/templates/{RuleTemplateId}|PermissionClaims.Actions.View|PermissionClaims.Actions.Update|Tags\("Actions"\)' telemetric-api/src/Telemetric.Api/Features/Actions/Templates
+2026-02-18T10:39:44 | Get-Command dotnet -ErrorAction SilentlyContinue
+2026-02-18T10:39:44 | teardown phase-02 (safe no-op), DRY_RUN=0
+2026-02-18T10:39:44 | Get-Command rg -ErrorAction SilentlyContinue
+2026-02-18T10:39:44 | Get-Command curl -ErrorAction SilentlyContinue
+2026-02-18T10:39:44 | docker compose -f "C:\Users\PC-03\Documents\GitHub\telemetric\telemetric-hub\kiss\scripts\docker-compose.yml" config --services
+2026-02-18T10:39:44 | dotnet build telemetric-api/src/Telemetric.Api/Telemetric.Api.csproj -p:OutDir=telemetric-api/.tmp-build/ -p:UseAppHost=false
+2026-02-18T10:39:47 | rg --line-number --glob '*.cs' -F -e '/api/v1/actions/templates/{RuleTemplateId}' -e 'PermissionClaims.Actions.View' -e 'PermissionClaims.Actions.Update' -e 'Tags("Actions")' telemetric-api/src/Telemetric.Api/Features/Actions/Templates
+2026-02-18T10:40:19 | rg --line-number --glob '*.cs' -F -e '/api/v1/actions/templates/{RuleTemplateId}' -e 'PermissionClaims.Actions.View' -e 'PermissionClaims.Actions.Update' -e 'Tags("Actions")' telemetric-api/src/Telemetric.Api/Features/Actions/Templates
+2026-02-18T10:40:19 | rg --line-number -F -e '/api/v1/actions/templates/{ruleTemplateId}' -e 'updateActionTemplate' -e 'getActionTemplateById' contexto/openapi/actions.yaml
+2026-02-18T10:40:19 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login
+2026-02-18T10:43:54 | rg --line-number --glob '*.cs' -F -e '/api/v1/actions/templates/{RuleTemplateId}' -e 'PermissionClaims.Actions.View' -e 'PermissionClaims.Actions.Update' -e 'Tags("Actions")' telemetric-api/src/Telemetric.Api/Features/Actions/Templates
+2026-02-18T10:43:54 | rg --line-number -F -e '/api/v1/actions/templates/{ruleTemplateId}' -e 'updateActionTemplate' -e 'getActionTemplateById' contexto/openapi/actions.yaml
+2026-02-18T10:43:54 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login
+2026-02-18T10:43:57 | Invoke-RestMethod GET http://localhost:5220/api/v1/actions/templates/1 (before)
+2026-02-18T10:46:13 | rg --line-number --glob '*.cs' -F -e '/api/v1/actions/templates/{RuleTemplateId}' -e 'PermissionClaims.Actions.View' -e 'PermissionClaims.Actions.Update' -e 'Tags("Actions")' telemetric-api/src/Telemetric.Api/Features/Actions/Templates
+2026-02-18T10:46:13 | rg --line-number -F -e '/api/v1/actions/templates/{ruleTemplateId}' -e 'updateActionTemplate' -e 'getActionTemplateById' contexto/openapi/actions.yaml
+2026-02-18T10:46:13 | Invoke-RestMethod POST http://localhost:5220/api/v1/auth/login
+2026-02-18T10:46:16 | Invoke-RestMethod GET http://localhost:5220/api/v1/actions/templates/3 (before)
+2026-02-18T10:46:16 | Invoke-RestMethod PUT http://localhost:5220/api/v1/actions/templates/3
+2026-02-18T10:46:16 | Invoke-RestMethod GET http://localhost:5220/api/v1/actions/templates/3 (after)
+2026-02-18T10:49:09 | teardown phase-02 (safe no-op), DRY_RUN=0

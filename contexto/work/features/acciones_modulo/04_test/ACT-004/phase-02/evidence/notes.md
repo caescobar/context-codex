@@ -1,0 +1,21 @@
+﻿# Notes - ACT-004 phase-02
+
+- Pack generado en modo builder (`DRY_RUN=1` por defecto).
+- Scripts incluyen auto-login (`API_USER`/`API_PASSWORD`) y autodiscovery de IDs via `sqlcmd` cuando falta input.
+- Si se levantan instancias para pruebas integradas, deben apagarse al cierre y registrar estado detenido.
+- Teardown phase-02: no se realizaron cambios destructivos.
+- Regla de cierre: si se levantaron instancias durante QA, deben quedar apagadas y verificadas como detenidas.
+- 2026-02-20T11:50:51-05:00 setup ejecutado con DRY_RUN=0.
+- 2026-02-20T11:51:36-05:00 gate no-regresion PASS: observed_no_demo_ts_errors=120, baseline=240.
+- SQL discovery: RuleTemplateId=2 (SMOKE_ACT002_TEMPLATE), RuleTemplateVersionId=5, DeviceId=7.
+- 2026-02-20T11:51:37-05:00 run fallido en prueba integrada local: POST /api/v1/actions/assignments/create-from-device devolvio 404 Not Found.
+- Cierre runtime: STILL_RUNNING: none para Telemetric.Api tras kill de procesos dotnet Telemetric.Api.csproj.
+- Teardown phase-02: no se realizaron cambios destructivos.
+- Regla de cierre: si se levantaron instancias durante QA, deben quedar apagadas y verificadas como detenidas.
+- 2026-02-20T12:06:58-05:00 rerun exitoso con API levantada temporalmente en el executor.
+- SQL discovery final (alineado a ClientId=1 de vcsoft): RuleTemplateId=2, RuleTemplateVersionId=2, DeviceId=6.
+- Evidencia funcional final:
+- local permitido: 200 OK, createdReusableTemplate=false, ruleTemplateId=null.
+- override invalido (`foo`): rechazado con 400.
+- reusable permitido: 200 OK, createdReusableTemplate=true, ruleTemplateVersionId=6.
+- Cierre runtime final: STILL_RUNNING: none para Telemetric.Api.

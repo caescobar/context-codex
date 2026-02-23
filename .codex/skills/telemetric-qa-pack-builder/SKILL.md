@@ -1,89 +1,116 @@
----
+﻿---
 name: telemetric-qa-pack-builder
-description: Genera un QA Pack reproducible (scripts + evidencias) para validar una PHASE/AUDIT en Telemetric. Produce setup/run/teardown + checklist + capturas de evidencia en contexto/05_tests/.
+description: Genera un QA Pack reproducible (setup/run/teardown + evidencia + checklist) para una fase de Telemetric bajo contexto/work/features/.../04_test/. Usar cuando se necesita CREAR o REGENERAR el pack, incluyendo scripts ps1/sh robustos en quoting y DRY_RUN seguro.
 ---
 
-# Telemetric QA Pack Builder — Skill
+# Telemetric QA Pack Builder
 
-## Propósito
-Crear un **QA Pack reproducible** para validar cambios (PHASE) o validar hallazgos (AUDIT) con:
-- scripts (setup/run/teardown),
-- pasos manuales cuando no sea automatizable,
-- y **evidencia replicable** guardada en `contexto/05_tests/`.
+## Proposito
+Crear o regenerar un QA Pack reproducible para validar una fase (`PHASE`) o auditoria (`AUDIT`) sin tocar codigo de producto.
 
-Este skill **NO implementa cambios de código**. Solo crea artefactos de QA.
+## Modo permitido
+- `docs-only`: solo escribir dentro de `contexto/`.
 
----
+## Paths canonicos (obligatorios)
+- `pack_dir = contexto/work/features/{requirement_slug}/04_test/{story_id}/phase-{phase_id}/`
+- `story_index = contexto/work/features/{requirement_slug}/04_test/{story_id}/STORY_QA.md`
 
-## Modos permitidos
-- `docs-only` (obligatorio): solo escribir/editar archivos dentro de `contexto/`.
+Reglas:
+- `story_id` tipo `ACT-00N`.
+- `phase_id` siempre a 2 digitos (`01..99`).
+- Nunca usar rutas legacy (`contexto/05_tests/...`).
 
----
+## Input contract
+Obligatorio:
+- `requirement_slug`
+- `story_id`
+- `phase_id`
 
-## REGLAS DURAS
-1) NO tocar código de producto (fuera de `contexto/`).
-2) Solo escribir en `contexto/`.
-3) No inventar puertos, nombres de containers, rutas o comandos:
-   - debe **descubrirlos** leyendo el repo (docker-compose, launchSettings, env files),
-   - si no es posible, pedir **NECESITO 1 RESPUESTA**.
-4) Todo QA Pack debe incluir: setup, run, teardown, evidencia, checklist.
-5) Slugs y filenames en ASCII (a-z0-9-). Prohibido tildes/ñ.
-6) El QA Pack debe ser reproducible por un humano: si Codex no puede ejecutar algo, debe dejar comandos/pasos claros.
-7) En `QA_PACK.md` debe existir una sección **"Descubrimiento (fuentes y evidencia)"** donde:
-   - liste los archivos del repo usados para inferir comandos (compose, env, launchSettings, Program.cs, README, scripts),
-   - y para cada comando importante incluya `Evidencia:` con paths exactos.
+Opcional:
+- objetivo explicito de validacion
+- restricciones operativas
 
-8) Los scripts (setup/run/teardown) deben ser **seguro-no-op por defecto**:
-   - incluir un flag `DRY_RUN=1` (o equivalente) y,
-   - si `DRY_RUN=1`, solo imprime comandos sin ejecutarlos.
-   - si el entorno no permite esto, dejarlo documentado en `notes.md`.
+## Inferencia de objetivo (mandatoria)
+Si no llega objetivo:
+1. Leer `contexto/work/features/{requirement_slug}/02_plans/{story_id}.plan.md`.
+2. Buscar la seccion de la fase.
+3. Prioridad de extraccion:
+- `Objetivo:`
+- `Cambios esperados (alto nivel)`
+- `Checklist de verificacion (concreto)` resumido.
+4. Si no se puede inferir: pedir `NECESITO 1 RESPUESTA` (maximo 1 pregunta).
 
-9) La evidencia siempre debe generarse aunque sea “manual”:
-   - `evidence/commands.log` debe contener los comandos (reales o a ejecutar),
-   - `evidence/outputs.log` debe tener “Expected” y un bloque “Observed (pendiente)” si no se ejecutó.
+## Reglas duras
+1. No tocar nada fuera de `contexto/`.
+2. No inventar puertos, compose, endpoints o credenciales: descubrir en repo y citar evidencia.
+3. El pack debe incluir siempre: setup, run, teardown, checklist, evidencia.
+4. `DRY_RUN=1` por defecto en scripts.
+5. `evidence/commands.log` y `evidence/outputs.log` siempre presentes.
+6. Si hay multiples `docker-compose*`, elegir uno y justificarlo en `QA_PACK.md`.
+7. Si falta un dato critico no inferible: `NECESITO 1 RESPUESTA`.
+8. Si el entorno define credenciales QA estables en evidencia previa, incluir defaults en `run.ps1/run.sh` (override por variables de entorno).
+9. Si `API_AUTH_TOKEN` no viene por input, `run` debe intentar auto-login y registrar resultado.
+10. Si faltan IDs de prueba (`TEST_RULE_TEMPLATE_VERSION_ID`, `TEST_DEVICE_IDS`), `run` debe intentar autodiscovery via `sqlcmd` y registrar evidencia.
+11. Documentar regla de cierre: toda instancia levantada durante QA debe apagarse y verificarse como detenida.
 
-10) Si el repo tiene un `docker-compose*.yml`, los scripts deben usarlo por path exacto.
-    Si hay múltiples, escoger el que corresponda y justificar en `QA_PACK.md` (Evidencia).
----
+## Entregables obligatorios
+Dentro de `{pack_dir}`:
+1. `INDEX.md`
+2. `QA_PACK.md`
+3. `CHECKLIST.md`
+4. `scripts/setup.ps1`, `scripts/run.ps1`, `scripts/teardown.ps1`
+5. `scripts/setup.sh`, `scripts/run.sh`, `scripts/teardown.sh`
+6. `evidence/commands.log`, `evidence/outputs.log`, `evidence/notes.md`
 
-## SALIDA / ENTREGABLES OBLIGATORIOS
-Crear un directorio:
+Opcional:
+- `queries.sql`
+- `seed.sql`
+- evidencia adicional
 
-`pack_dir = contexto/05_tests/packs/YYYY-MM-DD__qa-<slug>/`
+## Generacion robusta de scripts (MANDATORIO)
+Aplicar estas reglas al crear scripts:
 
-Dentro, crear SIEMPRE:
+### PowerShell (`*.ps1`)
+1. Evitar regex fragil con llaves `{}` en `rg`; usar literal con `-F -e`:
+- Bueno: `rg --line-number -F -e '/api/v1/actions/templates/{RuleTemplateId}' ...`
+- Evitar patrones regex con `{}` sin escape.
+2. Para HTTP JSON en ejecucion real, preferir `Invoke-RestMethod` + `ConvertTo-Json` (hashtable) en vez de strings `curl` con quoting complejo.
+3. Mantener branch `DRY_RUN=1` sin strings con escaping profundo que rompan parseo.
+4. Registrar todos los comandos en `commands.log` y expected/observed en `outputs.log`.
+5. Si no hay `API_AUTH_TOKEN`, intentar login automático con `API_USER`/`API_PASSWORD` (defaults descubiertos, con override).
+6. Si faltan IDs de prueba, autodetectar con `sqlcmd` (top no borrados) y dejar trazabilidad en `outputs.log`.
 
-1) `{pack_dir}/INDEX.md`
-   - checklist `[ ]` / `[x]` por etapa (setup/run/verify/evidence/teardown/close)
-2) `{pack_dir}/QA_PACK.md`
-   - usando TEMPLATE_QA_PACK (ver en `contexto/01_overview/templates/`; si no existe, crear uno local dentro del pack)
-3) `{pack_dir}/scripts/`
-   - `setup.(ps1|sh)` (según entorno detectado; si hay Windows+Linux, crear ambos)
-   - `run.(ps1|sh)`
-   - `teardown.(ps1|sh)`
-4) `{pack_dir}/evidence/`
-   - `commands.log` (comandos ejecutados o a ejecutar)
-   - `outputs.log` (salidas esperadas/observadas)
-   - `notes.md` (qué no se pudo automatizar y por qué)
+### Bash (`*.sh`)
+1. Mantener `set -euo pipefail`.
+2. Si `DRY_RUN=0` requiere parser JSON (`jq`), validar presencia y fallar con mensaje claro si falta.
+3. Guardar scripts en UTF-8 sin BOM para no romper shebang.
+4. Si no hay `API_AUTH_TOKEN`, intentar login automático con `API_USER`/`API_PASSWORD` (defaults descubiertos, con override).
+5. Si faltan IDs de prueba, autodetectar con `sqlcmd` (top no borrados) y registrar evidencia.
 
-Opcional (si aplica):
-- `{pack_dir}/evidence/docker_logs_*.log`
-- `{pack_dir}/evidence/redis_dump_*.txt`
-- `{pack_dir}/evidence/clickhouse_queries.sql`
-- `{pack_dir}/evidence/clickhouse_results.txt`
+### Cross-platform
+1. Usar paths relativos al repo cuando sea posible.
+2. No asumir que se puede crear procesos en background; eso pertenece al executor.
+3. El builder solo crea scripts y documenta limitaciones en `evidence/notes.md`.
 
----
+## Contenido minimo por script
+- `setup`: prerequisitos + discovery + build/checks basicos.
+- `run`: checks funcionales de la fase + evidencia.
+- `teardown`: limpieza segura no destructiva (o no-op documentado).
+- `teardown`: incluir nota explicita de cierre de runtime (si se levantaron instancias en ejecución, deben apagarse y verificarse).
 
-## INPUT CONTRACT (lo que debe venir en el input humano)
-El usuario debe proveer al menos:
-- Referencia a PHASE o AUDIT (PackDir + ItemId + Prompt/Output si existe)
-- Objetivo a validar (Done Criteria)
-- Restricciones relevantes (ej: no cambiar contratos externos)
-Si falta el target endpoint o compose/puertos y no se puede detectar, pedir **NECESITO 1 RESPUESTA**.
+## QA_PACK.md obligatorio
+Debe incluir seccion `Descubrimiento (fuentes y evidencia)` con paths exactos:
+- compose
+- launch settings
+- endpoints/policies
+- scripts/comandos base
 
----
+## STORY_QA.md
+Crear o actualizar indice por fase en:
+- `contexto/work/features/{requirement_slug}/04_test/{story_id}/STORY_QA.md`
 
-## OUTPUT FORMAT (en la respuesta)
-1) `PackDir: ...`
-2) Archivos creados (lista)
-3) Qué se puede ejecutar automático vs manual (2 listas cortas)
+## Output en respuesta
+1. `PackDir: ...`
+2. Archivos creados/actualizados
+3. Automatizable vs manual
+4. Resumen de descubrimiento con evidencia (paths)

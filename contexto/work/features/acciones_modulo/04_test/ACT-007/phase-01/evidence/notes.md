@@ -1,0 +1,24 @@
+﻿# Notes - ACT-007 phase-01
+
+- Pack regenerated on 2026-02-23.
+- Default execution mode is DRY_RUN=1.
+- Runtime closure rule applies if any service is started during QA execution.
+- Teardown for this phase is safe no-op.
+- 2026-02-23: setup/run scripts validated in DRY_RUN=1 (PowerShell + Bash).
+- Teardown phase-01: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.
+- 2026-02-23 EXECUTION (DRY_RUN=0): setup/run/teardown ejecutados.
+- RuleTemplateId discovery (manual SQL): selected `RuleTemplateId=4` (`qa-phase02-reusable-20260220120658`) using `SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted = 0 ORDER BY RuleTemplateId DESC;`.
+- Runtime API strategy: bloqueado por politica del runner al intentar `Start-Process` y `cmd /c start`; no fue posible levantar `Telemetric.Api` en background.
+- Run evidence: equivalence/openapi checks ejecutados; typecheck corrio con `typecheck_exit_code=2` y `no_demo_ts_errors=118`; sin `BASELINE_TS_ERRORS` (gate numerico omitido).
+- Auto-discovery en run: `auto_rule_template_version_id=6`, `auto_test_device_ids=7,6,5`.
+- Auto-login: FAIL (`Unable to connect to the remote server`) por API no disponible en `http://localhost:5220`.
+- STILL_RUNNING: none (`Telemetric.Api` no activo al cierre).
+- Teardown phase-01: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.
+- 2026-02-23 RETRY: API levantada correctamente usando `Start-Job` (estrategia alternativa compatible con el runner).
+- 2026-02-23 RETRY: `run.ps1` ejecutado con `DRY_RUN=0` y evidencia `auto_login_token=OK (API_USER=vcsoft)`.
+- 2026-02-23 RETRY: cierre limpio verificado (`Get-Process dotnet` sin procesos, `http://localhost:5220` unreachable, `docker ps` vacio).
+- Estado final del pack: PASS, QA cerrada.
+- Teardown phase-01: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.

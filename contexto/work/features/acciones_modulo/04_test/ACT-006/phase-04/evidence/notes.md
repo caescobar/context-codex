@@ -1,0 +1,25 @@
+﻿# Notes - ACT-006 phase-04
+
+- Pack generated on 2026-02-23.
+- Default execution mode is DRY_RUN=1.
+- Runtime closure rule applies if any service is started during QA execution.
+- Execution evidence pending until setup/run/teardown are executed.
+- Teardown phase-04: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.
+- Teardown phase-04: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.
+- Execution date: 2026-02-23.
+- RULE_TEMPLATE_ID selected: 4.
+- SQL query used: SELECT TOP 10 RuleTemplateId, Name FROM dbo.RuleTemplate WHERE IsDeleted = 0 ORDER BY RuleTemplateId DESC;
+- API runtime attempts: blocked by runner policy for background process management; auto-login failed with "Unable to connect to the remote server".
+- run.ps1 completed and recorded static checks + typecheck evidence (baseline gate skipped because BASELINE_TS_ERRORS was not provided).
+- Process closure verification: STILL_RUNNING: none (Telemetric.Api).
+- Final status: BLOQUEADO (QA not closed due missing live API runtime).
+- Teardown phase-04: no destructive actions were performed.
+- If services were started during DRY_RUN=0, stop them and verify they are not running.
+- Re-execution date: 2026-02-23 (API already up on localhost:5220).
+- Re-execution result: setup/run/teardown OK with DRY_RUN=0.
+- Auto-login result: OK (API_USER=vcsoft).
+- RULE_TEMPLATE_ID used: 4.
+- Final process closure (requested): STILL_RUNNING: none (Telemetric.Api).
+- Final status: QA CERRADA.

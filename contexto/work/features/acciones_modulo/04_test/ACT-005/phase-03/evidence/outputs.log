@@ -1,0 +1,1226 @@
+2026-02-20T15:48:05 | typecheck_exit_code=2
+2026-02-20T15:48:05 | baseline_no_demo_ts_errors=240
+2026-02-20T15:48:05 | observed_no_demo_ts_errors=118
+2026-02-20T15:48:05 | observed_demo_ts_errors=21
+2026-02-20T15:48:05 | gate_no_regresion=PASS
+--- TYPECHECK OUTPUT BEGIN ---
+
+> modernize@6.2.0 typecheck
+> vue-tsc --noEmit
+
+src/_demo/_mockApis/apps/blog/index.ts(281,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/blog/index.ts(282,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(214,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(215,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(229,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(247,9): error TS2322: Type '{ id?: string; content?: string | undefined; images?: PostImage[] | undefined; video?: string; likes?: Likes | undefined; comments?: Comment[]; }' is not assignable to type 'PostData'.
+  Types of property 'content' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,32): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,56): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,84): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(252,9): error TS2322: Type '{ id?: string; profile?: Profile | undefined; data?: PostData | undefined; }' is not assignable to type 'Post'.
+  Types of property 'profile' are incompatible.
+    Type 'Profile | undefined' is not assignable to type 'Profile'.
+      Type 'undefined' is not assignable to type 'Profile'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(265,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(272,54): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(285,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(296,17): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData | undefined; }' is not assignable to type 'Reply'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(297,62): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/views/apps/calendar/Calendar.vue(12,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/apps/email/EmailListing.vue(48,9): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/apps/email/EmailListing.vue(57,13): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/shared/BlocklyEditor.vue(15,21): error TS2345: Argument of type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to parameter of type '{ [key: string]: string; }'.
+  Property 'default' is incompatible with index signature.
+    Type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to type 'string'.
+src/components/table/EditableTable.vue(69,23): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(target: {}, source: { id: string; avatar: string; userinfo: string; usermail: string; phone: string; jdate: string; role: string; rolestatus: string; }): { id: string; avatar: string; userinfo: string; ... 4 more ...; rolestatus: string; }', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 4, '(target: object, ...sources: any[]): any', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/core/components/ui/notification/AppNotification.vue(32,78): error TS2532: Object is possibly 'undefined'.
+src/core/components/ui/table/AppDataTable.vue(3,8): error TS1192: Module '"C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/vue3-easy-data-table/types/main"' has no default export.
+src/core/components/ui/table/AppDataTable.vue(67,32): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/hooks/useDataTableFetch.ts(135,13): error TS2322: Type 'string | string[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/hooks/useDataTableFetch.ts(136,13): error TS2322: Type 'SortType | SortType[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/stores/notification.ts(206,58): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/utils/validation.ts(31,59): error TS2532: Object is possibly 'undefined'.
+src/features/admin/clients/client.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(9,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(10,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(11,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/views/ClientListView.vue(46,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/devices/decryptor-type.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/device.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/devices/transformer.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/views/DeviceForm.vue(132,36): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(67,20): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(85,29): error TS18046: 'clientsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(119,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Device>>' is not assignable to parameter of type '(params: Pagination) => Promise<Device[] | PagedList<Device>>'.
+  Type 'Promise<ListResponse<Device>>' is not assignable to type 'Promise<Device[] | PagedList<Device>>'.
+    Type 'ListResponse<Device>' is not assignable to type 'Device[] | PagedList<Device>'.
+      Type '{ [key: string]: unknown; items: Device[]; }' is not assignable to type 'Device[] | PagedList<Device>'.
+        Type '{ [key: string]: unknown; items: Device[]; }' is missing the following properties from type 'Device[]': length, pop, push, concat, and 35 more.
+src/features/admin/metrics/metric.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(9,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(10,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/views/MetricListView.vue(68,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/metrics/views/MetricListView.vue(90,30): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/models/model.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(9,57): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(10,77): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/views/ModelListView.vue(49,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/models/views/ModelListView.vue(75,70): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/security/security.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/security/views/RoleListView.vue(60,9): error TS2322: Type 'Record<string, unknown>[]' is not assignable to type 'Permission[] | { permissionId: number; code: string; module: string; description: string; isActive: boolean; isDeleted: boolean; createdAt: string; createdBy?: number | undefined; updatedAt?: string | undefined; updatedBy?: number | undefined; }[]'.
+  Type 'Record<string, unknown>[]' is not assignable to type 'Permission[]'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Permission': permissionId, code, module, description, and 3 more.
+src/features/admin/security/views/UserListView.vue(37,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<User>>' is not assignable to parameter of type '(params: Pagination) => Promise<User[] | PagedList<User>>'.
+  Type 'Promise<ListResponse<User>>' is not assignable to type 'Promise<User[] | PagedList<User>>'.
+    Type 'ListResponse<User>' is not assignable to type 'User[] | PagedList<User>'.
+      Type '{ [key: string]: unknown; items: User[]; }' is not assignable to type 'User[] | PagedList<User>'.
+        Type '{ [key: string]: unknown; items: User[]; }' is missing the following properties from type 'User[]': length, pop, push, concat, and 35 more.
+src/features/admin/security/views/UserListView.vue(103,25): error TS18046: 'response' is of type 'unknown'.
+src/features/admin/sensortypes/sensortype.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(9,56): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(10,76): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(68,66): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(86,26): error TS18046: 'metricRes' is of type 'unknown'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(90,31): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/units/unit.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/units/views/UnitListView.vue(51,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Unit>>' is not assignable to parameter of type '(params: Pagination) => Promise<Unit[] | PagedList<Unit>>'.
+  Type 'Promise<ListResponse<Unit>>' is not assignable to type 'Promise<Unit[] | PagedList<Unit>>'.
+    Type 'ListResponse<Unit>' is not assignable to type 'Unit[] | PagedList<Unit>'.
+      Type '{ [key: string]: unknown; items: Unit[]; }' is not assignable to type 'Unit[] | PagedList<Unit>'.
+        Type '{ [key: string]: unknown; items: Unit[]; }' is missing the following properties from type 'Unit[]': length, pop, push, concat, and 35 more.
+src/features/customer/devices/device-customer.service.ts(45,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/devices/views/DeviceCustomerModal.vue(73,35): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(74,27): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(75,32): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(78,33): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(81,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,50): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/features/customer/tags/tags.service.ts(59,33): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(62,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(64,62): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/views/TagFormModal.vue(71,19): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(72,20): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(73,26): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(74,23): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(118,51): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(55,23): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(56,28): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(149,10): error TS2345: Argument of type '"transform-end"' is not assignable to parameter of type '"select" | "click" | "hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(163,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(event: "select", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"select"'.
+  Overload 2 of 3, '(event: "click", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"click"'.
+  Overload 3 of 3, '(event: "hover", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(189,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(190,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(191,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(192,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(111,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(112,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(21,39): error TS2339: Property 'items' does not exist on type 'ListResponse<Device>'.
+  Property 'items' does not exist on type 'Device[]'.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(220,13): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(317,64): error TS2339: Property 'title' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(321,92): error TS2339: Property 'titleAlign' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(325,102): error TS2339: Property 'titleSize' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(335,76): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(338,70): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(382,56): error TS2339: Property 'aggregation' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(384,37): error TS2339: Property 'aggregationType' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(389,48): error TS2339: Property 'aggregationWindow' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(474,52): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(475,71): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(479,101): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(496,96): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(574,100): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/composables/inspector/usePropertyManagement.ts(78,13): error TS2322: Type '{ name: string; type?: "string" | "number" | undefined; defaultValue?: string | number; }' is not assignable to type '{ name: string; type: "string" | "number"; defaultValue?: string | number | undefined; }'.
+  Types of property 'type' are incompatible.
+    Type '"string" | "number" | undefined' is not assignable to type '"string" | "number"'.
+      Type 'undefined' is not assignable to type '"string" | "number"'.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(1,30): error TS2307: Cannot find module '../../store/maps.store' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(2,47): error TS2307: Cannot find module '../../types/scene' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(125,49): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/features/maps/composables/plan/useDrawClickNodes.ts(74,9): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/composables/plan/useToolRouter.ts(3,30): error TS2307: Cannot find module '@/store/maps.store' or its corresponding type declarations.
+src/features/maps/store/maps.store.ts(128,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(129,35): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(510,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(511,29): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(523,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(526,34): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(526,59): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,33): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,57): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(530,21): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(531,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,75): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(610,54): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(615,30): error TS2339: Property 'mapId' does not exist on type '{}'.
+src/features/maps/store/maps.store.ts(615,49): error TS2339: Property 'id' does not exist on type '{}'.
+src/features/maps/utils/runtime/TelemetryAdapter.ts(3,26): error TS2305: Module '"../../types/scene"' has no exported member 'LogicBlock'.
+src/features/maps/views/MapsViewerView.vue(86,17): error TS2322: Type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; } | undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+  Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/maps/views/MapsViewerView.vue(88,17): error TS2322: Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/telemetry/telemetry.service.ts(53,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/services/organization.service.ts(78,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/stores/modelStore.ts(3,15): error TS2305: Module '"@/features/admin/models/types"' has no exported member 'Model'.
+src/stratlabs-ui/components/domain/UiOrganizationSelector.vue(118,9): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(35,31): error TS18046: 'response' is of type 'unknown'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(77,20): error TS18046: 'response' is of type 'unknown'.
+--- TYPECHECK OUTPUT END ---
+2026-02-20T15:59:47 | Expected: setup valida prerequisitos y discovery ACT-005 phase-03.
+2026-02-20T15:59:47 | Observed: inicio setup (DRY_RUN=1, FRONTEND_DIR=telemetric-front).
+2026-02-20T15:59:47 | Observed: herramienta OK -> rg
+2026-02-20T15:59:47 | Observed: herramienta OK -> node
+2026-02-20T15:59:47 | Observed: herramienta OK -> npm
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed: compose legado detectado (no usado): telemetric-api/old/docker-compose.yml
+2026-02-20T15:59:47 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Properties/launchSettings.json]=True
+2026-02-20T15:59:47 | Observed: path_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T15:59:47 | Observed: path_exists[telemetric-front/package.json]=True
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Observed (pendiente): DRY_RUN=1 no ejecuto comando.
+2026-02-20T15:59:47 | Expected: setup deja evidencia en commands.log y outputs.log.
+2026-02-20T15:59:47 | Observed: setup finalizado.
+2026-02-20T15:59:47 | Expected: run valida criterios ACT-005 phase-03 (builder UI + rutas/permisos + no-regresion).
+2026-02-20T15:59:47 | Observed: inicio run (DRY_RUN=1, API_BASE_URL=http://localhost:5220).
+2026-02-20T15:59:47 | Observed: file_exists[telemetric-front/src/features/actions/views/ActionsTemplatesView.vue]=True
+2026-02-20T15:59:47 | Observed: file_exists[telemetric-front/src/features/actions/types.ts]=True
+2026-02-20T15:59:47 | Observed: file_exists[telemetric-front/src/features/actions/actions.service.ts]=True
+2026-02-20T15:59:47 | Observed: file_exists[telemetric-front/src/features/actions/actions.routes.ts]=True
+2026-02-20T15:59:47 | Observed: file_exists[telemetric-front/src/layouts/menuItems.ts]=True
+2026-02-20T15:59:47 | Observed: file_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T15:59:47 | Observed: phase_summary_builder=True
+2026-02-20T15:59:47 | Observed: view_validate_and_build=True
+2026-02-20T15:59:47 | Observed: view_without_v_textarea=True
+2026-02-20T15:59:47 | Observed: rule_type_1_instant_threshold=True
+2026-02-20T15:59:47 | Observed: rule_type_2_continuous_duration=True
+2026-02-20T15:59:47 | Observed: rule_type_3_accumulated_duration_window=True
+2026-02-20T15:59:47 | Observed: rule_type_4_aggregation_window=True
+2026-02-20T15:59:47 | Observed: rule_type_5_count_occurrences_window=True
+2026-02-20T15:59:47 | Observed: duration_rule_t_le_w=True
+2026-02-20T15:59:47 | Observed: hold_last_value_ttl_validation=True
+2026-02-20T15:59:47 | Observed: recipients_required_validation=True
+2026-02-20T15:59:47 | Observed: recipients_format_validation=True
+2026-02-20T15:59:47 | Observed: ux_filter_present=True
+2026-02-20T15:59:47 | Observed: ux_table_present=True
+2026-02-20T15:59:47 | Observed: route_actions_exists=True
+2026-02-20T15:59:47 | Observed: route_actions_permission=True
+2026-02-20T15:59:47 | Observed: menu_actions_title=True
+2026-02-20T15:59:47 | Observed: menu_actions_path=True
+2026-02-20T15:59:47 | Observed: menu_actions_permission=True
+2026-02-20T15:59:47 | Observed: types_rule_definition_v1=True
+2026-02-20T15:59:47 | Observed: types_no_any=True
+2026-02-20T15:59:47 | Observed: types_no_unknown=True
+2026-02-20T15:59:47 | Observed (pendiente): typecheck no ejecutado por DRY_RUN=1.
+2026-02-20T15:59:47 | Observed (pendiente): gate no-regresion no evaluado por DRY_RUN=1.
+2026-02-20T15:59:47 | Observed (pendiente): auto-login y autodiscovery SQL no ejecutados por DRY_RUN=1.
+2026-02-20T15:59:47 | Observed: run finalizado.
+2026-02-20T15:59:47 | Expected: teardown sin borrar datos criticos.
+2026-02-20T15:59:47 | Observed: no-op ejecutado.
+2026-02-20T15:59:47 | Regla cierre runtime: si se levantaron instancias durante QA, deben apagarse y verificarse detenidas.
+2026-02-20T16:02:45 | Expected: teardown sin borrar datos criticos.
+2026-02-20T16:02:45 | Observed: no-op ejecutado.
+2026-02-20T16:02:45 | Regla cierre runtime: si se levantaron instancias durante QA, deben apagarse y verificarse detenidas.
+2026-02-20T16:02:45 | Expected: setup valida prerequisitos y discovery ACT-005 phase-03.
+2026-02-20T16:02:45 | Observed: inicio setup (DRY_RUN=0, FRONTEND_DIR=telemetric-front).
+2026-02-20T16:02:45 | Expected: run valida criterios ACT-005 phase-03 (builder UI + rutas/permisos + no-regresion).
+2026-02-20T16:02:45 | Observed: inicio run (DRY_RUN=0, API_BASE_URL=http://localhost:5220).
+2026-02-20T16:02:45 | Observed: herramienta OK -> rg
+2026-02-20T16:02:45 | Observed: file_exists[telemetric-front/src/features/actions/views/ActionsTemplatesView.vue]=True
+2026-02-20T16:02:45 | Observed: herramienta OK -> node
+2026-02-20T16:02:45 | Observed: file_exists[telemetric-front/src/features/actions/types.ts]=True
+2026-02-20T16:02:45 | Observed: file_exists[telemetric-front/src/features/actions/actions.service.ts]=True
+2026-02-20T16:02:45 | Observed: file_exists[telemetric-front/src/features/actions/actions.routes.ts]=True
+2026-02-20T16:02:45 | Observed: herramienta OK -> npm
+2026-02-20T16:02:45 | Observed: file_exists[telemetric-front/src/layouts/menuItems.ts]=True
+2026-02-20T16:02:45 | Observed: file_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T16:02:45 | Observed: phase_summary_builder=True
+2026-02-20T16:02:45 | Observed: view_validate_and_build=True
+2026-02-20T16:02:45 | Observed: view_without_v_textarea=True
+2026-02-20T16:02:45 | Observed: rule_type_1_instant_threshold=True
+2026-02-20T16:02:45 | Observed: rule_type_2_continuous_duration=True
+2026-02-20T16:02:45 | Observed: rule_type_3_accumulated_duration_window=True
+2026-02-20T16:02:45 | Observed: rule_type_4_aggregation_window=True
+2026-02-20T16:02:45 | Observed: rule_type_5_count_occurrences_window=True
+2026-02-20T16:02:45 | Observed: duration_rule_t_le_w=True
+2026-02-20T16:02:45 | Observed: hold_last_value_ttl_validation=True
+2026-02-20T16:02:45 | Observed: recipients_required_validation=True
+2026-02-20T16:02:45 | Observed: recipients_format_validation=True
+2026-02-20T16:02:45 | Observed: ux_filter_present=True
+2026-02-20T16:02:45 | Observed: ux_table_present=True
+2026-02-20T16:02:45 | Observed: route_actions_exists=True
+2026-02-20T16:02:45 | Observed: route_actions_permission=True
+2026-02-20T16:02:45 | Observed: menu_actions_title=True
+2026-02-20T16:02:45 | Observed: menu_actions_path=True
+2026-02-20T16:02:45 | Observed: menu_actions_permission=True
+2026-02-20T16:02:45 | Observed: types_rule_definition_v1=True
+2026-02-20T16:02:45 | Observed: types_no_any=True
+2026-02-20T16:02:45 | Observed: types_no_unknown=True
+2026-02-20T16:02:45 | Observed: baseline_scope=no-demo, baseline_ts_errors=240
+redis
+redis-init
+clickhouse
+rabbitmq
+2026-02-20T16:02:45 | Observed: compose legado detectado (no usado): telemetric-api/old/docker-compose.yml
+2026-02-20T16:02:45 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Properties/launchSettings.json]=True
+2026-02-20T16:02:45 | Observed: path_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T16:02:45 | Observed: path_exists[telemetric-front/package.json]=True
+163:const validateAndBuild = (): { definition: RuleDefinitionV1 | null; error: string } => {
+298:        const { definition, error } = validateAndBuild();
+175:        if (durationSeconds > windowSeconds) return { definition: null, error: 'durationSeconds no puede ser mayor que windowSeconds.' };
+194:    if (!missingDataPolicy) return { definition: null, error: 'ttlSeconds invalido para HOLD_LAST_VALUE.' };
+182:    if (recipients.length === 0) return { definition: null, error: 'Debe ingresar al menos un destinatario.' };
+5:        path: '/actions',
+telemetric-front/src/features/actions/actions.routes.ts:11:            requiresPermission: 'Actions.View'
+telemetric-front/src/features/actions/actions.routes.ts:21:            requiresPermission: 'Actions.View'
+telemetric-front/src/layouts/menuItems.ts:45:        requiresPermission: 'Actions.View'
+
+> modernize@6.2.0 typecheck
+> vue-tsc --noEmit
+
+src/_demo/_mockApis/apps/blog/index.ts(281,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/blog/index.ts(282,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(214,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(215,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(229,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(247,9): error TS2322: Type '{ id?: string; content?: string | undefined; images?: PostImage[] | undefined; video?: string; likes?: Likes | undefined; comments?: Comment[]; }' is not assignable to type 'PostData'.
+  Types of property 'content' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,32): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,56): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,84): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(252,9): error TS2322: Type '{ id?: string; profile?: Profile | undefined; data?: PostData | undefined; }' is not assignable to type 'Post'.
+  Types of property 'profile' are incompatible.
+    Type 'Profile | undefined' is not assignable to type 'Profile'.
+      Type 'undefined' is not assignable to type 'Profile'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(265,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(272,54): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(285,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(296,17): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData | undefined; }' is not assignable to type 'Reply'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(297,62): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/views/apps/calendar/Calendar.vue(12,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/apps/email/EmailListing.vue(48,9): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/apps/email/EmailListing.vue(57,13): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/shared/BlocklyEditor.vue(15,21): error TS2345: Argument of type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to parameter of type '{ [key: string]: string; }'.
+  Property 'default' is incompatible with index signature.
+    Type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to type 'string'.
+src/components/table/EditableTable.vue(69,23): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(target: {}, source: { id: string; avatar: string; userinfo: string; usermail: string; phone: string; jdate: string; role: string; rolestatus: string; }): { id: string; avatar: string; userinfo: string; ... 4 more ...; rolestatus: string; }', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 4, '(target: object, ...sources: any[]): any', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/core/components/ui/notification/AppNotification.vue(32,78): error TS2532: Object is possibly 'undefined'.
+src/core/components/ui/table/AppDataTable.vue(3,8): error TS1192: Module '"C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/vue3-easy-data-table/types/main"' has no default export.
+src/core/components/ui/table/AppDataTable.vue(67,32): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/hooks/useDataTableFetch.ts(135,13): error TS2322: Type 'string | string[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/hooks/useDataTableFetch.ts(136,13): error TS2322: Type 'SortType | SortType[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/stores/notification.ts(206,58): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/utils/validation.ts(31,59): error TS2532: Object is possibly 'undefined'.
+src/features/admin/clients/client.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(9,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(10,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(11,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/views/ClientListView.vue(46,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/devices/decryptor-type.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/device.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/devices/transformer.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/views/DeviceForm.vue(132,36): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(67,20): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(85,29): error TS18046: 'clientsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(119,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Device>>' is not assignable to parameter of type '(params: Pagination) => Promise<Device[] | PagedList<Device>>'.
+  Type 'Promise<ListResponse<Device>>' is not assignable to type 'Promise<Device[] | PagedList<Device>>'.
+    Type 'ListResponse<Device>' is not assignable to type 'Device[] | PagedList<Device>'.
+      Type '{ [key: string]: unknown; items: Device[]; }' is not assignable to type 'Device[] | PagedList<Device>'.
+        Type '{ [key: string]: unknown; items: Device[]; }' is missing the following properties from type 'Device[]': length, pop, push, concat, and 35 more.
+src/features/admin/metrics/metric.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(9,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(10,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/views/MetricListView.vue(68,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/metrics/views/MetricListView.vue(90,30): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/models/model.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(9,57): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(10,77): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/views/ModelListView.vue(49,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/models/views/ModelListView.vue(75,70): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/security/security.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/security/views/RoleListView.vue(60,9): error TS2322: Type 'Record<string, unknown>[]' is not assignable to type 'Permission[] | { permissionId: number; code: string; module: string; description: string; isActive: boolean; isDeleted: boolean; createdAt: string; createdBy?: number | undefined; updatedAt?: string | undefined; updatedBy?: number | undefined; }[]'.
+  Type 'Record<string, unknown>[]' is not assignable to type 'Permission[]'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Permission': permissionId, code, module, description, and 3 more.
+src/features/admin/security/views/UserListView.vue(37,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<User>>' is not assignable to parameter of type '(params: Pagination) => Promise<User[] | PagedList<User>>'.
+  Type 'Promise<ListResponse<User>>' is not assignable to type 'Promise<User[] | PagedList<User>>'.
+    Type 'ListResponse<User>' is not assignable to type 'User[] | PagedList<User>'.
+      Type '{ [key: string]: unknown; items: User[]; }' is not assignable to type 'User[] | PagedList<User>'.
+        Type '{ [key: string]: unknown; items: User[]; }' is missing the following properties from type 'User[]': length, pop, push, concat, and 35 more.
+src/features/admin/security/views/UserListView.vue(103,25): error TS18046: 'response' is of type 'unknown'.
+src/features/admin/sensortypes/sensortype.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(9,56): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(10,76): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(68,66): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(86,26): error TS18046: 'metricRes' is of type 'unknown'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(90,31): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/units/unit.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/units/views/UnitListView.vue(51,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Unit>>' is not assignable to parameter of type '(params: Pagination) => Promise<Unit[] | PagedList<Unit>>'.
+  Type 'Promise<ListResponse<Unit>>' is not assignable to type 'Promise<Unit[] | PagedList<Unit>>'.
+    Type 'ListResponse<Unit>' is not assignable to type 'Unit[] | PagedList<Unit>'.
+      Type '{ [key: string]: unknown; items: Unit[]; }' is not assignable to type 'Unit[] | PagedList<Unit>'.
+        Type '{ [key: string]: unknown; items: Unit[]; }' is missing the following properties from type 'Unit[]': length, pop, push, concat, and 35 more.
+src/features/customer/devices/device-customer.service.ts(45,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/devices/views/DeviceCustomerModal.vue(73,35): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(74,27): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(75,32): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(78,33): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(81,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,50): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/features/customer/tags/tags.service.ts(59,33): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(62,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(64,62): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/views/TagFormModal.vue(71,19): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(72,20): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(73,26): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(74,23): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(118,51): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(55,23): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(56,28): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(149,10): error TS2345: Argument of type '"transform-end"' is not assignable to parameter of type '"select" | "click" | "hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(163,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(event: "select", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"select"'.
+  Overload 2 of 3, '(event: "click", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"click"'.
+  Overload 3 of 3, '(event: "hover", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(189,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(190,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(191,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(192,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(111,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(112,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(21,39): error TS2339: Property 'items' does not exist on type 'ListResponse<Device>'.
+  Property 'items' does not exist on type 'Device[]'.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(220,13): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(317,64): error TS2339: Property 'title' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(321,92): error TS2339: Property 'titleAlign' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(325,102): error TS2339: Property 'titleSize' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(335,76): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(338,70): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(382,56): error TS2339: Property 'aggregation' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(384,37): error TS2339: Property 'aggregationType' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(389,48): error TS2339: Property 'aggregationWindow' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(474,52): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(475,71): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(479,101): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(496,96): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(574,100): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/composables/inspector/usePropertyManagement.ts(78,13): error TS2322: Type '{ name: string; type?: "string" | "number" | undefined; defaultValue?: string | number; }' is not assignable to type '{ name: string; type: "string" | "number"; defaultValue?: string | number | undefined; }'.
+  Types of property 'type' are incompatible.
+    Type '"string" | "number" | undefined' is not assignable to type '"string" | "number"'.
+      Type 'undefined' is not assignable to type '"string" | "number"'.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(1,30): error TS2307: Cannot find module '../../store/maps.store' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(2,47): error TS2307: Cannot find module '../../types/scene' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(125,49): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/features/maps/composables/plan/useDrawClickNodes.ts(74,9): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/composables/plan/useToolRouter.ts(3,30): error TS2307: Cannot find module '@/store/maps.store' or its corresponding type declarations.
+src/features/maps/store/maps.store.ts(128,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(129,35): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(510,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(511,29): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(523,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(526,34): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(526,59): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,33): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,57): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(530,21): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(531,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,75): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(610,54): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(615,30): error TS2339: Property 'mapId' does not exist on type '{}'.
+src/features/maps/store/maps.store.ts(615,49): error TS2339: Property 'id' does not exist on type '{}'.
+src/features/maps/utils/runtime/TelemetryAdapter.ts(3,26): error TS2305: Module '"../../types/scene"' has no exported member 'LogicBlock'.
+src/features/maps/views/MapsViewerView.vue(86,17): error TS2322: Type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; } | undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+  Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/maps/views/MapsViewerView.vue(88,17): error TS2322: Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/telemetry/telemetry.service.ts(53,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/services/organization.service.ts(78,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/stores/modelStore.ts(3,15): error TS2305: Module '"@/features/admin/models/types"' has no exported member 'Model'.
+src/stratlabs-ui/components/domain/UiOrganizationSelector.vue(118,9): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(35,31): error TS18046: 'response' is of type 'unknown'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(77,20): error TS18046: 'response' is of type 'unknown'.
+2026-02-20T16:03:06 | Observed: typecheck_exit_code=2
+2026-02-20T16:03:06 | Expected: no-regresion no-demo => observed <= baseline (240)
+2026-02-20T16:03:06 | Observed: no_demo_ts_errors=118
+2026-02-20T16:03:06 | Observed: gate_no_regresion=PASS (observed=118 <= baseline=240)
+
+> modernize@6.2.0 typecheck
+> vue-tsc --noEmit
+
+src/_demo/_mockApis/apps/blog/index.ts(281,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/blog/index.ts(282,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(214,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(215,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(229,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(247,9): error TS2322: Type '{ id?: string; content?: string | undefined; images?: PostImage[] | undefined; video?: string; likes?: Likes | undefined; comments?: Comment[]; }' is not assignable to type 'PostData'.
+  Types of property 'content' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,32): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,56): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,84): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(252,9): error TS2322: Type '{ id?: string; profile?: Profile | undefined; data?: PostData | undefined; }' is not assignable to type 'Post'.
+  Types of property 'profile' are incompatible.
+    Type 'Profile | undefined' is not assignable to type 'Profile'.
+      Type 'undefined' is not assignable to type 'Profile'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(265,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(272,54): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(285,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(296,17): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData | undefined; }' is not assignable to type 'Reply'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(297,62): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/views/apps/calendar/Calendar.vue(12,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/apps/email/EmailListing.vue(48,9): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/apps/email/EmailListing.vue(57,13): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/shared/BlocklyEditor.vue(15,21): error TS2345: Argument of type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to parameter of type '{ [key: string]: string; }'.
+  Property 'default' is incompatible with index signature.
+    Type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to type 'string'.
+src/components/table/EditableTable.vue(69,23): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(target: {}, source: { id: string; avatar: string; userinfo: string; usermail: string; phone: string; jdate: string; role: string; rolestatus: string; }): { id: string; avatar: string; userinfo: string; ... 4 more ...; rolestatus: string; }', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 4, '(target: object, ...sources: any[]): any', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/core/components/ui/notification/AppNotification.vue(32,78): error TS2532: Object is possibly 'undefined'.
+src/core/components/ui/table/AppDataTable.vue(3,8): error TS1192: Module '"C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/vue3-easy-data-table/types/main"' has no default export.
+src/core/components/ui/table/AppDataTable.vue(67,32): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/hooks/useDataTableFetch.ts(135,13): error TS2322: Type 'string | string[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/hooks/useDataTableFetch.ts(136,13): error TS2322: Type 'SortType | SortType[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/stores/notification.ts(206,58): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/utils/validation.ts(31,59): error TS2532: Object is possibly 'undefined'.
+src/features/admin/clients/client.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(9,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(10,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(11,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/views/ClientListView.vue(46,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/devices/decryptor-type.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/device.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/devices/transformer.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/views/DeviceForm.vue(132,36): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(67,20): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(85,29): error TS18046: 'clientsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(119,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Device>>' is not assignable to parameter of type '(params: Pagination) => Promise<Device[] | PagedList<Device>>'.
+  Type 'Promise<ListResponse<Device>>' is not assignable to type 'Promise<Device[] | PagedList<Device>>'.
+    Type 'ListResponse<Device>' is not assignable to type 'Device[] | PagedList<Device>'.
+      Type '{ [key: string]: unknown; items: Device[]; }' is not assignable to type 'Device[] | PagedList<Device>'.
+        Type '{ [key: string]: unknown; items: Device[]; }' is missing the following properties from type 'Device[]': length, pop, push, concat, and 35 more.
+src/features/admin/metrics/metric.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(9,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(10,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/views/MetricListView.vue(68,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/metrics/views/MetricListView.vue(90,30): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/models/model.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(9,57): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(10,77): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/views/ModelListView.vue(49,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/models/views/ModelListView.vue(75,70): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/security/security.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/security/views/RoleListView.vue(60,9): error TS2322: Type 'Record<string, unknown>[]' is not assignable to type 'Permission[] | { permissionId: number; code: string; module: string; description: string; isActive: boolean; isDeleted: boolean; createdAt: string; createdBy?: number | undefined; updatedAt?: string | undefined; updatedBy?: number | undefined; }[]'.
+  Type 'Record<string, unknown>[]' is not assignable to type 'Permission[]'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Permission': permissionId, code, module, description, and 3 more.
+src/features/admin/security/views/UserListView.vue(37,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<User>>' is not assignable to parameter of type '(params: Pagination) => Promise<User[] | PagedList<User>>'.
+  Type 'Promise<ListResponse<User>>' is not assignable to type 'Promise<User[] | PagedList<User>>'.
+    Type 'ListResponse<User>' is not assignable to type 'User[] | PagedList<User>'.
+      Type '{ [key: string]: unknown; items: User[]; }' is not assignable to type 'User[] | PagedList<User>'.
+        Type '{ [key: string]: unknown; items: User[]; }' is missing the following properties from type 'User[]': length, pop, push, concat, and 35 more.
+src/features/admin/security/views/UserListView.vue(103,25): error TS18046: 'response' is of type 'unknown'.
+src/features/admin/sensortypes/sensortype.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(9,56): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(10,76): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(68,66): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(86,26): error TS18046: 'metricRes' is of type 'unknown'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(90,31): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/units/unit.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/units/views/UnitListView.vue(51,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Unit>>' is not assignable to parameter of type '(params: Pagination) => Promise<Unit[] | PagedList<Unit>>'.
+  Type 'Promise<ListResponse<Unit>>' is not assignable to type 'Promise<Unit[] | PagedList<Unit>>'.
+    Type 'ListResponse<Unit>' is not assignable to type 'Unit[] | PagedList<Unit>'.
+      Type '{ [key: string]: unknown; items: Unit[]; }' is not assignable to type 'Unit[] | PagedList<Unit>'.
+        Type '{ [key: string]: unknown; items: Unit[]; }' is missing the following properties from type 'Unit[]': length, pop, push, concat, and 35 more.
+src/features/customer/devices/device-customer.service.ts(45,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/devices/views/DeviceCustomerModal.vue(73,35): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(74,27): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(75,32): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(78,33): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(81,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,50): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/features/customer/tags/tags.service.ts(59,33): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(62,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(64,62): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/views/TagFormModal.vue(71,19): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(72,20): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(73,26): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(74,23): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(118,51): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(55,23): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(56,28): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(149,10): error TS2345: Argument of type '"transform-end"' is not assignable to parameter of type '"select" | "click" | "hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(163,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(event: "select", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"select"'.
+  Overload 2 of 3, '(event: "click", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"click"'.
+  Overload 3 of 3, '(event: "hover", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(189,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(190,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(191,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(192,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(111,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(112,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(21,39): error TS2339: Property 'items' does not exist on type 'ListResponse<Device>'.
+  Property 'items' does not exist on type 'Device[]'.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(220,13): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(317,64): error TS2339: Property 'title' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(321,92): error TS2339: Property 'titleAlign' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(325,102): error TS2339: Property 'titleSize' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(335,76): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(338,70): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(382,56): error TS2339: Property 'aggregation' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(384,37): error TS2339: Property 'aggregationType' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(389,48): error TS2339: Property 'aggregationWindow' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(474,52): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(475,71): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(479,101): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(496,96): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(574,100): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/composables/inspector/usePropertyManagement.ts(78,13): error TS2322: Type '{ name: string; type?: "string" | "number" | undefined; defaultValue?: string | number; }' is not assignable to type '{ name: string; type: "string" | "number"; defaultValue?: string | number | undefined; }'.
+  Types of property 'type' are incompatible.
+    Type '"string" | "number" | undefined' is not assignable to type '"string" | "number"'.
+      Type 'undefined' is not assignable to type '"string" | "number"'.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(1,30): error TS2307: Cannot find module '../../store/maps.store' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(2,47): error TS2307: Cannot find module '../../types/scene' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(125,49): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/features/maps/composables/plan/useDrawClickNodes.ts(74,9): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/composables/plan/useToolRouter.ts(3,30): error TS2307: Cannot find module '@/store/maps.store' or its corresponding type declarations.
+src/features/maps/store/maps.store.ts(128,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(129,35): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(510,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(511,29): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(523,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(526,34): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(526,59): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,33): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,57): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(530,21): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(531,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,75): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(610,54): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(615,30): error TS2339: Property 'mapId' does not exist on type '{}'.
+src/features/maps/store/maps.store.ts(615,49): error TS2339: Property 'id' does not exist on type '{}'.
+src/features/maps/utils/runtime/TelemetryAdapter.ts(3,26): error TS2305: Module '"../../types/scene"' has no exported member 'LogicBlock'.
+src/features/maps/views/MapsViewerView.vue(86,17): error TS2322: Type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; } | undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+  Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/maps/views/MapsViewerView.vue(88,17): error TS2322: Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/telemetry/telemetry.service.ts(53,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/services/organization.service.ts(78,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/stores/modelStore.ts(3,15): error TS2305: Module '"@/features/admin/models/types"' has no exported member 'Model'.
+src/stratlabs-ui/components/domain/UiOrganizationSelector.vue(118,9): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(35,31): error TS18046: 'response' is of type 'unknown'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(77,20): error TS18046: 'response' is of type 'unknown'.
+2026-02-20T16:03:06 | Expected: setup deja evidencia en commands.log y outputs.log.
+2026-02-20T16:03:06 | Observed: setup finalizado.
+2026-02-20T16:03:10 | Observed: auto_login_token=FAIL (Unable to connect to the remote server)
+2026-02-20T16:03:10 | Observed: auto_test_device_ids=7,6,5
+2026-02-20T16:03:10 | Observed: run finalizado.
+2026-02-20T16:03:56 | STILL_RUNNING: none
+2026-02-20T16:12:21 | API_BOOT_FOR_QA_CLOSE=True
+2026-02-20T16:12:21 | Expected: setup valida prerequisitos y discovery ACT-005 phase-03.
+2026-02-20T16:12:21 | Observed: inicio setup (DRY_RUN=0, FRONTEND_DIR=telemetric-front).
+2026-02-20T16:12:21 | Observed: herramienta OK -> rg
+2026-02-20T16:12:21 | Observed: herramienta OK -> node
+2026-02-20T16:12:21 | Observed: herramienta OK -> npm
+clickhouse
+rabbitmq
+redis
+redis-init
+2026-02-20T16:12:22 | Observed: compose legado detectado (no usado): telemetric-api/old/docker-compose.yml
+2026-02-20T16:12:22 | Observed: path_exists[telemetric-api/src/Telemetric.Api/Properties/launchSettings.json]=True
+2026-02-20T16:12:22 | Observed: path_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T16:12:22 | Observed: path_exists[telemetric-front/package.json]=True
+163:const validateAndBuild = (): { definition: RuleDefinitionV1 | null; error: string } => {
+298:        const { definition, error } = validateAndBuild();
+175:        if (durationSeconds > windowSeconds) return { definition: null, error: 'durationSeconds no puede ser mayor que windowSeconds.' };
+194:    if (!missingDataPolicy) return { definition: null, error: 'ttlSeconds invalido para HOLD_LAST_VALUE.' };
+182:    if (recipients.length === 0) return { definition: null, error: 'Debe ingresar al menos un destinatario.' };
+5:        path: '/actions',
+telemetric-front/src/layouts/menuItems.ts:45:        requiresPermission: 'Actions.View'
+telemetric-front/src/features/actions/actions.routes.ts:11:            requiresPermission: 'Actions.View'
+telemetric-front/src/features/actions/actions.routes.ts:21:            requiresPermission: 'Actions.View'
+
+> modernize@6.2.0 typecheck
+> vue-tsc --noEmit
+
+src/_demo/_mockApis/apps/blog/index.ts(281,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/blog/index.ts(282,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(214,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(215,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(229,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(247,9): error TS2322: Type '{ id?: string; content?: string | undefined; images?: PostImage[] | undefined; video?: string; likes?: Likes | undefined; comments?: Comment[]; }' is not assignable to type 'PostData'.
+  Types of property 'content' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,32): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,56): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,84): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(252,9): error TS2322: Type '{ id?: string; profile?: Profile | undefined; data?: PostData | undefined; }' is not assignable to type 'Post'.
+  Types of property 'profile' are incompatible.
+    Type 'Profile | undefined' is not assignable to type 'Profile'.
+      Type 'undefined' is not assignable to type 'Profile'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(265,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(272,54): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(285,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(296,17): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData | undefined; }' is not assignable to type 'Reply'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(297,62): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/views/apps/calendar/Calendar.vue(12,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/apps/email/EmailListing.vue(48,9): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/apps/email/EmailListing.vue(57,13): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/shared/BlocklyEditor.vue(15,21): error TS2345: Argument of type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to parameter of type '{ [key: string]: string; }'.
+  Property 'default' is incompatible with index signature.
+    Type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to type 'string'.
+src/components/table/EditableTable.vue(69,23): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(target: {}, source: { id: string; avatar: string; userinfo: string; usermail: string; phone: string; jdate: string; role: string; rolestatus: string; }): { id: string; avatar: string; userinfo: string; ... 4 more ...; rolestatus: string; }', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 4, '(target: object, ...sources: any[]): any', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/core/components/ui/notification/AppNotification.vue(32,78): error TS2532: Object is possibly 'undefined'.
+src/core/components/ui/table/AppDataTable.vue(3,8): error TS1192: Module '"C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/vue3-easy-data-table/types/main"' has no default export.
+src/core/components/ui/table/AppDataTable.vue(67,32): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/hooks/useDataTableFetch.ts(135,13): error TS2322: Type 'string | string[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/hooks/useDataTableFetch.ts(136,13): error TS2322: Type 'SortType | SortType[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/stores/notification.ts(206,58): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/utils/validation.ts(31,59): error TS2532: Object is possibly 'undefined'.
+src/features/admin/clients/client.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(9,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(10,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(11,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/views/ClientListView.vue(46,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/devices/decryptor-type.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/device.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/devices/transformer.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/views/DeviceForm.vue(132,36): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(67,20): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(85,29): error TS18046: 'clientsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(119,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Device>>' is not assignable to parameter of type '(params: Pagination) => Promise<Device[] | PagedList<Device>>'.
+  Type 'Promise<ListResponse<Device>>' is not assignable to type 'Promise<Device[] | PagedList<Device>>'.
+    Type 'ListResponse<Device>' is not assignable to type 'Device[] | PagedList<Device>'.
+      Type '{ [key: string]: unknown; items: Device[]; }' is not assignable to type 'Device[] | PagedList<Device>'.
+        Type '{ [key: string]: unknown; items: Device[]; }' is missing the following properties from type 'Device[]': length, pop, push, concat, and 35 more.
+src/features/admin/metrics/metric.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(9,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(10,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/views/MetricListView.vue(68,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/metrics/views/MetricListView.vue(90,30): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/models/model.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(9,57): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(10,77): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/views/ModelListView.vue(49,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/models/views/ModelListView.vue(75,70): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/security/security.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/security/views/RoleListView.vue(60,9): error TS2322: Type 'Record<string, unknown>[]' is not assignable to type 'Permission[] | { permissionId: number; code: string; module: string; description: string; isActive: boolean; isDeleted: boolean; createdAt: string; createdBy?: number | undefined; updatedAt?: string | undefined; updatedBy?: number | undefined; }[]'.
+  Type 'Record<string, unknown>[]' is not assignable to type 'Permission[]'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Permission': permissionId, code, module, description, and 3 more.
+src/features/admin/security/views/UserListView.vue(37,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<User>>' is not assignable to parameter of type '(params: Pagination) => Promise<User[] | PagedList<User>>'.
+  Type 'Promise<ListResponse<User>>' is not assignable to type 'Promise<User[] | PagedList<User>>'.
+    Type 'ListResponse<User>' is not assignable to type 'User[] | PagedList<User>'.
+      Type '{ [key: string]: unknown; items: User[]; }' is not assignable to type 'User[] | PagedList<User>'.
+        Type '{ [key: string]: unknown; items: User[]; }' is missing the following properties from type 'User[]': length, pop, push, concat, and 35 more.
+src/features/admin/security/views/UserListView.vue(103,25): error TS18046: 'response' is of type 'unknown'.
+src/features/admin/sensortypes/sensortype.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(9,56): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(10,76): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(68,66): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(86,26): error TS18046: 'metricRes' is of type 'unknown'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(90,31): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/units/unit.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/units/views/UnitListView.vue(51,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Unit>>' is not assignable to parameter of type '(params: Pagination) => Promise<Unit[] | PagedList<Unit>>'.
+  Type 'Promise<ListResponse<Unit>>' is not assignable to type 'Promise<Unit[] | PagedList<Unit>>'.
+    Type 'ListResponse<Unit>' is not assignable to type 'Unit[] | PagedList<Unit>'.
+      Type '{ [key: string]: unknown; items: Unit[]; }' is not assignable to type 'Unit[] | PagedList<Unit>'.
+        Type '{ [key: string]: unknown; items: Unit[]; }' is missing the following properties from type 'Unit[]': length, pop, push, concat, and 35 more.
+src/features/customer/devices/device-customer.service.ts(45,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/devices/views/DeviceCustomerModal.vue(73,35): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(74,27): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(75,32): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(78,33): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(81,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,50): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/features/customer/tags/tags.service.ts(59,33): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(62,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(64,62): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/views/TagFormModal.vue(71,19): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(72,20): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(73,26): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(74,23): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(118,51): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(55,23): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(56,28): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(149,10): error TS2345: Argument of type '"transform-end"' is not assignable to parameter of type '"select" | "click" | "hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(163,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(event: "select", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"select"'.
+  Overload 2 of 3, '(event: "click", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"click"'.
+  Overload 3 of 3, '(event: "hover", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(189,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(190,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(191,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(192,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(111,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(112,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(21,39): error TS2339: Property 'items' does not exist on type 'ListResponse<Device>'.
+  Property 'items' does not exist on type 'Device[]'.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(220,13): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(317,64): error TS2339: Property 'title' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(321,92): error TS2339: Property 'titleAlign' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(325,102): error TS2339: Property 'titleSize' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(335,76): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(338,70): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(382,56): error TS2339: Property 'aggregation' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(384,37): error TS2339: Property 'aggregationType' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(389,48): error TS2339: Property 'aggregationWindow' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(474,52): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(475,71): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(479,101): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(496,96): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(574,100): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/composables/inspector/usePropertyManagement.ts(78,13): error TS2322: Type '{ name: string; type?: "string" | "number" | undefined; defaultValue?: string | number; }' is not assignable to type '{ name: string; type: "string" | "number"; defaultValue?: string | number | undefined; }'.
+  Types of property 'type' are incompatible.
+    Type '"string" | "number" | undefined' is not assignable to type '"string" | "number"'.
+      Type 'undefined' is not assignable to type '"string" | "number"'.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(1,30): error TS2307: Cannot find module '../../store/maps.store' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(2,47): error TS2307: Cannot find module '../../types/scene' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(125,49): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/features/maps/composables/plan/useDrawClickNodes.ts(74,9): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/composables/plan/useToolRouter.ts(3,30): error TS2307: Cannot find module '@/store/maps.store' or its corresponding type declarations.
+src/features/maps/store/maps.store.ts(128,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(129,35): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(510,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(511,29): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(523,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(526,34): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(526,59): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,33): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,57): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(530,21): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(531,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,75): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(610,54): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(615,30): error TS2339: Property 'mapId' does not exist on type '{}'.
+src/features/maps/store/maps.store.ts(615,49): error TS2339: Property 'id' does not exist on type '{}'.
+src/features/maps/utils/runtime/TelemetryAdapter.ts(3,26): error TS2305: Module '"../../types/scene"' has no exported member 'LogicBlock'.
+src/features/maps/views/MapsViewerView.vue(86,17): error TS2322: Type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; } | undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+  Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/maps/views/MapsViewerView.vue(88,17): error TS2322: Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/telemetry/telemetry.service.ts(53,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/services/organization.service.ts(78,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/stores/modelStore.ts(3,15): error TS2305: Module '"@/features/admin/models/types"' has no exported member 'Model'.
+src/stratlabs-ui/components/domain/UiOrganizationSelector.vue(118,9): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(35,31): error TS18046: 'response' is of type 'unknown'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(77,20): error TS18046: 'response' is of type 'unknown'.
+2026-02-20T16:12:41 | Expected: setup deja evidencia en commands.log y outputs.log.
+2026-02-20T16:12:41 | Observed: setup finalizado.
+2026-02-20T16:12:41 | Expected: run valida criterios ACT-005 phase-03 (builder UI + rutas/permisos + no-regresion).
+2026-02-20T16:12:41 | Observed: inicio run (DRY_RUN=0, API_BASE_URL=http://localhost:5220).
+2026-02-20T16:12:41 | Observed: file_exists[telemetric-front/src/features/actions/views/ActionsTemplatesView.vue]=True
+2026-02-20T16:12:41 | Observed: file_exists[telemetric-front/src/features/actions/types.ts]=True
+2026-02-20T16:12:41 | Observed: file_exists[telemetric-front/src/features/actions/actions.service.ts]=True
+2026-02-20T16:12:41 | Observed: file_exists[telemetric-front/src/features/actions/actions.routes.ts]=True
+2026-02-20T16:12:41 | Observed: file_exists[telemetric-front/src/layouts/menuItems.ts]=True
+2026-02-20T16:12:41 | Observed: file_exists[contexto/work/features/acciones_modulo/03_execution/ACT-005/phase-03.md]=True
+2026-02-20T16:12:41 | Observed: phase_summary_builder=True
+2026-02-20T16:12:41 | Observed: view_validate_and_build=True
+2026-02-20T16:12:41 | Observed: view_without_v_textarea=True
+2026-02-20T16:12:41 | Observed: rule_type_1_instant_threshold=True
+2026-02-20T16:12:41 | Observed: rule_type_2_continuous_duration=True
+2026-02-20T16:12:41 | Observed: rule_type_3_accumulated_duration_window=True
+2026-02-20T16:12:41 | Observed: rule_type_4_aggregation_window=True
+2026-02-20T16:12:41 | Observed: rule_type_5_count_occurrences_window=True
+2026-02-20T16:12:41 | Observed: duration_rule_t_le_w=True
+2026-02-20T16:12:41 | Observed: hold_last_value_ttl_validation=True
+2026-02-20T16:12:41 | Observed: recipients_required_validation=True
+2026-02-20T16:12:41 | Observed: recipients_format_validation=True
+2026-02-20T16:12:41 | Observed: ux_filter_present=True
+2026-02-20T16:12:41 | Observed: ux_table_present=True
+2026-02-20T16:12:41 | Observed: route_actions_exists=True
+2026-02-20T16:12:41 | Observed: route_actions_permission=True
+2026-02-20T16:12:41 | Observed: menu_actions_title=True
+2026-02-20T16:12:41 | Observed: menu_actions_path=True
+2026-02-20T16:12:41 | Observed: menu_actions_permission=True
+2026-02-20T16:12:41 | Observed: types_rule_definition_v1=True
+2026-02-20T16:12:41 | Observed: types_no_any=True
+2026-02-20T16:12:41 | Observed: types_no_unknown=True
+2026-02-20T16:12:41 | Observed: baseline_scope=no-demo, baseline_ts_errors=240
+
+> modernize@6.2.0 typecheck
+> vue-tsc --noEmit
+
+src/_demo/_mockApis/apps/blog/index.ts(281,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/blog/index.ts(282,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(214,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(215,9): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(229,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(247,9): error TS2322: Type '{ id?: string; content?: string | undefined; images?: PostImage[] | undefined; video?: string; likes?: Likes | undefined; comments?: Comment[]; }' is not assignable to type 'PostData'.
+  Types of property 'content' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(249,32): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(250,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,9): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,33): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,56): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(251,84): error TS18048: 'post.data' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(252,9): error TS2322: Type '{ id?: string; profile?: Profile | undefined; data?: PostData | undefined; }' is not assignable to type 'Post'.
+  Types of property 'profile' are incompatible.
+    Type 'Profile | undefined' is not assignable to type 'Profile'.
+      Type 'undefined' is not assignable to type 'Profile'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(265,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(272,54): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(285,27): error TS18048: 'post' is possibly 'undefined'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(296,17): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData | undefined; }' is not assignable to type 'Reply'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/_mockApis/apps/userprofile/posts.ts(297,62): error TS2322: Type '{ id?: string | undefined; profile?: Profile | undefined; data?: CommentData; }' is not assignable to type 'Comment'.
+  Types of property 'id' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/_demo/views/apps/calendar/Calendar.vue(12,21): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/apps/email/EmailListing.vue(48,9): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/apps/email/EmailListing.vue(57,13): error TS2322: Type 'EmailType | undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+  Type 'undefined' is not assignable to type 'EmailType | { id: number; from: string; thumbnail: string; subject: string; time: any; To: string; emailExcerpt: string; emailContent: string; unread: boolean; attachment: boolean; ... 11 more ...; attchments?: { ...; }[] | undefined; } | null'.
+src/components/shared/BlocklyEditor.vue(15,21): error TS2345: Argument of type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to parameter of type '{ [key: string]: string; }'.
+  Property 'default' is incompatible with index signature.
+    Type 'typeof import("C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/blockly/msg/es")' is not assignable to type 'string'.
+src/components/table/EditableTable.vue(69,23): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(target: {}, source: { id: string; avatar: string; userinfo: string; usermail: string; phone: string; jdate: string; role: string; rolestatus: string; }): { id: string; avatar: string; userinfo: string; ... 4 more ...; rolestatus: string; }', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 4, '(target: object, ...sources: any[]): any', gave the following error.
+    Argument of type 'KeyedObject | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/core/components/ui/notification/AppNotification.vue(32,78): error TS2532: Object is possibly 'undefined'.
+src/core/components/ui/table/AppDataTable.vue(3,8): error TS1192: Module '"C:/Users/PC-03/Documents/GitHub/telemetric/telemetric-front/node_modules/vue3-easy-data-table/types/main"' has no default export.
+src/core/components/ui/table/AppDataTable.vue(67,32): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/hooks/useDataTableFetch.ts(135,13): error TS2322: Type 'string | string[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/hooks/useDataTableFetch.ts(136,13): error TS2322: Type 'SortType | SortType[] | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/core/stores/notification.ts(206,58): error TS2538: Type 'undefined' cannot be used as an index type.
+src/core/utils/validation.ts(31,59): error TS2532: Object is possibly 'undefined'.
+src/features/admin/clients/client.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(9,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(10,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/client.service.ts(11,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/clients/views/ClientListView.vue(46,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/devices/decryptor-type.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/device.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/devices/transformer.service.ts(7,36): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/devices/views/DeviceForm.vue(132,36): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(67,20): error TS18046: 'modelsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(85,29): error TS18046: 'clientsData' is of type 'unknown'.
+src/features/admin/devices/views/DeviceListView.vue(119,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Device>>' is not assignable to parameter of type '(params: Pagination) => Promise<Device[] | PagedList<Device>>'.
+  Type 'Promise<ListResponse<Device>>' is not assignable to type 'Promise<Device[] | PagedList<Device>>'.
+    Type 'ListResponse<Device>' is not assignable to type 'Device[] | PagedList<Device>'.
+      Type '{ [key: string]: unknown; items: Device[]; }' is not assignable to type 'Device[] | PagedList<Device>'.
+        Type '{ [key: string]: unknown; items: Device[]; }' is missing the following properties from type 'Device[]': length, pop, push, concat, and 35 more.
+src/features/admin/metrics/metric.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(9,52): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/metric.service.ts(10,72): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/metrics/views/MetricListView.vue(68,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/metrics/views/MetricListView.vue(90,30): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/models/model.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(9,57): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/model.service.ts(10,77): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/models/views/ModelListView.vue(49,49): error TS2345: Argument of type '(params: Pagination) => Promise<unknown>' is not assignable to parameter of type '(params: Pagination) => Promise<unknown[] | PagedList<unknown>>'.
+  Type 'Promise<unknown>' is not assignable to type 'Promise<unknown[] | PagedList<unknown>>'.
+    Type 'unknown' is not assignable to type 'unknown[] | PagedList<unknown>'.
+src/features/admin/models/views/ModelListView.vue(75,70): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/security/security.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/security/views/RoleListView.vue(60,9): error TS2322: Type 'Record<string, unknown>[]' is not assignable to type 'Permission[] | { permissionId: number; code: string; module: string; description: string; isActive: boolean; isDeleted: boolean; createdAt: string; createdBy?: number | undefined; updatedAt?: string | undefined; updatedBy?: number | undefined; }[]'.
+  Type 'Record<string, unknown>[]' is not assignable to type 'Permission[]'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Permission': permissionId, code, module, description, and 3 more.
+src/features/admin/security/views/UserListView.vue(37,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<User>>' is not assignable to parameter of type '(params: Pagination) => Promise<User[] | PagedList<User>>'.
+  Type 'Promise<ListResponse<User>>' is not assignable to type 'Promise<User[] | PagedList<User>>'.
+    Type 'ListResponse<User>' is not assignable to type 'User[] | PagedList<User>'.
+      Type '{ [key: string]: unknown; items: User[]; }' is not assignable to type 'User[] | PagedList<User>'.
+        Type '{ [key: string]: unknown; items: User[]; }' is missing the following properties from type 'User[]': length, pop, push, concat, and 35 more.
+src/features/admin/security/views/UserListView.vue(103,25): error TS18046: 'response' is of type 'unknown'.
+src/features/admin/sensortypes/sensortype.service.ts(8,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(9,56): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/sensortype.service.ts(10,76): error TS2558: Expected 0 type arguments, but got 1.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(68,66): error TS2339: Property 'items' does not exist on type '{}'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(86,26): error TS18046: 'metricRes' is of type 'unknown'.
+src/features/admin/sensortypes/views/SensorTypeListView.vue(90,31): error TS2339: Property 'items' does not exist on type 'ListResponse<Unit>'.
+  Property 'items' does not exist on type 'Unit[]'.
+src/features/admin/units/unit.service.ts(29,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/features/admin/units/views/UnitListView.vue(51,49): error TS2345: Argument of type '(params: Pagination) => Promise<ListResponse<Unit>>' is not assignable to parameter of type '(params: Pagination) => Promise<Unit[] | PagedList<Unit>>'.
+  Type 'Promise<ListResponse<Unit>>' is not assignable to type 'Promise<Unit[] | PagedList<Unit>>'.
+    Type 'ListResponse<Unit>' is not assignable to type 'Unit[] | PagedList<Unit>'.
+      Type '{ [key: string]: unknown; items: Unit[]; }' is not assignable to type 'Unit[] | PagedList<Unit>'.
+        Type '{ [key: string]: unknown; items: Unit[]; }' is missing the following properties from type 'Unit[]': length, pop, push, concat, and 35 more.
+src/features/customer/devices/device-customer.service.ts(45,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/devices/views/DeviceCustomerModal.vue(73,35): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(74,27): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(75,32): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(78,33): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(81,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,29): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/features/customer/devices/views/DeviceCustomerModal.vue(84,50): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/features/customer/tags/tags.service.ts(59,33): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(62,47): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/tags.service.ts(64,62): error TS2558: Expected 0 type arguments, but got 1.
+src/features/customer/tags/views/TagFormModal.vue(71,19): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(72,20): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(73,26): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(74,23): error TS18046: 'data' is of type 'unknown'.
+src/features/customer/tags/views/TagFormModal.vue(118,51): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(55,23): error TS18046: 'response' is of type 'unknown'.
+src/features/customer/tags/views/TagListView.vue(56,28): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(149,10): error TS2345: Argument of type '"transform-end"' is not assignable to parameter of type '"select" | "click" | "hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(163,26): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(event: "select", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"select"'.
+  Overload 2 of 3, '(event: "click", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"click"'.
+  Overload 3 of 3, '(event: "hover", ...args: any[]): void', gave the following error.
+    Argument of type '"transform-end"' is not assignable to parameter of type '"hover"'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(189,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(190,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(191,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/pipe/KonvaPipe.vue(192,27): error TS2339: Property 'document' does not exist on type 'CreateComponentPublicInstanceWithMixins<ToResolvedProps<__VLS_Props, { select: (...args: any[]) => void; click: (...args: any[]) => void; hover: (...args: any[]) => void; }>, { config: ComputedRef<{ id: string; points: number[]; ... 8 more ...; hitStrokeWidth: number; }>; ... 4 more ...; groupConfig: ComputedRef<......'.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(111,26): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/canvas/elements/shapes/KonvaPoly.vue(112,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(21,39): error TS2339: Property 'items' does not exist on type 'ListResponse<Device>'.
+  Property 'items' does not exist on type 'Device[]'.
+src/features/maps/components/inspector/sections/InspectorBinding.vue(220,13): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(317,64): error TS2339: Property 'title' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(321,92): error TS2339: Property 'titleAlign' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(325,102): error TS2339: Property 'titleSize' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(335,76): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(338,70): error TS2339: Property 'titleColor' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(382,56): error TS2339: Property 'aggregation' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(384,37): error TS2339: Property 'aggregationType' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(389,48): error TS2339: Property 'aggregationWindow' does not exist on type '{ id: number; deviceId: number; sensorCode: string; color: string; label: string; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(474,52): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(475,71): error TS2339: Property 'imageVariables' does not exist on type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(479,101): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(496,96): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/components/inspector/sections/InspectorStyle.vue(574,100): error TS2352: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/features/maps/composables/inspector/usePropertyManagement.ts(78,13): error TS2322: Type '{ name: string; type?: "string" | "number" | undefined; defaultValue?: string | number; }' is not assignable to type '{ name: string; type: "string" | "number"; defaultValue?: string | number | undefined; }'.
+  Types of property 'type' are incompatible.
+    Type '"string" | "number" | undefined' is not assignable to type '"string" | "number"'.
+      Type 'undefined' is not assignable to type '"string" | "number"'.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(1,30): error TS2307: Cannot find module '../../store/maps.store' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(2,47): error TS2307: Cannot find module '../../types/scene' or its corresponding type declarations.
+src/features/maps/composables/plan/old/useDrawPolyline.ts(125,49): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/features/maps/composables/plan/useDrawClickNodes.ts(74,9): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type '{ baseZoom?: number | undefined; color?: string | undefined; opacity?: number | undefined; fontSize?: number | undefined; strokeWidth?: number | undefined; imageUrl?: string | undefined; ... 13 more ...; series?: { ...; }[] | undefined; }'.
+src/features/maps/composables/plan/useToolRouter.ts(3,30): error TS2307: Cannot find module '@/store/maps.store' or its corresponding type declarations.
+src/features/maps/store/maps.store.ts(128,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(129,35): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(510,53): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(511,29): error TS18046: 'response' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(523,48): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(526,34): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(526,59): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,33): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(527,57): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(530,21): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(531,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,23): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(532,75): error TS18046: 'dto' is of type 'unknown'.
+src/features/maps/store/maps.store.ts(610,54): error TS2558: Expected 0 type arguments, but got 1.
+src/features/maps/store/maps.store.ts(615,30): error TS2339: Property 'mapId' does not exist on type '{}'.
+src/features/maps/store/maps.store.ts(615,49): error TS2339: Property 'id' does not exist on type '{}'.
+src/features/maps/utils/runtime/TelemetryAdapter.ts(3,26): error TS2305: Module '"../../types/scene"' has no exported member 'LogicBlock'.
+src/features/maps/views/MapsViewerView.vue(86,17): error TS2322: Type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; } | undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+  Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/maps/views/MapsViewerView.vue(88,17): error TS2322: Type 'undefined' is not assignable to type '{ id: string; type: SceneNodeType; name: string; zIndex: number; isVisible: boolean; isLocked: boolean; draggable?: boolean | undefined; properties: { baseZoom?: number | undefined; ... 18 more ...; series?: { ...; }[] | undefined; }; ... 17 more ...; propertyMappings?: Record<...> | undefined; }'.
+src/features/telemetry/telemetry.service.ts(53,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/services/organization.service.ts(78,66): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.
+src/stores/modelStore.ts(3,15): error TS2305: Module '"@/features/admin/models/types"' has no exported member 'Model'.
+src/stratlabs-ui/components/domain/UiOrganizationSelector.vue(118,9): error TS2322: Type 'number | null' is not assignable to type 'number | undefined'.
+  Type 'null' is not assignable to type 'number | undefined'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(35,31): error TS18046: 'response' is of type 'unknown'.
+src/stratlabs-ui/components/domain/UiTagModal.vue(77,20): error TS18046: 'response' is of type 'unknown'.
+2026-02-20T16:13:01 | Observed: typecheck_exit_code=2
+2026-02-20T16:13:01 | Expected: no-regresion no-demo => observed <= baseline (240)
+2026-02-20T16:13:01 | Observed: no_demo_ts_errors=118
+2026-02-20T16:13:01 | Observed: gate_no_regresion=PASS (observed=118 <= baseline=240)
+2026-02-20T16:13:03 | Observed: auto_login_token=OK (API_USER=vcsoft)
+2026-02-20T16:13:03 | Observed: auto_test_device_ids=7,6,5
+2026-02-20T16:13:03 | Observed: run finalizado.
+2026-02-20T16:13:03 | Expected: teardown sin borrar datos criticos.
+2026-02-20T16:13:03 | Observed: no-op ejecutado.
+2026-02-20T16:13:03 | Regla cierre runtime: si se levantaron instancias durante QA, deben apagarse y verificarse detenidas.
+2026-02-20T16:13:06 | STILL_RUNNING: none
